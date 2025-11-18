@@ -1,0 +1,154 @@
+1. DISK SPACE FULL - STORAGE UPGRADE
+
+Tell customer:
+
+"Your disk is low. Upgrade options:"
+
+Present storage plans:
+
+200 GB for $120/month
+100 GB for $60/month
+80 GB for $50/month
+60 GB for $40/month
+40 GB for $28/month
+
+Capture customer choice.
+Auto-send to POC for approval.
+
+2. PASSWORD RESET
+
+Capture user details:
+
+Username / Account name/ CID
+
+Verify in CRM lookup.
+Automatically send password reset request to support team with all details.
+Send confirmation email to customer with ETA.
+
+3. USER ADD / DELETE - NEW EMPLOYEE / DEPARTED
+
+Ask:
+
+"Add new user or delete user?"
+
+Collect details:
+
+Full name
+
+Email address
+
+CID
+
+Create support ticket with these details for user addition/deletion.
+
+4. MONITOR SETUP - SINGLE MONITOR / MULTI-MONITOR
+
+Ask:
+
+"Single monitor or multi-monitor setup?"
+
+Provide fixed steps:
+
+Go to Remote Desktop Connection (mstsc)
+
+Switch to the Display tab
+
+Select the option “Use all my monitors for the remote session”
+
+5. PRINTER NOT WORKING / OFFLINE / STUCK
+
+Ask:
+
+"What printer problem?
+
+Can't find printer
+
+Printer offline
+
+Print job stuck
+
+Other"
+
+Provide quick fix based on issue:
+
+Printer offline:
+
+Restart printer (power off for 10 seconds)
+
+Restart your computer
+
+Try printing again
+
+6. SERVER DOWN / SLOWNESS / NOT RESPONDING / FREEZE
+
+Ask interactive questions:
+
+"Open Task Manager. What's your CPU percentage? (1-100)"
+
+"What's your RAM percentage?"
+
+"What's your Disk percentage?"
+
+Diagnose based on numbers:
+
+High CPU (>80%): Close unused applications, restart computer
+
+High RAM (>85%): Restart your computer
+
+High Disk (>90%): Delete old files, request disk upgrade
+
+7. RDP CONNECTION PROBLEMS - CAN'T CONNECT / TOO SLOW
+
+Ask step-by-step questions:
+
+"Are you connected to the internet? (Yes/No)"
+
+"Can you see an error message?"
+
+Provide fixes based on answers:
+
+No internet: Restart WiFi/modem
+
+8. QB MFA - CAN'T GET SECURITY CODE / TOO MANY CODES
+
+(Troubleshooting or escalation process as applicable.)
+
+9. EMAIL ISSUES IN OUTLOOK AND QB
+
+Diagnose based on symptoms (e.g., login error, sync issue, send/receive issue).
+Provide relevant troubleshooting or escalate to support.
+
+10. QB ISSUES - WON'T START / BANK FEED NOT SYNCING / FILE CORRUPT
+
+Ask:
+
+"What QB problem?
+
+Won't start
+
+Bank feed not syncing
+
+File corrupted?"
+
+Provide QB-specific recovery steps:
+
+Won't start: Restart computer, check internet, restart QB
+
+Bank feed: Check feed settings, force sync, verify credentials
+
+File corrupt: Restore from backup, validate company file
+
+11. WINDOWS UPDATE FAILED / SYSTEM WON'T BOOT
+
+Provide automated response message:
+
+"Windows update issue detected. Please restart your computer."
+
+12. ACCOUNT LOCKED - TOO MANY LOGIN ATTEMPTS
+
+Ask:
+
+"Your account locked after too many login attempts? (Yes/No)"
+
+Verify identity (ask security questions or CRM verification).
+Proceed with account unlock request.

@@ -1,0 +1,250 @@
+{
+  "sample_queries": [
+    {
+      "query": "I forgot my password and can't log in",
+      "expected_intent": "password_reset",
+      "expected_kb_file": "01_password_reset.md"
+    },
+    {
+      "query": "How do I reset my account password",
+      "expected_intent": "password_reset",
+      "expected_kb_file": "01_password_reset.md"
+    },
+    {
+      "query": "My disk is running out of space",
+      "expected_intent": "disk_storage",
+      "expected_kb_file": "02_disk_storage_upgrade.md"
+    },
+    {
+      "query": "I need to upgrade my storage capacity",
+      "expected_intent": "disk_storage",
+      "expected_kb_file": "02_disk_storage_upgrade.md"
+    },
+    {
+      "query": "What storage plans do you have available",
+      "expected_intent": "disk_storage",
+      "expected_kb_file": "02_disk_storage_upgrade.md"
+    },
+    {
+      "query": "I can't connect to remote desktop",
+      "expected_intent": "rdp_issues",
+      "expected_kb_file": "03_rdp_connection_issues.md"
+    },
+    {
+      "query": "RDP connection is very slow",
+      "expected_intent": "rdp_issues",
+      "expected_kb_file": "03_rdp_connection_issues.md"
+    },
+    {
+      "query": "Server not responding when I try to RDP",
+      "expected_intent": "rdp_issues",
+      "expected_kb_file": "03_rdp_connection_issues.md"
+    },
+    {
+      "query": "I need to add a new employee to the system",
+      "expected_intent": "user_management",
+      "expected_kb_file": "04_user_addition_deletion.md"
+    },
+    {
+      "query": "How do I create a new user account",
+      "expected_intent": "user_management",
+      "expected_kb_file": "04_user_addition_deletion.md"
+    },
+    {
+      "query": "Delete user account for departed employee",
+      "expected_intent": "user_management",
+      "expected_kb_file": "04_user_addition_deletion.md"
+    },
+    {
+      "query": "I want to use multiple monitors with remote desktop",
+      "expected_intent": "monitor_setup",
+      "expected_kb_file": "05_monitor_setup.md"
+    },
+    {
+      "query": "How do I configure dual monitors for RDP",
+      "expected_intent": "monitor_setup",
+      "expected_kb_file": "05_monitor_setup.md"
+    },
+    {
+      "query": "Set up single monitor remote desktop session",
+      "expected_intent": "monitor_setup",
+      "expected_kb_file": "05_monitor_setup.md"
+    },
+    {
+      "query": "My printer is offline and not responding",
+      "expected_intent": "printer_issues",
+      "expected_kb_file": "06_printer_troubleshooting.md"
+    },
+    {
+      "query": "Print job is stuck in queue",
+      "expected_intent": "printer_issues",
+      "expected_kb_file": "06_printer_troubleshooting.md"
+    },
+    {
+      "query": "Can't find printer on network",
+      "expected_intent": "printer_issues",
+      "expected_kb_file": "06_printer_troubleshooting.md"
+    },
+    {
+      "query": "My computer is running very slowly",
+      "expected_intent": "performance_issues",
+      "expected_kb_file": "07_server_performance.md"
+    },
+    {
+      "query": "High CPU usage is slowing down my system",
+      "expected_intent": "performance_issues",
+      "expected_kb_file": "07_server_performance.md"
+    },
+    {
+      "query": "RAM memory is almost full",
+      "expected_intent": "performance_issues",
+      "expected_kb_file": "07_server_performance.md"
+    },
+    {
+      "query": "Computer is freezing frequently",
+      "expected_intent": "performance_issues",
+      "expected_kb_file": "07_server_performance.md"
+    },
+    {
+      "query": "QuickBooks won't start up",
+      "expected_intent": "quickbooks_issues",
+      "expected_kb_file": "08_quickbooks_issues.md"
+    },
+    {
+      "query": "QB bank feed not syncing transactions",
+      "expected_intent": "quickbooks_issues",
+      "expected_kb_file": "08_quickbooks_issues.md"
+    },
+    {
+      "query": "Company file appears corrupted",
+      "expected_intent": "quickbooks_issues",
+      "expected_kb_file": "08_quickbooks_issues.md"
+    },
+    {
+      "query": "I can't send emails from Outlook",
+      "expected_intent": "email_issues",
+      "expected_kb_file": "09_email_issues.md"
+    },
+    {
+      "query": "Email not receiving messages",
+      "expected_intent": "email_issues",
+      "expected_kb_file": "09_email_issues.md"
+    },
+    {
+      "query": "Outlook keeps crashing on startup",
+      "expected_intent": "email_issues",
+      "expected_kb_file": "09_email_issues.md"
+    },
+    {
+      "query": "Cannot log in to email account",
+      "expected_intent": "email_issues",
+      "expected_kb_file": "09_email_issues.md"
+    },
+    {
+      "query": "Password reset request for user",
+      "expected_intent": "password_reset",
+      "expected_kb_file": "01_password_reset.md"
+    },
+    {
+      "query": "Account locked need to unlock",
+      "expected_intent": "password_reset",
+      "expected_kb_file": "01_password_reset.md"
+    },
+    {
+      "query": "Storage upgrade pricing and options",
+      "expected_intent": "disk_storage",
+      "expected_kb_file": "02_disk_storage_upgrade.md"
+    },
+    {
+      "query": "Low disk space warning",
+      "expected_intent": "disk_storage",
+      "expected_kb_file": "02_disk_storage_upgrade.md"
+    },
+    {
+      "query": "Remote desktop troubleshooting help",
+      "expected_intent": "rdp_issues",
+      "expected_kb_file": "03_rdp_connection_issues.md"
+    },
+    {
+      "query": "VPN and RDP connection problems",
+      "expected_intent": "rdp_issues",
+      "expected_kb_file": "03_rdp_connection_issues.md"
+    },
+    {
+      "query": "Onboard new team member with account",
+      "expected_intent": "user_management",
+      "expected_kb_file": "04_user_addition_deletion.md"
+    },
+    {
+      "query": "Offboard departing employee remove access",
+      "expected_intent": "user_management",
+      "expected_kb_file": "04_user_addition_deletion.md"
+    },
+    {
+      "query": "Multi-monitor remote desktop setup",
+      "expected_intent": "monitor_setup",
+      "expected_kb_file": "05_monitor_setup.md"
+    },
+    {
+      "query": "Display configuration for RDP",
+      "expected_intent": "monitor_setup",
+      "expected_kb_file": "05_monitor_setup.md"
+    },
+    {
+      "query": "Printer not found on network",
+      "expected_intent": "printer_issues",
+      "expected_kb_file": "06_printer_troubleshooting.md"
+    },
+    {
+      "query": "Printer offline error message",
+      "expected_intent": "printer_issues",
+      "expected_kb_file": "06_printer_troubleshooting.md"
+    },
+    {
+      "query": "Computer performance is degrading",
+      "expected_intent": "performance_issues",
+      "expected_kb_file": "07_server_performance.md"
+    },
+    {
+      "query": "Check CPU and disk usage high",
+      "expected_intent": "performance_issues",
+      "expected_kb_file": "07_server_performance.md"
+    },
+    {
+      "query": "QB file is corrupted won't open",
+      "expected_intent": "quickbooks_issues",
+      "expected_kb_file": "08_quickbooks_issues.md"
+    },
+    {
+      "query": "QuickBooks login failing",
+      "expected_intent": "quickbooks_issues",
+      "expected_kb_file": "08_quickbooks_issues.md"
+    },
+    {
+      "query": "Email sync not working",
+      "expected_intent": "email_issues",
+      "expected_kb_file": "09_email_issues.md"
+    },
+    {
+      "query": "Can't send receive email Outlook",
+      "expected_intent": "email_issues",
+      "expected_kb_file": "09_email_issues.md"
+    }
+  ],
+  "metadata": {
+    "total_queries": 47,
+    "kb_topics": 9,
+    "coverage": {
+      "password_reset": 5,
+      "disk_storage": 5,
+      "rdp_issues": 5,
+      "user_management": 4,
+      "monitor_setup": 4,
+      "printer_issues": 4,
+      "performance_issues": 5,
+      "quickbooks_issues": 5,
+      "email_issues": 5
+    },
+    "instructions": "Use these queries to test the chatbot retrieval system. Each query should return relevant KB content from the expected_kb_file. Check that /chat endpoint returns context snippets matching the intent."
+  }
+}

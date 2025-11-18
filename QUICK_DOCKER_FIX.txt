@@ -1,0 +1,87 @@
+# 🚀 QUICK FIX - Docker WSL Error
+
+## The Problem
+❌ Docker Desktop stuck on "WSL update"  
+❌ Not showing home screen  
+**Cause:** WSL 2 not properly installed
+
+## The Solution (Choose One - Fastest First)
+
+---
+
+## ✅ FASTEST METHOD (5 minutes)
+
+**Step 1:** Open PowerShell as Administrator
+```
+Windows Key + X → A
+```
+
+**Step 2:** Copy & Paste this ONE command:
+```powershell
+wsl --install
+```
+
+**Step 3:** Restart your computer when prompted
+
+**Done!** Docker Desktop should work now.
+
+---
+
+## ⚡ AUTOMATIC FIX (10 minutes)
+
+**Option A: Using Batch Script**
+```
+1. Right-click on: FIX_DOCKER_WSL.bat
+2. Click "Run as Administrator"
+3. Follow prompts
+4. Restart computer
+```
+
+**Option B: Using PowerShell Script**
+```powershell
+# Open PowerShell as Administrator, then run:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+.\Fix-DockerWSL.ps1
+```
+
+---
+
+## ✔️ VERIFY IT WORKED
+
+After restart, run:
+```powershell
+docker ps
+```
+
+**Expected:** Either shows containers or blank list (no error)
+
+**If error:** Run the fix script again or see DOCKER_WSL_FIX.md
+
+---
+
+## 🎯 THEN START ACEBUDDY-RAG
+
+```powershell
+cd "C:\Users\aryan.gupta\OneDrive - Real Time Data Services Pvt Ltd\Desktop\AceBuddy-RAG"
+docker-compose up --build -d
+curl http://localhost:8000/health
+```
+
+---
+
+## 📝 SUMMARY
+
+| Method | Time | Difficulty |
+|--------|------|-----------|
+| **Command line** | 5 min | Easy ⭐ |
+| **Batch script** | 10 min | Easy |
+| **PowerShell script** | 10 min | Easy |
+| **Manual install** | 20 min | Medium (see DOCKER_WSL_FIX.md) |
+
+---
+
+## 🆘 STILL NOT WORKING?
+
+See **DOCKER_WSL_FIX.md** for detailed troubleshooting (in same folder)
+
+**Key file:** `DOCKER_WSL_FIX.md` - Read this if quick fix doesn't work

@@ -1,0 +1,628 @@
+[
+  {
+    "query": "How do I reset my password?",
+    "timestamp": "2025-11-18T17:24:26.250295",
+    "response": {
+      "answer": "To reset your password, please follow these steps:\n\n1. **Select Your Request Type**: Begin by choosing the appropriate option for your password reset request.\n\n2. **Access the Selfcare Portal**: Visit the Ace Selfcare Portal using the following link: [How to reset Password via Ace Selfcare Portal](https://www.acecloudhosting.com/knowledgebase/selfcare-portal-user-guide/).\n\n3. **Follow the Instructions**: Once on the portal, follow the detailed instructions provided to reset your password.\n\nIf you encounter any issues during the process, please ensure:\n- Your email address is correctly registered in the system.\n- Your account is not locked due to too many failed attempts.\n- You are entering the correct Customer ID (CID).\n\nIf problems persist, consider escalating the issue to IT security if you suspect account compromise. If you need further assistance, please contact support.",
+      "intent": "password_reset",
+      "intent_confidence": 0.6666666666666666,
+      "context": [
+        "Question: Password Reset\n\nAnswer: Please select an option!",
+        "Question: Password Reset\n\nAnswer: Please select your request type.",
+        "Question: How do I enrolled to selfcare portal?\n\nAnswer: Please follow the process mentioned in the link below inorder to reset your server password.\n\nRelevant Links:\n- {'text': 'How to reset Password via Ace Selfcare Portal', 'url': 'https://www.acecloudhosting.com/knowledgebase/selfcare-portal-user-guide/', 'target': '_blank'}",
+        "# # Password Reset\n\nThis document contains comprehensive support information about Password Reset from the AceBuddy support system.\n\n---\n\n",
+        "## Troubleshooting\nIf password reset fails:\n1. Verify email address is correct in system\n2. Check if account is locked due to too many failed attempts\n3. Ensure user is providing correct CID\n4. Escalate to IT security if account compromise suspected",
+        "# Question 63: Password Reset\n\n**Answer:**\n\nPlease select your request type.\n\n---\n\n"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "Question: Password Reset\n\nAnswer: Please select an option!",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_45",
+          "rank": 1,
+          "confidence": 0.2275834083557129
+        },
+        {
+          "content": "Question: Password Reset\n\nAnswer: Please select your request type.",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_147",
+          "rank": 2,
+          "confidence": 0.20106297731399536
+        },
+        {
+          "content": "Question: How do I enrolled to selfcare portal?\n\nAnswer: Please follow the process mentioned in the link below inorder to reset your server password.\n\nRelevant Links:\n- {'text': 'How to reset Password via Ace Selfcare Portal', 'url': 'https://www.acecloudhosting.com/knowledgebase/selfcare-portal-user-guide/', 'target': '_blank'}",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_125",
+          "rank": 3,
+          "confidence": 0.13814818859100342
+        },
+        {
+          "content": "# # Password Reset\n\nThis document contains comprehensive support information about Password Reset from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Password_Reset_0",
+          "rank": 4,
+          "confidence": 0.1180412769317627
+        },
+        {
+          "content": "## Troubleshooting\nIf password reset fails:\n1. Verify email address is correct in system\n2. Check if account is locked due to too many failed attempts\n3. Ensure user is providing correct CID\n4. Escalate to IT security if account compromise suspected",
+          "source": "kb_file",
+          "chunk_id": "kb_01_password_reset_chunk_8",
+          "rank": 5,
+          "confidence": 0.10642528533935547
+        },
+        {
+          "content": "# Question 63: Password Reset\n\n**Answer:**\n\nPlease select your request type.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_General_Support_63",
+          "rank": 6,
+          "confidence": 0.10241943597793579
+        }
+      ],
+      "confidence": 0.14894676208496094,
+      "session_id": "local_smoke_1",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "How can I increase disk storage on my server?",
+    "timestamp": "2025-11-18T17:24:37.849432",
+    "response": {
+      "answer": "To increase disk storage on your server, please follow these steps:\n\n1. **Request an Upgrade**: Contact your provisioning team to request a disk space upgrade. Ensure you specify the amount of additional storage needed.\n\n2. **Verify Provisioning**: Once the upgrade is requested, verify that the provisioning has been completed on the server.\n\n3. **Refresh the Operating System**: After provisioning, check if the operating system needs a refresh to recognize the new disk space. This may involve rebooting the server.\n\n4. **Check Disk Usage**: Use system tools to verify that the system is utilizing the new storage. You can check disk usage with commands like `df -h` on Linux or by checking the properties of the drive on Windows.\n\n5. **Escalate if Necessary**: If the storage is still not increasing after following the above steps, escalate the issue to your infrastructure team for further assistance.\n\nIf you need further help, please consider contacting your support team.",
+      "intent": "unknown",
+      "intent_confidence": 0.25,
+      "context": [
+        "ps needed for clarification\n- Billing and provisioning teams receive complete information\n\n## Preventing Disk Full Issues\n1. Monitor disk usage monthly\n2. Archive old files regularly\n3. Delete temporary/backup files not needed\n4. Schedule automatic backups to separate storage\n5. Request proactive upgrade before reaching 85% capacity\n\n## Related Topics\n- Server Performance\n- System Maintenance\n- Backup Management\n- Disk Usage Monitoring\n\n## Troubleshooting\nIf storage not increasing after upgrade:\n1. Verify provisioning completed on server\n2. Check if OS needs refresh to recognize new space\n3. Verify system is using new storage\n4. Escalate to infrastructure team if issue persists",
+        "Question: How do I diskspaceaddition?\n\nAnswer: Please be informed that we have automated junk/temp cleaning and residual file erasing mechanism enabled on all our servers by default.",
+        "Question: How do I diskspace2?\n\nAnswer: This ensures that the disk space on the servers do not get used up by unnecessary temporary files and you won't have to manually do a cleanup.",
+        "## Troubleshooting\nIf storage not increasing after upgrade:\n1. Verify provisioning completed on server\n2. Check if OS needs refresh to recognize new space\n3. Verify system is using new storage\n4. Escalate to infrastructure team if issue persists",
+        "# Question 3: How do I diskspace2?\n\n**Answer:**\n\nThis ensures that the disk space on the servers do not get used up by unnecessary temporary files and you won't have to manually do a cleanup.\n\n---\n",
+        "# Question 2: How do I diskspaceaddition?\n\n**Answer:**\n\nPlease be informed that we have automated junk/temp cleaning and residual file erasing mechanism enabled on all our servers by default.\n\n---\n\n"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "ps needed for clarification\n- Billing and provisioning teams receive complete information\n\n## Preventing Disk Full Issues\n1. Monitor disk usage monthly\n2. Archive old files regularly\n3. Delete temporary/backup files not needed\n4. Schedule automatic backups to separate storage\n5. Request proactive upgrade before reaching 85% capacity\n\n## Related Topics\n- Server Performance\n- System Maintenance\n- Backup Management\n- Disk Usage Monitoring\n\n## Troubleshooting\nIf storage not increasing after upgrade:\n1. Verify provisioning completed on server\n2. Check if OS needs refresh to recognize new space\n3. Verify system is using new storage\n4. Escalate to infrastructure team if issue persists",
+          "source": "kb_file",
+          "chunk_id": "02_disk_storage_upgrade_3",
+          "rank": 1,
+          "confidence": 0.16401493549346924
+        },
+        {
+          "content": "Question: How do I diskspaceaddition?\n\nAnswer: Please be informed that we have automated junk/temp cleaning and residual file erasing mechanism enabled on all our servers by default.",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_66",
+          "rank": 2,
+          "confidence": 0.13169091939926147
+        },
+        {
+          "content": "Question: How do I diskspace2?\n\nAnswer: This ensures that the disk space on the servers do not get used up by unnecessary temporary files and you won't have to manually do a cleanup.",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_181",
+          "rank": 3,
+          "confidence": 0.11256450414657593
+        },
+        {
+          "content": "## Troubleshooting\nIf storage not increasing after upgrade:\n1. Verify provisioning completed on server\n2. Check if OS needs refresh to recognize new space\n3. Verify system is using new storage\n4. Escalate to infrastructure team if issue persists",
+          "source": "kb_file",
+          "chunk_id": "kb_02_disk_storage_upgrade_chunk_11",
+          "rank": 4,
+          "confidence": 0.10202336311340332
+        },
+        {
+          "content": "# Question 3: How do I diskspace2?\n\n**Answer:**\n\nThis ensures that the disk space on the servers do not get used up by unnecessary temporary files and you won't have to manually do a cleanup.\n\n---\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Disk_Space_3",
+          "rank": 5,
+          "confidence": 0.09798949956893921
+        },
+        {
+          "content": "# Question 2: How do I diskspaceaddition?\n\n**Answer:**\n\nPlease be informed that we have automated junk/temp cleaning and residual file erasing mechanism enabled on all our servers by default.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Disk_Space_2",
+          "rank": 6,
+          "confidence": 0.07904481887817383
+        }
+      ],
+      "confidence": 0.11455467343330383,
+      "session_id": "local_smoke_2",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "My RDP connection keeps disconnecting, what should I check?",
+    "timestamp": "2025-11-18T17:24:48.941328",
+    "response": {
+      "answer": "If your RDP connection keeps disconnecting, please follow these steps to troubleshoot the issue:\n\n1. **Check Internet Connection**: Ensure that your internet connection is stable. If possible, switch to a wired Ethernet connection for better reliability.\n\n2. **VPN Status**: If you are using a VPN, make sure it is running before attempting to connect to the RDP server.\n\n3. **Windows Updates**: Verify that your Windows operating system is up to date. Keeping your system updated can resolve many connectivity issues.\n\n4. **Network Bandwidth**: Monitor your network bandwidth. Close any unnecessary applications that may be consuming bandwidth.\n\n5. **RDP Quality Settings**: Adjust the Remote Desktop quality settings:\n   - Open the Remote Desktop Connection client.\n   - Click on \"Show Options.\"\n   - Go to the \"Experience\" tab and select a lower quality setting (e.g., \"Low Quality\") if you are experiencing lag.\n\n6. **IP Whitelisting**: Ensure that your IP address is whitelisted with your IT department, as this can affect your ability to connect.\n\n7. **Check for Error Messages**: If you receive any specific error messages when the connection drops, take note of them as they can provide clues to the underlying issue.\n\nIf the problem persists after following these steps, please consider contacting your IT support for further assistance.",
+      "intent": "rdp_issue",
+      "intent_confidence": 0.3333333333333333,
+      "context": [
+        "# RDP Connection Issues - Remote Desktop Problems - AceBuddy Knowledge Base",
+        "## Symptoms\n- Cannot connect to RDP server\n- \"Server not responding\" error\n- Connection drops frequently\n- Extremely slow response times\n- Lag while typing or moving mouse\n- Error messages when attempting RDP connection",
+        "## Prevention Tips\n1. Keep Windows updated\n2. Maintain stable internet connection\n3. Use Ethernet for better RDP performance\n4. Ensure VPN is running before attempting RDP\n5. Whitelist your IP address with IT",
+        "**Issue: Only one monitor shows up in RDP**\n- Check all monitors are connected and powered on\n- Verify all monitors detected by Windows (Settings → Display)\n- Restart RDP connection\n- May need to disable and re-enable in Display settings\n\n**Issue: RDP session spans monitors incorrectly**\n- Adjust monitor positions in Windows Display settings\n- Windows → Settings → System → Display → Arrange displays\n- Position monitors to match physical layout\n- Reconnect RDP after arrangement\n\n**Issue: Performance degradation with multi-monitor**\n- Multi-monitor = higher bandwidth requirements\n- Consider reducing resolution\n- Close unused applications\n- Use Ethernet instead of WiFi for better performance\n- Reduce remote desktop quality setting\n\n### Performance Optimization\nFor optimal multi-monitor performance:\n1. Use Ethernet connection (not WiFi)\n2. Keep network bandwidth available\n3. Close unnecessary applications\n4. Monitor network latency\n5. Reduce resolution if experiencing lag\n\n### Remote Desktop Quality Settings\n- **High Quality**: Slower, more details (local network)\n- **Medium Quality**: Balanced (good for most setups)\n- **Low Quality**: Fast, reduced details (slow networks)",
+        "## Issue\nUser cannot connect to Remote Desktop (RDP) or connection is extremely slow/laggy.",
+        "## Common RDP Error Codes and Solutions\n\n### Error: \"The Remote Desktop Gateway server cannot be reached\"\n- Check internet connection\n- Verify VPN is connected\n- Restart router/modem\n\n### Error: \"Remote Desktop cannot connect to the remote computer\"\n- Verify correct server address\n- Check firewall settings\n- Ensure RDP service is running on server\n- Verify credentials\n\n### Slow RDP Connection\n- Check network bandwidth usage\n- Reduce remote display resolution\n- Close unused applications on local machine\n- Move closer to WiFi router or use Ethernet",
+        "# RDP Connection Issues - Remote Desktop Problems - AceBuddy Knowledge Base\n\n## Issue\nUser cannot connect to Remote Desktop (RDP) or connection is extremely slow/laggy.\n\n## Symptoms\n- Cannot connect to RDP server\n- \"Server not responding\" error\n- Connection drops frequently\n- Extremely slow response times\n- Lag while typing or moving mouse\n- Error messages when attempting RDP connection\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks diagnostic questions about internet connectivity and RDP error messages, then provides targeted fixes or escalates to NOC/SysAdmin team with all diagnostic information.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"I can't connect to RDP\" or \"RDP is very slow\"\n2. Chatbot asks diagnostic questions:\n   - \"Are you curre"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "# RDP Connection Issues - Remote Desktop Problems - AceBuddy Knowledge Base",
+          "source": "kb_file",
+          "chunk_id": "kb_03_rdp_connection_issues_chunk_0",
+          "rank": 1,
+          "confidence": 0.2295261025428772
+        },
+        {
+          "content": "## Symptoms\n- Cannot connect to RDP server\n- \"Server not responding\" error\n- Connection drops frequently\n- Extremely slow response times\n- Lag while typing or moving mouse\n- Error messages when attempting RDP connection",
+          "source": "kb_file",
+          "chunk_id": "kb_03_rdp_connection_issues_chunk_2",
+          "rank": 2,
+          "confidence": 0.17661988735198975
+        },
+        {
+          "content": "## Prevention Tips\n1. Keep Windows updated\n2. Maintain stable internet connection\n3. Use Ethernet for better RDP performance\n4. Ensure VPN is running before attempting RDP\n5. Whitelist your IP address with IT",
+          "source": "kb_file",
+          "chunk_id": "kb_03_rdp_connection_issues_chunk_12",
+          "rank": 3,
+          "confidence": 0.14637339115142822
+        },
+        {
+          "content": "**Issue: Only one monitor shows up in RDP**\n- Check all monitors are connected and powered on\n- Verify all monitors detected by Windows (Settings → Display)\n- Restart RDP connection\n- May need to disable and re-enable in Display settings\n\n**Issue: RDP session spans monitors incorrectly**\n- Adjust monitor positions in Windows Display settings\n- Windows → Settings → System → Display → Arrange displays\n- Position monitors to match physical layout\n- Reconnect RDP after arrangement\n\n**Issue: Performance degradation with multi-monitor**\n- Multi-monitor = higher bandwidth requirements\n- Consider reducing resolution\n- Close unused applications\n- Use Ethernet instead of WiFi for better performance\n- Reduce remote desktop quality setting\n\n### Performance Optimization\nFor optimal multi-monitor performance:\n1. Use Ethernet connection (not WiFi)\n2. Keep network bandwidth available\n3. Close unnecessary applications\n4. Monitor network latency\n5. Reduce resolution if experiencing lag\n\n### Remote Desktop Quality Settings\n- **High Quality**: Slower, more details (local network)\n- **Medium Quality**: Balanced (good for most setups)\n- **Low Quality**: Fast, reduced details (slow networks)",
+          "source": "kb_file",
+          "chunk_id": "kb_05_monitor_setup_chunk_6",
+          "rank": 4,
+          "confidence": 0.14504146575927734
+        },
+        {
+          "content": "## Issue\nUser cannot connect to Remote Desktop (RDP) or connection is extremely slow/laggy.",
+          "source": "kb_file",
+          "chunk_id": "kb_03_rdp_connection_issues_chunk_1",
+          "rank": 5,
+          "confidence": 0.11344468593597412
+        },
+        {
+          "content": "## Common RDP Error Codes and Solutions\n\n### Error: \"The Remote Desktop Gateway server cannot be reached\"\n- Check internet connection\n- Verify VPN is connected\n- Restart router/modem\n\n### Error: \"Remote Desktop cannot connect to the remote computer\"\n- Verify correct server address\n- Check firewall settings\n- Ensure RDP service is running on server\n- Verify credentials\n\n### Slow RDP Connection\n- Check network bandwidth usage\n- Reduce remote display resolution\n- Close unused applications on local machine\n- Move closer to WiFi router or use Ethernet",
+          "source": "kb_file",
+          "chunk_id": "kb_03_rdp_connection_issues_chunk_7",
+          "rank": 6,
+          "confidence": 0.0649951696395874
+        },
+        {
+          "content": "# RDP Connection Issues - Remote Desktop Problems - AceBuddy Knowledge Base\n\n## Issue\nUser cannot connect to Remote Desktop (RDP) or connection is extremely slow/laggy.\n\n## Symptoms\n- Cannot connect to RDP server\n- \"Server not responding\" error\n- Connection drops frequently\n- Extremely slow response times\n- Lag while typing or moving mouse\n- Error messages when attempting RDP connection\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks diagnostic questions about internet connectivity and RDP error messages, then provides targeted fixes or escalates to NOC/SysAdmin team with all diagnostic information.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"I can't connect to RDP\" or \"RDP is very slow\"\n2. Chatbot asks diagnostic questions:\n   - \"Are you curre",
+          "source": "kb_file",
+          "chunk_id": "03_rdp_connection_issues_0",
+          "rank": 7,
+          "confidence": 0.044652581214904785
+        }
+      ],
+      "confidence": 0.13152189765657699,
+      "session_id": "local_smoke_3",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "Printer is not responding on Windows 10 — troubleshooting steps?",
+    "timestamp": "2025-11-18T17:25:02.518949",
+    "response": {
+      "answer": "To troubleshoot a printer that is not responding on Windows 10, follow these step-by-step instructions:\n\n1. **Verify Printer Status**:\n   - Check the printer's display screen for any error lights (red, orange, blinking).\n   - Note any error messages that may appear.\n\n2. **Check for Common Issues**:\n   - **Out of Paper**: Refill the paper tray if it's empty.\n   - **Paper Jam**: Open all access doors and remove any jammed paper.\n   - **Toner/Inks Low**: Replace the cartridge if the printer indicates low toner or ink.\n   - **Door Open**: Ensure all covers and access doors are securely closed.\n\n3. **Power Cycle the Printer**:\n   - Turn off the printer and wait for 10 seconds.\n   - Turn the printer back on and wait for it to complete its startup process.\n\n4. **Print a Test Page**:\n   - Use the printer's control panel buttons to navigate to \"Settings\" or \"Maintenance.\"\n   - Select \"Print Test Page\" or \"Test Print\" to check if the printer is functioning.\n\n**If the printer still does not respond**:\n- There may be a hardware malfunction.\n- Contact IT support and provide any error messages you noted during the troubleshooting process.",
+      "intent": "unknown",
+      "intent_confidence": 0.25,
+      "context": [
+        "- Type: `services.msc`\n   - Find \"Print Spooler\"\n   - Right-click → \"Stop\"\n   - Wait 10 seconds\n   - Right-click → \"Start\"\n\n3. **Restart printer again**:\n   - Power off for 10 seconds\n   - Power back on\n   - Try printing test page\n\n4. **Try printing again**:\n   - Open document\n   - File → Print\n   - Select printer\n   - Click \"Print\"\n\n**If job still stuck:**\n- Printer may have hardware issue\n- Contact IT support with printer name and model\n\n---\n\n## Solution C: Can't Find/Connect to Printer\n\n**Problem**: Printer not appearing in available printers list\n\n**Quick Fix - 5 Minutes:**\n1. **Verify printer is on network**:\n   - Check printer power\n   - Verify printer connected to WiFi or Ethernet\n   - Look for network indicator on printer\n\n2. **Add printer to Windows**:\n   - Windows → Settings → De",
+        "## Solution D: Printer Not Responding\n\n**Problem**: Printer appears connected but doesn't respond to print commands\n\n**Quick Fix - 5 Minutes:**\n1. **Verify printer status**:\n   - Check printer display screen\n   - Look for error lights (red, orange, blinking)\n   - Note any error messages\n\n2. **Check for common issues**:\n   - **Out of paper**: Refill paper tray\n   - **Paper jam**: Open all access doors and remove jammed paper\n   - **Toner/ink low**: Replace cartridge if indicated\n   - **Door open**: Close all covers and access doors\n\n3. **Power cycle printer**:\n   - Turn off for 10 seconds\n   - Turn back on\n   - Wait for startup complete\n\n4. **Print test page** (from printer menu):\n   - Use printer control panel buttons\n   - Navigate to \"Settings\" or \"Maintenance\"\n   - Select \"Print Test Page\" or \"Test Print\"\n   - If test page prints, printer is working\n\n**If printer still not responding:**\n- Hardware may be malfunctioning\n- Contact IT support with error messages\n\n---",
+        "Can't find/connect to printer\n   - Printer offline\n   - Print job stuck/won't print\n   - Printer not responding\n   - Other issue\n\n---\n\n## Solution A: Printer Offline\n\n**Problem**: Printer shows as \"Offline\" in Windows settings\n\n**Quick Fix - 5 Minutes:**\n1. **Restart the printer**:\n   - Locate power button on printer\n   - Hold button or turn off for 10 seconds\n   - Count to 10 while it shuts down\n   - Turn back on and wait for startup (30-60 seconds)\n\n2. **Restart your computer**:\n   - Save all work\n   - Restart Windows completely\n   - Wait for full startup\n   - Try printing again\n\n3. **Check printer connection**:\n   - Verify printer is connected to network (WiFi or Ethernet)\n   - Look for WiFi/network icon on printer display\n   - Note any error lights or messages on printer\n\n4. **Print a",
+        "## Solution A: Printer Offline\n\n**Problem**: Printer shows as \"Offline\" in Windows settings\n\n**Quick Fix - 5 Minutes:**\n1. **Restart the printer**:\n   - Locate power button on printer\n   - Hold button or turn off for 10 seconds\n   - Count to 10 while it shuts down\n   - Turn back on and wait for startup (30-60 seconds)\n\n2. **Restart your computer**:\n   - Save all work\n   - Restart Windows completely\n   - Wait for full startup\n   - Try printing again\n\n3. **Check printer connection**:\n   - Verify printer is connected to network (WiFi or Ethernet)\n   - Look for WiFi/network icon on printer display\n   - Note any error lights or messages on printer\n\n4. **Print a test page**:\n   - Windows → Settings → Devices → Printers & Scanners\n   - Select your printer\n   - Click \"Open queue\"\n   - Right-click → \"Printer properties\"\n   - Click \"Print Test Page\"\n   - Listen for printer response\n\n**If still offline:**\n- Printer may need WiFi reconnection\n- Check if WiFi password changed\n- Restart WiFi router\n- Contact IT support: \"Escalating to IT team...\"\n\n---",
+        "vices → Printers & Scanners\n   - Click \"Add a printer or scanner\"\n   - Wait 30 seconds for scan\n   - Look for your printer in the list\n   - Click on it and \"Add device\"\n\n3. **If printer not found in scan**:\n   - Try \"The printer that I want isn't listed\"\n   - Select \"Add a printer using an IP address or hostname\"\n   - Enter printer IP address: **[Check printer settings or ask IT for IP]**\n   - Click Next and follow wizard\n\n4. **If still not found**:\n   - Printer may need to be reset\n   - Restart printer (power off 10 seconds, power on)\n   - Wait 1 minute for network connection\n   - Try adding again\n\n**If still not available:**\n- Printer may need IT configuration\n- Contact IT support: \"Escalating to IT team...\"\n\n---\n\n## Solution D: Printer Not Responding\n\n**Problem**: Printer appears connec"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "- Type: `services.msc`\n   - Find \"Print Spooler\"\n   - Right-click → \"Stop\"\n   - Wait 10 seconds\n   - Right-click → \"Start\"\n\n3. **Restart printer again**:\n   - Power off for 10 seconds\n   - Power back on\n   - Try printing test page\n\n4. **Try printing again**:\n   - Open document\n   - File → Print\n   - Select printer\n   - Click \"Print\"\n\n**If job still stuck:**\n- Printer may have hardware issue\n- Contact IT support with printer name and model\n\n---\n\n## Solution C: Can't Find/Connect to Printer\n\n**Problem**: Printer not appearing in available printers list\n\n**Quick Fix - 5 Minutes:**\n1. **Verify printer is on network**:\n   - Check printer power\n   - Verify printer connected to WiFi or Ethernet\n   - Look for network indicator on printer\n\n2. **Add printer to Windows**:\n   - Windows → Settings → De",
+          "source": "kb_file",
+          "chunk_id": "06_printer_troubleshooting_3",
+          "rank": 1,
+          "confidence": 0.34346890449523926
+        },
+        {
+          "content": "## Solution D: Printer Not Responding\n\n**Problem**: Printer appears connected but doesn't respond to print commands\n\n**Quick Fix - 5 Minutes:**\n1. **Verify printer status**:\n   - Check printer display screen\n   - Look for error lights (red, orange, blinking)\n   - Note any error messages\n\n2. **Check for common issues**:\n   - **Out of paper**: Refill paper tray\n   - **Paper jam**: Open all access doors and remove jammed paper\n   - **Toner/ink low**: Replace cartridge if indicated\n   - **Door open**: Close all covers and access doors\n\n3. **Power cycle printer**:\n   - Turn off for 10 seconds\n   - Turn back on\n   - Wait for startup complete\n\n4. **Print test page** (from printer menu):\n   - Use printer control panel buttons\n   - Navigate to \"Settings\" or \"Maintenance\"\n   - Select \"Print Test Page\" or \"Test Print\"\n   - If test page prints, printer is working\n\n**If printer still not responding:**\n- Hardware may be malfunctioning\n- Contact IT support with error messages\n\n---",
+          "source": "kb_file",
+          "chunk_id": "kb_06_printer_troubleshooting_chunk_8",
+          "rank": 2,
+          "confidence": 0.34084004163742065
+        },
+        {
+          "content": "Can't find/connect to printer\n   - Printer offline\n   - Print job stuck/won't print\n   - Printer not responding\n   - Other issue\n\n---\n\n## Solution A: Printer Offline\n\n**Problem**: Printer shows as \"Offline\" in Windows settings\n\n**Quick Fix - 5 Minutes:**\n1. **Restart the printer**:\n   - Locate power button on printer\n   - Hold button or turn off for 10 seconds\n   - Count to 10 while it shuts down\n   - Turn back on and wait for startup (30-60 seconds)\n\n2. **Restart your computer**:\n   - Save all work\n   - Restart Windows completely\n   - Wait for full startup\n   - Try printing again\n\n3. **Check printer connection**:\n   - Verify printer is connected to network (WiFi or Ethernet)\n   - Look for WiFi/network icon on printer display\n   - Note any error lights or messages on printer\n\n4. **Print a",
+          "source": "kb_file",
+          "chunk_id": "06_printer_troubleshooting_1",
+          "rank": 3,
+          "confidence": 0.33729779720306396
+        },
+        {
+          "content": "## Solution A: Printer Offline\n\n**Problem**: Printer shows as \"Offline\" in Windows settings\n\n**Quick Fix - 5 Minutes:**\n1. **Restart the printer**:\n   - Locate power button on printer\n   - Hold button or turn off for 10 seconds\n   - Count to 10 while it shuts down\n   - Turn back on and wait for startup (30-60 seconds)\n\n2. **Restart your computer**:\n   - Save all work\n   - Restart Windows completely\n   - Wait for full startup\n   - Try printing again\n\n3. **Check printer connection**:\n   - Verify printer is connected to network (WiFi or Ethernet)\n   - Look for WiFi/network icon on printer display\n   - Note any error lights or messages on printer\n\n4. **Print a test page**:\n   - Windows → Settings → Devices → Printers & Scanners\n   - Select your printer\n   - Click \"Open queue\"\n   - Right-click → \"Printer properties\"\n   - Click \"Print Test Page\"\n   - Listen for printer response\n\n**If still offline:**\n- Printer may need WiFi reconnection\n- Check if WiFi password changed\n- Restart WiFi router\n- Contact IT support: \"Escalating to IT team...\"\n\n---",
+          "source": "kb_file",
+          "chunk_id": "kb_06_printer_troubleshooting_chunk_5",
+          "rank": 4,
+          "confidence": 0.3325982093811035
+        },
+        {
+          "content": "vices → Printers & Scanners\n   - Click \"Add a printer or scanner\"\n   - Wait 30 seconds for scan\n   - Look for your printer in the list\n   - Click on it and \"Add device\"\n\n3. **If printer not found in scan**:\n   - Try \"The printer that I want isn't listed\"\n   - Select \"Add a printer using an IP address or hostname\"\n   - Enter printer IP address: **[Check printer settings or ask IT for IP]**\n   - Click Next and follow wizard\n\n4. **If still not found**:\n   - Printer may need to be reset\n   - Restart printer (power off 10 seconds, power on)\n   - Wait 1 minute for network connection\n   - Try adding again\n\n**If still not available:**\n- Printer may need IT configuration\n- Contact IT support: \"Escalating to IT team...\"\n\n---\n\n## Solution D: Printer Not Responding\n\n**Problem**: Printer appears connec",
+          "source": "kb_file",
+          "chunk_id": "06_printer_troubleshooting_4",
+          "rank": 5,
+          "confidence": 0.2846665382385254
+        }
+      ],
+      "confidence": 0.32777429819107057,
+      "session_id": "local_smoke_4",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "How do I configure email (SMTP) for our application?",
+    "timestamp": "2025-11-18T17:25:13.622725",
+    "response": {
+      "answer": "To configure email (SMTP) for your application, follow these general steps:\n\n1. **Access Email Settings**: Open your application and navigate to the email configuration settings.\n\n2. **Enter SMTP Server Details**:\n   - **SMTP Server Address**: Enter the SMTP server address provided by your email service (e.g., smtp.yourdomain.com).\n   - **Port Number**: Use port 587 for TLS or port 465 for SSL. If your service provider specifies a different port, use that instead.\n\n3. **Authentication**:\n   - **Username**: Enter the full email address you will be sending from.\n   - **Password**: Enter the password associated with the email account.\n\n4. **Encryption**: \n   - Select the appropriate encryption method (TLS or SSL) based on the port you are using.\n\n5. **Test Configuration**: After entering all details, look for a \"Test\" or \"Send Test Email\" option to verify that the configuration is correct.\n\n6. **Save Settings**: Once the test is successful, save your settings.\n\nIf you encounter any issues during this process, please document any error messages and check if the email works on other devices. Additionally, verify your IT server settings and check if a firewall is blocking the email ports. If problems persist, contact IT support with the complete diagnostic data for further assistance.",
+      "intent": "monitor_issue",
+      "intent_confidence": 0.3333333333333333,
+      "context": [
+        "## Troubleshooting\nFor persistent email issues:\n1. Document all error messages\n2. Check email works on other devices\n3. Verify IT server settings\n4. Check firewall blocking email ports\n5. Contact IT support with complete diagnostic data",
+        "## Related Topics\n- Email Configuration\n- Account Management\n- Outlook Settings\n- Email Sync\n- IT Support Escalation",
+        "rors\n\n## Related Topics\n- Email Configuration\n- Account Management\n- Outlook Settings\n- Email Sync\n- IT Support Escalation\n\n## Troubleshooting\nFor persistent email issues:\n1. Document all error messages\n2. Check email works on other devices\n3. Verify IT server settings\n4. Check firewall blocking email ports\n5. Contact IT support with complete diagnostic data",
+        "# Email Issues - Outlook Configuration and Sync Problems - AceBuddy Knowledge Base",
+        "# Question 5: How do I office3?\n\n**Answer:**\n\nIf you already have any of the above mentioned subscription plans, Kindly email us at support@acecloudhosting.com so we can provision the application.\n\n---\n\n",
+        "5. **Check server settings**:\n   - Go to **File** → **Account Settings** → **Account Settings**\n   - Select your email account\n   - Click **Change**\n   - Verify incoming server settings:\n     - Server type: IMAP or POP3 (ask IT which one)\n     - Server address: (should be provided by IT)\n     - Port: 993 (IMAP) or 995 (POP3)\n     - Encryption: SSL/TLS\n\n6. **Restart Outlook**:\n   - Close Outlook completely\n   - Wait 10 seconds\n   - Open Outlook again\n   - Check inbox again\n\n**If emails still not receiving:**\n- Server connection issue\n- Server may be down\n- Contact IT support\n\n---",
+        "## Success Criteria\n- Email send/receive working\n- Outlook opens without crashing\n- Emails syncing properly\n- User can access all email folders\n- No authentication errors"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "## Troubleshooting\nFor persistent email issues:\n1. Document all error messages\n2. Check email works on other devices\n3. Verify IT server settings\n4. Check firewall blocking email ports\n5. Contact IT support with complete diagnostic data",
+          "source": "kb_file",
+          "chunk_id": "kb_09_email_issues_chunk_18",
+          "rank": 1,
+          "confidence": 0
+        },
+        {
+          "content": "## Related Topics\n- Email Configuration\n- Account Management\n- Outlook Settings\n- Email Sync\n- IT Support Escalation",
+          "source": "kb_file",
+          "chunk_id": "kb_09_email_issues_chunk_17",
+          "rank": 2,
+          "confidence": 0
+        },
+        {
+          "content": "rors\n\n## Related Topics\n- Email Configuration\n- Account Management\n- Outlook Settings\n- Email Sync\n- IT Support Escalation\n\n## Troubleshooting\nFor persistent email issues:\n1. Document all error messages\n2. Check email works on other devices\n3. Verify IT server settings\n4. Check firewall blocking email ports\n5. Contact IT support with complete diagnostic data",
+          "source": "kb_file",
+          "chunk_id": "09_email_issues_11",
+          "rank": 3,
+          "confidence": 0
+        },
+        {
+          "content": "# Email Issues - Outlook Configuration and Sync Problems - AceBuddy Knowledge Base",
+          "source": "kb_file",
+          "chunk_id": "kb_09_email_issues_chunk_0",
+          "rank": 4,
+          "confidence": 0
+        },
+        {
+          "content": "# Question 5: How do I office3?\n\n**Answer:**\n\nIf you already have any of the above mentioned subscription plans, Kindly email us at support@acecloudhosting.com so we can provision the application.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Office_365_5",
+          "rank": 5,
+          "confidence": 0
+        },
+        {
+          "content": "5. **Check server settings**:\n   - Go to **File** → **Account Settings** → **Account Settings**\n   - Select your email account\n   - Click **Change**\n   - Verify incoming server settings:\n     - Server type: IMAP or POP3 (ask IT which one)\n     - Server address: (should be provided by IT)\n     - Port: 993 (IMAP) or 995 (POP3)\n     - Encryption: SSL/TLS\n\n6. **Restart Outlook**:\n   - Close Outlook completely\n   - Wait 10 seconds\n   - Open Outlook again\n   - Check inbox again\n\n**If emails still not receiving:**\n- Server connection issue\n- Server may be down\n- Contact IT support\n\n---",
+          "source": "kb_file",
+          "chunk_id": "kb_09_email_issues_chunk_6",
+          "rank": 6,
+          "confidence": 0
+        },
+        {
+          "content": "## Success Criteria\n- Email send/receive working\n- Outlook opens without crashing\n- Emails syncing properly\n- User can access all email folders\n- No authentication errors",
+          "source": "kb_file",
+          "chunk_id": "kb_09_email_issues_chunk_16",
+          "rank": 7,
+          "confidence": 0
+        }
+      ],
+      "confidence": 0.0,
+      "session_id": "local_smoke_5",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "How do I add or remove a user from the system?",
+    "timestamp": "2025-11-18T17:25:22.792296",
+    "response": {
+      "answer": "To add or remove a user from the system, please follow these steps:\n\n### To Remove a User:\n1. **Disable the Existing User**: It is recommended to disable the user you wish to remove instead of modifying them due to potential technical challenges.\n2. **Access MyPortal**: Log in to your MyPortal account.\n3. **Navigate to User Management**: Locate the user management section.\n4. **Select the User**: Find and select the user you want to disable.\n5. **Disable the User**: Follow the prompts to disable the user account.\n\n### To Add a New User:\n1. **Access MyPortal**: Log in to your MyPortal account.\n2. **Navigate to User Management**: Go to the user management section.\n3. **Select Add User**: Click on the option to add a new user.\n4. **Fill in User Details**: Enter the required information for the new user.\n5. **Save Changes**: Confirm and save the new user details.\n\nIf you encounter any issues or need further assistance, please contact support.",
+      "intent": "user_management",
+      "intent_confidence": 0.75,
+      "context": [
+        "Question: User Removal\n\nAnswer: Please select your desired option!",
+        "# Question 2: User Removal\n\n**Answer:**\n\nPlease select your desired option!\n\n---\n\n",
+        "# Question 8: How do I send message  167?\n\n**Answer:**\n\nWe do not recommend modifying an existing user due to technical challenges. Hence we request you to disable the existing user (that you'd like to replace) and instead add a new user from MyPortal.\n\n---\n\n",
+        "Question: User Addition\n\nAnswer: Please select your desired option!",
+        "Question: How do I send message  167?\n\nAnswer: We do not recommend modifying an existing user due to technical challenges. Hence we request you to disable the existing user (that you'd like to replace) and instead add a new user from MyPortal."
+      ],
+      "context_with_metadata": [
+        {
+          "content": "Question: User Removal\n\nAnswer: Please select your desired option!",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_15",
+          "rank": 1,
+          "confidence": 0.1863122582435608
+        },
+        {
+          "content": "# Question 2: User Removal\n\n**Answer:**\n\nPlease select your desired option!\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_User_Management_2",
+          "rank": 2,
+          "confidence": 0.0761670470237732
+        },
+        {
+          "content": "# Question 8: How do I send message  167?\n\n**Answer:**\n\nWe do not recommend modifying an existing user due to technical challenges. Hence we request you to disable the existing user (that you'd like to replace) and instead add a new user from MyPortal.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Sage_8",
+          "rank": 3,
+          "confidence": 0.07456791400909424
+        },
+        {
+          "content": "Question: User Addition\n\nAnswer: Please select your desired option!",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_14",
+          "rank": 4,
+          "confidence": 0.046977102756500244
+        },
+        {
+          "content": "Question: How do I send message  167?\n\nAnswer: We do not recommend modifying an existing user due to technical challenges. Hence we request you to disable the existing user (that you'd like to replace) and instead add a new user from MyPortal.",
+          "source": "acebuddy_chatbot",
+          "chunk_id": "zobot_qa_73",
+          "rank": 5,
+          "confidence": 0.030543744564056396
+        }
+      ],
+      "confidence": 0.08291361331939698,
+      "session_id": "local_smoke_6",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "Server CPU is high — how to diagnose performance issues?",
+    "timestamp": "2025-11-18T17:25:37.970970",
+    "response": {
+      "answer": "To diagnose high CPU performance issues on your server, follow these step-by-step instructions:\n\n1. **Open Task Manager**:\n   - Press `Ctrl + Shift + Esc` to open Task Manager directly.\n   - Alternatively, you can right-click on the taskbar and select \"Task Manager.\"\n\n2. **Check CPU Usage**:\n   - In the Task Manager, navigate to the \"Processes\" tab.\n   - Look for the \"CPU\" column to identify which applications are consuming the most CPU resources.\n\n3. **Document Resource Metrics**:\n   - Note the CPU percentage usage and which applications are using the most CPU.\n   - If CPU usage is consistently high (above 50%), proceed to the next steps.\n\n4. **Close Unnecessary Applications**:\n   - Select any applications that are using excessive CPU resources and click \"End Task\" to close them.\n\n5. **Restart the Server**:\n   - After closing unnecessary applications, restart the server to clear temporary processes that may be consuming CPU resources.\n\n6. **Monitor Performance**:\n   - After the restart, monitor the CPU usage again in Task Manager.\n   - If the CPU usage remains high, consider the following:\n     - Check for recently installed software that may be causing the issue.\n     - Ensure there is no malware present on the server.\n\n7. **Contact IT Support**:\n   - If the problem persists after following these steps, document your findings (CPU metrics, applications running) and contact IT support for further assistance.\n\nBy following these steps, you should be able to diagnose and potentially resolve high CPU performance issues on your server.",
+      "intent": "server_performance",
+      "intent_confidence": 0.75,
+      "context": [
+        "## Issue\nServer or computer is running slowly, freezing, or showing high resource usage.",
+        "# Server Performance Issues - CPU / RAM / Disk Full - AceBuddy Knowledge Base",
+        "# Server Performance Issues - CPU / RAM / Disk Full - AceBuddy Knowledge Base\n\n## Issue\nServer or computer is running slowly, freezing, or showing high resource usage.\n\n## Symptoms\n- Computer running slowly or freezing\n- High CPU usage\n- High RAM (memory) usage\n- Low disk space\n- Applications taking long time to load\n- System becomes unresponsive periodically\n- Fan running loudly\n- Programs crashing or quitting unexpectedly\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks users to check their Task Manager for resource usage (CPU, RAM, Disk), then provides targeted solutions based on the readings.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"My computer is running slowly\" or \"Computer freezing\"\n2. Chatbot asks: \"Let's diagnose the issue. Open Task",
+        "## Troubleshooting\nFor persistent performance issues:\n1. Document resource metrics when issue occurs\n2. Note which applications are running\n3. Check for recently installed software\n4. Verify no malware present\n5. Contact IT with complete diagnostic data",
+        "## Complete Diagnostic Process\n\n**User Provides All Three Metrics:**\n\n1. **All normal (CPU <50%, RAM <60%, Disk <85%)**\n   - System should be running fine\n   - Slowness may be caused by:\n     - Network latency\n     - Software issue (QB, application bug)\n     - Background processes\n   - Chatbot suggests: \"Restart your computer and monitor performance\"\n\n2. **One metric high**\n   - CPU high: Close applications, restart\n   - RAM high: Close applications, restart\n   - Disk high: Delete files, request upgrade\n\n3. **Multiple metrics high**\n   - Indicates system is overloaded\n   - Solution: Restart computer immediately\n   - Close unused applications after restart\n   - If problem persists: Contact IT support\n\n---"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "## Issue\nServer or computer is running slowly, freezing, or showing high resource usage.",
+          "source": "kb_file",
+          "chunk_id": "kb_07_server_performance_chunk_1",
+          "rank": 1,
+          "confidence": 0.25836825370788574
+        },
+        {
+          "content": "# Server Performance Issues - CPU / RAM / Disk Full - AceBuddy Knowledge Base",
+          "source": "kb_file",
+          "chunk_id": "kb_07_server_performance_chunk_0",
+          "rank": 2,
+          "confidence": 0.18008077144622803
+        },
+        {
+          "content": "# Server Performance Issues - CPU / RAM / Disk Full - AceBuddy Knowledge Base\n\n## Issue\nServer or computer is running slowly, freezing, or showing high resource usage.\n\n## Symptoms\n- Computer running slowly or freezing\n- High CPU usage\n- High RAM (memory) usage\n- Low disk space\n- Applications taking long time to load\n- System becomes unresponsive periodically\n- Fan running loudly\n- Programs crashing or quitting unexpectedly\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks users to check their Task Manager for resource usage (CPU, RAM, Disk), then provides targeted solutions based on the readings.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"My computer is running slowly\" or \"Computer freezing\"\n2. Chatbot asks: \"Let's diagnose the issue. Open Task",
+          "source": "kb_file",
+          "chunk_id": "07_server_performance_0",
+          "rank": 3,
+          "confidence": 0.158808171749115
+        },
+        {
+          "content": "## Troubleshooting\nFor persistent performance issues:\n1. Document resource metrics when issue occurs\n2. Note which applications are running\n3. Check for recently installed software\n4. Verify no malware present\n5. Contact IT with complete diagnostic data",
+          "source": "kb_file",
+          "chunk_id": "kb_07_server_performance_chunk_16",
+          "rank": 4,
+          "confidence": 0.15621745586395264
+        },
+        {
+          "content": "## Complete Diagnostic Process\n\n**User Provides All Three Metrics:**\n\n1. **All normal (CPU <50%, RAM <60%, Disk <85%)**\n   - System should be running fine\n   - Slowness may be caused by:\n     - Network latency\n     - Software issue (QB, application bug)\n     - Background processes\n   - Chatbot suggests: \"Restart your computer and monitor performance\"\n\n2. **One metric high**\n   - CPU high: Close applications, restart\n   - RAM high: Close applications, restart\n   - Disk high: Delete files, request upgrade\n\n3. **Multiple metrics high**\n   - Indicates system is overloaded\n   - Solution: Restart computer immediately\n   - Close unused applications after restart\n   - If problem persists: Contact IT support\n\n---",
+          "source": "kb_file",
+          "chunk_id": "kb_07_server_performance_chunk_8",
+          "rank": 5,
+          "confidence": 0.1389162540435791
+        }
+      ],
+      "confidence": 0.1784781813621521,
+      "session_id": "local_smoke_7",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "QuickBooks shows data error on startup, what should I try?",
+    "timestamp": "2025-11-18T17:25:47.406109",
+    "response": {
+      "answer": "If QuickBooks shows a data error on startup, you can try the following steps:\n\n1. **Restart your computer**:\n   - Save all work in other applications.\n   - Restart Windows completely.\n   - Wait for full startup (2-3 minutes).\n   - Try opening QuickBooks again.\n\n2. **Check internet connection**:\n   - Ensure that you have an active internet connection.\n   - Verify that your WiFi or Ethernet is connected.\n   - Try visiting a website to confirm connectivity.\n   - Restart your WiFi router if needed.\n\n3. **Restart QuickBooks**:\n   - Close QuickBooks if it is open.\n   - Wait 10 seconds.\n   - Open QuickBooks again and give it 30 seconds to load.\n\n4. **Update QuickBooks**:\n   - Open QuickBooks.\n   - Go to the **Help** menu.\n   - Click **Update QuickBooks**.\n   - Install all available updates.\n   - Restart QuickBooks.\n\n5. **Check the company file**:\n   - If QuickBooks opens but you encounter a data error with a specific company file, try opening a different company file (if available).\n   - If other files open without issues, the problem may be with that specific file.\n   - If no files open, the issue may be with the QuickBooks installation itself.\n\nIf you continue to experience data errors after trying these steps, it may indicate a corrupted installation or file. In that case, please contact IT support for further assistance.",
+      "intent": "quickbooks_issue",
+      "intent_confidence": 0.6666666666666666,
+      "context": [
+        "## Solution A: QuickBooks Won't Start / Crashes on Startup\n\n**Problem**: QB won't open or crashes immediately after launching\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Restart your computer**:\n   - Save all work in other applications\n   - Restart Windows completely\n   - Wait for full startup (2-3 minutes)\n   - Try opening QuickBooks again\n\n2. **Check internet connection**:\n   - QB requires active internet connection\n   - Verify WiFi or Ethernet is connected\n   - Try visiting a website to confirm connectivity\n   - Restart WiFi router if needed\n\n3. **Restart QuickBooks**:\n   - Close QB if open\n   - Wait 10 seconds\n   - Open QB again\n   - Give it 30 seconds to load\n\n4. **Update QuickBooks**:\n   - Open QB\n   - Go to **Help** menu\n   - Click **Update QuickBooks**\n   - Install all available updates\n   - Restart QB\n\n5. **Check QB company file**:\n   - If QB opens but specific company won't load:\n   - Try opening different company file (if available)\n   - If other files open: Problem is with that specific file\n   - If no files open: Problem is with QB installation\n\n**If QB still won't start:**\n- QB installation may be corrupted\n- Contact IT support: \"QB won't start after troubleshooting\"\n\n---",
+        "# QuickBooks (QB) Issues - Won't Start / Bank Feed / File Corrupt - AceBuddy Knowledge Base",
+        "## Issue\nQuickBooks won't start, bank feed not syncing, or company file is corrupted.",
+        "## Symptoms\n- QuickBooks won't open or crashes on startup\n- \"QuickBooks is not responding\" error\n- Bank feeds not syncing with accounts\n- Transactions missing from bank feed\n- Company file won't open / error message\n- File appears corrupted or damaged\n- Slow performance in QB\n- Cannot access company data",
+        "king\" or \"QB problem\"\n2. Chatbot asks: \"What is your QuickBooks issue?\"\n   - Won't start / crashes\n   - Bank feed not syncing\n   - Company file corrupted / won't open\n   - Login issues\n   - Other issue\n\n---\n\n## Solution A: QuickBooks Won't Start / Crashes on Startup\n\n**Problem**: QB won't open or crashes immediately after launching\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Restart your computer**:\n   - Save all work in other applications\n   - Restart Windows completely\n   - Wait for full startup (2-3 minutes)\n   - Try opening QuickBooks again\n\n2. **Check internet connection**:\n   - QB requires active internet connection\n   - Verify WiFi or Ethernet is connected\n   - Try visiting a website to confirm connectivity\n   - Restart WiFi router if needed\n\n3. **Restart QuickBooks**:\n   - Close QB if ope"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "## Solution A: QuickBooks Won't Start / Crashes on Startup\n\n**Problem**: QB won't open or crashes immediately after launching\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Restart your computer**:\n   - Save all work in other applications\n   - Restart Windows completely\n   - Wait for full startup (2-3 minutes)\n   - Try opening QuickBooks again\n\n2. **Check internet connection**:\n   - QB requires active internet connection\n   - Verify WiFi or Ethernet is connected\n   - Try visiting a website to confirm connectivity\n   - Restart WiFi router if needed\n\n3. **Restart QuickBooks**:\n   - Close QB if open\n   - Wait 10 seconds\n   - Open QB again\n   - Give it 30 seconds to load\n\n4. **Update QuickBooks**:\n   - Open QB\n   - Go to **Help** menu\n   - Click **Update QuickBooks**\n   - Install all available updates\n   - Restart QB\n\n5. **Check QB company file**:\n   - If QB opens but specific company won't load:\n   - Try opening different company file (if available)\n   - If other files open: Problem is with that specific file\n   - If no files open: Problem is with QB installation\n\n**If QB still won't start:**\n- QB installation may be corrupted\n- Contact IT support: \"QB won't start after troubleshooting\"\n\n---",
+          "source": "kb_file",
+          "chunk_id": "kb_08_quickbooks_issues_chunk_5",
+          "rank": 1,
+          "confidence": 0.3387564420700073
+        },
+        {
+          "content": "# QuickBooks (QB) Issues - Won't Start / Bank Feed / File Corrupt - AceBuddy Knowledge Base",
+          "source": "kb_file",
+          "chunk_id": "kb_08_quickbooks_issues_chunk_0",
+          "rank": 2,
+          "confidence": 0.3357662558555603
+        },
+        {
+          "content": "## Issue\nQuickBooks won't start, bank feed not syncing, or company file is corrupted.",
+          "source": "kb_file",
+          "chunk_id": "kb_08_quickbooks_issues_chunk_1",
+          "rank": 3,
+          "confidence": 0.3041757345199585
+        },
+        {
+          "content": "## Symptoms\n- QuickBooks won't open or crashes on startup\n- \"QuickBooks is not responding\" error\n- Bank feeds not syncing with accounts\n- Transactions missing from bank feed\n- Company file won't open / error message\n- File appears corrupted or damaged\n- Slow performance in QB\n- Cannot access company data",
+          "source": "kb_file",
+          "chunk_id": "kb_08_quickbooks_issues_chunk_2",
+          "rank": 4,
+          "confidence": 0.28556329011917114
+        },
+        {
+          "content": "king\" or \"QB problem\"\n2. Chatbot asks: \"What is your QuickBooks issue?\"\n   - Won't start / crashes\n   - Bank feed not syncing\n   - Company file corrupted / won't open\n   - Login issues\n   - Other issue\n\n---\n\n## Solution A: QuickBooks Won't Start / Crashes on Startup\n\n**Problem**: QB won't open or crashes immediately after launching\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Restart your computer**:\n   - Save all work in other applications\n   - Restart Windows completely\n   - Wait for full startup (2-3 minutes)\n   - Try opening QuickBooks again\n\n2. **Check internet connection**:\n   - QB requires active internet connection\n   - Verify WiFi or Ethernet is connected\n   - Try visiting a website to confirm connectivity\n   - Restart WiFi router if needed\n\n3. **Restart QuickBooks**:\n   - Close QB if ope",
+          "source": "kb_file",
+          "chunk_id": "08_quickbooks_issues_1",
+          "rank": 5,
+          "confidence": 0.2816455364227295
+        }
+      ],
+      "confidence": 0.30918145179748535,
+      "session_id": "local_smoke_8",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "How do I set up a monitor for server alerts?",
+    "timestamp": "2025-11-18T17:25:53.756511",
+    "response": {
+      "answer": "I'm sorry, but the provided knowledge base context does not contain specific instructions for setting up a monitor for server alerts. I recommend contacting your IT support team for assistance with this setup. They will be able to provide the necessary guidance tailored to your server environment.",
+      "intent": "monitor_issue",
+      "intent_confidence": 0.3333333333333333,
+      "context": [
+        "tion\n2. If multi-monitor fails: Auto-escalate to IT with system info\n3. Provide performance metrics if needed\n4. Follow up on user satisfaction\n\n## Troubleshooting\nIf configuration fails after following steps:\n1. Verify Remote Desktop client is updated\n2. Check if monitors properly detected by Windows\n3. Try single monitor first, then enable multi-monitor\n4. Escalate to IT support with screenshot of Display settings",
+        "## Issue\nUser needs to set up monitors for Remote Desktop session or switch between single and multi-monitor configurations.",
+        "# Monitor Setup - Single and Multi-Monitor Configuration - AceBuddy Knowledge Base",
+        "*For Single Monitor Setup:**\n\nSolution Steps:\n1. Open **Remote Desktop Connection** (search for \"mstsc\")\n2. Click **Show Options**\n3. Go to **Display** tab\n4. Uncheck \"Use all my monitors for the remote session\"\n5. Set resolution to preferred single-monitor resolution\n6. Click **Connect**\n\nResult: Your Remote Desktop session will use only one monitor.\n\n### Monitor Count Guide\n- **Single Monitor**: Standard setup, adequate for most tasks\n- **Dual Monitor** (2 monitors): Better for QB + communication + web browsing\n- **Triple Monitor** (3+ monitors): Advanced setup for power users, specialized workflows\n\n### Recommended Configurations by Role\n- **Accounting**: Dual monitor (QB on one, documents/email on other)\n- **Admin**: Triple monitor (system management, QB, communication)\n- **Support**:",
+        "## Automation Opportunity\nWhen user selects monitor setup via chatbot:\n1. Chatbot creates automatic ticket for configuration confirmation\n2. If multi-monitor fails: Auto-escalate to IT with system info\n3. Provide performance metrics if needed\n4. Follow up on user satisfaction"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "tion\n2. If multi-monitor fails: Auto-escalate to IT with system info\n3. Provide performance metrics if needed\n4. Follow up on user satisfaction\n\n## Troubleshooting\nIf configuration fails after following steps:\n1. Verify Remote Desktop client is updated\n2. Check if monitors properly detected by Windows\n3. Try single monitor first, then enable multi-monitor\n4. Escalate to IT support with screenshot of Display settings",
+          "source": "kb_file",
+          "chunk_id": "05_monitor_setup_6",
+          "rank": 1,
+          "confidence": 0.04469174146652222
+        },
+        {
+          "content": "## Issue\nUser needs to set up monitors for Remote Desktop session or switch between single and multi-monitor configurations.",
+          "source": "kb_file",
+          "chunk_id": "kb_05_monitor_setup_chunk_1",
+          "rank": 2,
+          "confidence": 0.02904355525970459
+        },
+        {
+          "content": "# Monitor Setup - Single and Multi-Monitor Configuration - AceBuddy Knowledge Base",
+          "source": "kb_file",
+          "chunk_id": "kb_05_monitor_setup_chunk_0",
+          "rank": 3,
+          "confidence": 0.014366626739501953
+        },
+        {
+          "content": "*For Single Monitor Setup:**\n\nSolution Steps:\n1. Open **Remote Desktop Connection** (search for \"mstsc\")\n2. Click **Show Options**\n3. Go to **Display** tab\n4. Uncheck \"Use all my monitors for the remote session\"\n5. Set resolution to preferred single-monitor resolution\n6. Click **Connect**\n\nResult: Your Remote Desktop session will use only one monitor.\n\n### Monitor Count Guide\n- **Single Monitor**: Standard setup, adequate for most tasks\n- **Dual Monitor** (2 monitors): Better for QB + communication + web browsing\n- **Triple Monitor** (3+ monitors): Advanced setup for power users, specialized workflows\n\n### Recommended Configurations by Role\n- **Accounting**: Dual monitor (QB on one, documents/email on other)\n- **Admin**: Triple monitor (system management, QB, communication)\n- **Support**:",
+          "source": "kb_file",
+          "chunk_id": "05_monitor_setup_2",
+          "rank": 4,
+          "confidence": 0.007433414459228516
+        },
+        {
+          "content": "## Automation Opportunity\nWhen user selects monitor setup via chatbot:\n1. Chatbot creates automatic ticket for configuration confirmation\n2. If multi-monitor fails: Auto-escalate to IT with system info\n3. Provide performance metrics if needed\n4. Follow up on user satisfaction",
+          "source": "kb_file",
+          "chunk_id": "kb_05_monitor_setup_chunk_11",
+          "rank": 5,
+          "confidence": 0
+        }
+      ],
+      "confidence": 0.019107067584991456,
+      "session_id": "local_smoke_9",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  },
+  {
+    "query": "Where can I find the AceBuddy support guide?",
+    "timestamp": "2025-11-18T17:25:58.286650",
+    "response": {
+      "answer": "I'm sorry, but the specific location of the AceBuddy support guide is not provided in the available knowledge base context. I recommend contacting support directly for assistance in locating the guide.",
+      "intent": "unknown",
+      "intent_confidence": 0.0,
+      "context": [
+        "# # General Support\n\nThis document contains comprehensive support information about General Support from the AceBuddy support system.\n\n---\n\n",
+        "# # ATX\n\nThis document contains comprehensive support information about ATX from the AceBuddy support system.\n\n---\n\n",
+        "# # Application Management\n\nThis document contains comprehensive support information about Application Management from the AceBuddy support system.\n\n---\n\n",
+        "# # User Management\n\nThis document contains comprehensive support information about User Management from the AceBuddy support system.\n\n---\n\n",
+        "# # Sage\n\nThis document contains comprehensive support information about Sage from the AceBuddy support system.\n\n---\n\n",
+        "# # Server Management\n\nThis document contains comprehensive support information about Server Management from the AceBuddy support system.\n\n---\n\n"
+      ],
+      "context_with_metadata": [
+        {
+          "content": "# # General Support\n\nThis document contains comprehensive support information about General Support from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_General_Support_0",
+          "rank": 1,
+          "confidence": 0.44230222702026367
+        },
+        {
+          "content": "# # ATX\n\nThis document contains comprehensive support information about ATX from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_ATX_0",
+          "rank": 2,
+          "confidence": 0.32727909088134766
+        },
+        {
+          "content": "# # Application Management\n\nThis document contains comprehensive support information about Application Management from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Application_Management_0",
+          "rank": 3,
+          "confidence": 0.27994275093078613
+        },
+        {
+          "content": "# # User Management\n\nThis document contains comprehensive support information about User Management from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_User_Management_0",
+          "rank": 4,
+          "confidence": 0.26232123374938965
+        },
+        {
+          "content": "# # Sage\n\nThis document contains comprehensive support information about Sage from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Sage_0",
+          "rank": 5,
+          "confidence": 0.2536282539367676
+        },
+        {
+          "content": "# # Server Management\n\nThis document contains comprehensive support information about Server Management from the AceBuddy support system.\n\n---\n\n",
+          "source": "zobot_topic_document",
+          "chunk_id": "zobot_topic_Server_Management_0",
+          "rank": 6,
+          "confidence": 0.1740439534187317
+        }
+      ],
+      "confidence": 0.28991958498954773,
+      "session_id": "local_smoke_10",
+      "response_quality": 0.5,
+      "query_enhanced": true
+    }
+  }
+]

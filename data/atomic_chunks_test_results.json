@@ -1,0 +1,84 @@
+{
+  "timestamp": "2025-11-18T17:59:31.422236",
+  "test_type": "atomic_chunks_smoke_test",
+  "stats": {
+    "total_queries": 10,
+    "avg_confidence": 0.6737110413209757,
+    "min_confidence": 0.6238653796684559,
+    "max_confidence": 0.7362362865634338,
+    "pass_rate_percent": 70.0,
+    "total_documents": 92
+  },
+  "results": [
+    {
+      "query": "How do I reset my password?",
+      "confidence": 0.6568312712586536,
+      "contexts_retrieved": 5,
+      "top_context": "Password Reset Instructions\n\nIf you are unable to log into your account, follow ",
+      "avg_distance": 0.5224610090255737
+    },
+    {
+      "query": "How can I increase disk storage on my server?",
+      "confidence": 0.6572139955469536,
+      "contexts_retrieved": 5,
+      "top_context": "## Troubleshooting\nIf storage not increasing after upgrade:\n1. Verify provisioni",
+      "avg_distance": 0.5215744137763977
+    },
+    {
+      "query": "My RDP connection keeps disconnecting, what should I check?",
+      "confidence": 0.6866074177561554,
+      "contexts_retrieved": 5,
+      "top_context": "# RDP Connection Issues - Remote Desktop Problems - AceBuddy Knowledge Base\n## I",
+      "avg_distance": 0.4564363479614258
+    },
+    {
+      "query": "Printer is not responding on Windows 10 — troubleshooting steps?",
+      "confidence": 0.7362362865634338,
+      "contexts_retrieved": 5,
+      "top_context": "2. **Check for common issues**:\n   - **Out of paper**: Refill paper tray\n   - **",
+      "avg_distance": 0.3582595944404602
+    },
+    {
+      "query": "How do I configure email (SMTP) for our application?",
+      "confidence": 0.6238653796684559,
+      "contexts_retrieved": 5,
+      "top_context": "2. **Clear stuck emails**:\n   - If email still stuck in outbox:\n   - Right-click",
+      "avg_distance": 0.6029099106788636
+    },
+    {
+      "query": "How do I add or remove a user from the system?",
+      "confidence": 0.6423777809206843,
+      "contexts_retrieved": 5,
+      "top_context": "## Information Needed for User Addition\n- Full Legal Name\n- Email Address\n- Empl",
+      "avg_distance": 0.5567163586616516
+    },
+    {
+      "query": "Server CPU is high — how to diagnose performance issues?",
+      "confidence": 0.6998465671751867,
+      "contexts_retrieved": 5,
+      "top_context": "# Server Performance Issues - CPU / RAM / Disk Full - AceBuddy Knowledge Base\n##",
+      "avg_distance": 0.4288846254348755
+    },
+    {
+      "query": "QuickBooks shows data error on startup, what should I try?",
+      "confidence": 0.7299461991720427,
+      "contexts_retrieved": 5,
+      "top_context": "- Ensure QuickBooks is updated to the latest version\n- Check file permissions an",
+      "avg_distance": 0.3699639797210693
+    },
+    {
+      "query": "How do I set up a monitor for server alerts?",
+      "confidence": 0.6574249048564371,
+      "contexts_retrieved": 5,
+      "top_context": "## Automation Opportunity\nWhen user selects monitor setup via chatbot:\n1. Chatbo",
+      "avg_distance": 0.5210862755775452
+    },
+    {
+      "query": "Where can I find the AceBuddy support guide?",
+      "confidence": 0.6467606102917536,
+      "contexts_retrieved": 5,
+      "top_context": "# Password Reset - AceBuddy Knowledge Base\n## Issue\nUser cannot access their acc",
+      "avg_distance": 0.5461671352386475
+    }
+  ]
+}

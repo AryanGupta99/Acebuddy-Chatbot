@@ -1,0 +1,101 @@
+1. Password Reset Automation
+
+Current Process:
+Agents manually collect user details and contact the support/POC via email.
+
+Proposed Bot Workflow:
+
+Collect user credentials and required details directly through chat prompts.
+
+Validate user identity by checking CRM data and verifying with the POC or server record.
+
+Automatically send an email to the support team (with CC to the POC and user) to initiate the password reset request.
+
+Expected Outcome:
+Faster password resets and reduced dependency on live agents.
+
+💾 2. Disk Space Full / Upgrade Requests
+
+Current Process:
+Agents manually share upgrade options and follow up for approvals.
+
+Proposed Bot Workflow:
+
+Present available upgrade plans to the user:
+🔹 200 GB – $120/month
+🔹 100 GB – $60/month
+🔹 80 GB – $50/month
+🔹 60 GB – $40/month
+🔹 40 GB – $28/month
+
+Capture user selection directly in chat.
+
+Automatically identify and email the POC for approval via AceBuddy.
+
+Notify the user once approval is received.
+
+Expected Outcome:
+End-to-end automation from request to POC approval, improving response time and reducing follow-ups.
+
+⚙️ 3. Application Update Requests
+
+Proposed Bot Workflow:
+
+Use chat forms to collect application names and update requirements.
+
+Fetch necessary POC or CRM data automatically.
+
+Send a detailed email to the support team for execution.
+
+Expected Outcome:
+Automated ticket creation and communication with zero manual input.
+
+🪟 4. Unsupported Windows 10/11 Update Messages
+
+Proposed Automation:
+Standardize and automate the agent message through AceBuddy for quick, consistent replies.
+
+Expected Outcome:
+Reduced repetitive agent work and faster customer response time.
+
+🌐 5. RDP Login Issue (IP Change)
+
+Proposed Bot Workflow:
+
+Ask user to provide the static IP directly in chat.
+
+Auto-raise a request to the Support/NOC/SysAdmin team.
+
+Inform the user of standard ETA (e.g., “4–6 hours, with follow-up to expedite to 1–2 hours”).
+
+Expected Outcome:
+Instant ticket creation with clear user communication.
+
+👥 6. User Addition / Deletion
+
+Proposed Bot Workflow:
+
+Collect required details (user name, email, department, role) in chat.
+
+Trigger automated email or API call to create/delete users.
+
+Expected Outcome:
+Quick turnaround on routine user management tasks.
+
+🖥️ 7. Single/Multi-Monitor Configuration
+
+Proposed Automation:
+
+Identify user’s current setup through chat.
+
+Create/update ticket automatically for switching between single or multi-monitor sessions.
+
+🔁 8. Server Reboot Requests
+
+Proposed Bot Workflow:
+
+Verify that the requester is an admin.
+
+Confirm no active sessions (or get approval to force logout).
+
+Execute reboot workflow or raise automated request to NOC/SysAdmin team.

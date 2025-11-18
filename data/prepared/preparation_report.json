@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-11-11T20:51:44.956865",
+  "metrics": {
+    "total_documents": 10,
+    "valid_documents": 10,
+    "documents_with_pii": 1,
+    "documents_cleaned": 10,
+    "duplicate_documents": 0,
+    "quality_score_avg": 0.0,
+    "total_characters": 51367,
+    "total_chunks": 116,
+    "processing_time": 0.0
+  },
+  "documents_summary": [
+    {
+      "id": "01_password_reset",
+      "quality_score": 1.0,
+      "chunk_count": 5,
+      "source": "data\\kb\\01_password_reset.md"
+    },
+    {
+      "id": "02_disk_storage_upgrade",
+      "quality_score": 1.0,
+      "chunk_count": 8,
+      "source": "data\\kb\\02_disk_storage_upgrade.md"
+    },
+    {
+      "id": "03_rdp_connection_issues",
+      "quality_score": 1.0,
+      "chunk_count": 10,
+      "source": "data\\kb\\03_rdp_connection_issues.md"
+    },
+    {
+      "id": "04_user_addition_deletion",
+      "quality_score": 1.0,
+      "chunk_count": 9,
+      "source": "data\\kb\\04_user_addition_deletion.md"
+    },
+    {
+      "id": "05_monitor_setup",
+      "quality_score": 1.0,
+      "chunk_count": 10,
+      "source": "data\\kb\\05_monitor_setup.md"
+    },
+    {
+      "id": "06_printer_troubleshooting",
+      "quality_score": 0.9,
+      "chunk_count": 15,
+      "source": "data\\kb\\06_printer_troubleshooting.md"
+    },
+    {
+      "id": "07_server_performance",
+      "quality_score": 1.0,
+      "chunk_count": 15,
+      "source": "data\\kb\\07_server_performance.md"
+    },
+    {
+      "id": "08_quickbooks_issues",
+      "quality_score": 0.9,
+      "chunk_count": 18,
+      "source": "data\\kb\\08_quickbooks_issues.md"
+    },
+    {
+      "id": "09_email_issues",
+      "quality_score": 0.9,
+      "chunk_count": 22,
+      "source": "data\\kb\\09_email_issues.md"
+    },
+    {
+      "id": "acebuddy_support_guide",
+      "quality_score": 0.8999999999999999,
+      "chunk_count": 4,
+      "source": "data\\kb\\acebuddy_support_guide.txt"
+    }
+  ]
+}

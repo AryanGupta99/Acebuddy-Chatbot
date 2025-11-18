@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: acebuddy-rag-webhook
+    runtime: docker
+    region: oregon
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: SALESIQ_ACCESS_TOKEN
+        value: ""  # Set this in Render dashboard after deployment
+      - key: SALESIQ_API_BASE
+        value: https://www.zohoapis.com

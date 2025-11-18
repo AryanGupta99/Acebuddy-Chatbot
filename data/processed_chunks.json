@@ -1,0 +1,562 @@
+[
+  {
+    "id": "acebuddy_support_guide_0",
+    "content": "Password Reset Instructions\n\nIf you are unable to log into your account, follow these steps:\n\n1. Go to the login page and click \"Forgot Password\"\n2. Enter your email address associated with your account\n3. Check your email for a password reset link\n4. Click the link and create a new password\n5. Use your new password to log in\n\nCommon Password Reset Issues:\n- Email not received: Check spam/junk folder\n- Link expired: Request a new password reset\n- Invalid email: Ensure you're using the correct email address\n\nFor additional help, contact support at support@acebuddy.com or chat with us.\n\nRemote Desktop Connection Issues\n\nIf you cannot connect to your remote desktop:\n\n1. Check your internet connection\n2. Verify the server name is correct\n3. Ensure you have the correct username and password\n4.",
+    "metadata": {
+      "source": "kb_file",
+      "file": "acebuddy_support_guide.txt"
+    }
+  },
+  {
+    "id": "acebuddy_support_guide_1",
+    "content": "Try restarting the Remote Desktop application\n5. Check if the server is online and accessible\n\nError Messages:\n- \"Cannot find computer\": Server name might be incorrect\n- \"Connection denied\": Check username and password\n- \"Network error\": Check internet connection and firewall settings\n\nContact IT support if the issue persists.\n\nQuickBooks Support\n\nCommon QuickBooks issues and solutions:\n\nFile Access Problems:\n- Ensure QuickBooks is updated to the latest version\n- Check file permissions and user access rights\n- Verify the company file path is correct\n- Try opening QuickBooks in safe mode\n\nPerformance Issues:\n- Close unnecessary programs running in background\n- Restart QuickBooks and your computer\n- Check available disk space\n- Run QuickBooks file doctor tool\n\nBank Feed Issues:\n- Update bank",
+    "metadata": {
+      "source": "kb_file",
+      "file": "acebuddy_support_guide.txt"
+    }
+  },
+  {
+    "id": "acebuddy_support_guide_2",
+    "content": "connection settings\n- Re-enter bank login credentials\n- Check with your bank for service outages\n- Clear browser cache if using web connect\n\nFor technical support, contact our QuickBooks specialists.",
+    "metadata": {
+      "source": "kb_file",
+      "file": "acebuddy_support_guide.txt"
+    }
+  },
+  {
+    "id": "01_password_reset_0",
+    "content": "# Password Reset - AceBuddy Knowledge Base\n\n## Issue\nUser cannot access their account and needs a password reset.\n\n## Symptoms\n- User is locked out of their account\n- Forgot their password\n- Cannot log in to AceBuddy or related systems\n- Last login was more than 30 days ago\n\n## Automated Solution Overview\nThe AceBuddy chatbot automatically collects user details and sends a password reset request to the support team with all necessary information.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"I need to reset my password\"\n2. Chatbot asks for the following information:\n   - Username or Account Name\n   - Customer ID (CID)\n   - Registered Email Address\n   - Current Organization/Department\n\n3. Chatbot verifies information against CRM data\n4. If verification succ",
+    "metadata": {
+      "source": "kb_file",
+      "file": "01_password_reset.md"
+    }
+  },
+  {
+    "id": "01_password_reset_1",
+    "content": "eeds, chatbot sends automated email to support team\n5. Support team receives email with:\n   - User's full details\n   - Timestamp of request\n   - Suggested ETA: 15-30 minutes\n6. User receives confirmation email with ETA and ticket number\n\n### For Support Team\n1. Receive automated ticket from chatbot\n2. Verify user identity using CRM lookup\n3. Generate temporary password or reset link\n4. Send password reset link via email\n5. Update ticket status to resolved\n\n## Expected Outcome\n- Faster password resets: 15-30 minute turnaround\n- Reduced dependency on live agents\n- Clear communication with customer\n- All user details captured upfront\n- No back-and-forth for clarification\n\n## Time Savings\n- Before: 10-15 minutes per ticket (with collection and verification)\n- After: 5-7 minutes per ticket (sup",
+    "metadata": {
+      "source": "kb_file",
+      "file": "01_password_reset.md"
+    }
+  },
+  {
+    "id": "01_password_reset_2",
+    "content": "port team only needs to process)\n- Annual impact: ~1-2 hours saved per agent per month\n\n## Success Criteria\n- User receives confirmation within 1 minute\n- Support team receives complete information in ticket\n- Password reset completed within 30 minutes\n- Zero escalations for missing information\n\n## Related Topics\n- Account Management\n- User Authentication\n- Account Access Issues\n- Login Problems\n\n## Troubleshooting\nIf password reset fails:\n1. Verify email address is correct in system\n2. Check if account is locked due to too many failed attempts\n3. Ensure user is providing correct CID\n4. Escalate to IT security if account compromise suspected",
+    "metadata": {
+      "source": "kb_file",
+      "file": "01_password_reset.md"
+    }
+  },
+  {
+    "id": "02_disk_storage_upgrade_0",
+    "content": "# Disk Space Full - Storage Upgrade - AceBuddy Knowledge Base\n\n## Issue\nCustomer's storage is running low or full, causing system slowdown or failures.\n\n## Symptoms\n- Receiving \"Low Disk Space\" warning\n- Applications running slowly\n- Cannot save new files\n- System freezing periodically\n- Backup failures\n- Database performance degradation\n\n## Automated Solution Overview\nThe AceBuddy chatbot presents storage upgrade options, captures customer preference, and automatically forwards the request to the Point of Contact (POC) for approval.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"My disk is running low\" or \"I need more storage\"\n2. Chatbot displays available upgrade plans:\n   - 200 GB for $120/month\n   - 100 GB for $60/month\n   - 80 GB for $50/month\n   - 60",
+    "metadata": {
+      "source": "kb_file",
+      "file": "02_disk_storage_upgrade.md"
+    }
+  },
+  {
+    "id": "02_disk_storage_upgrade_1",
+    "content": "GB for $40/month\n   - 40 GB for $28/month\n\n3. User selects preferred storage plan\n4. Chatbot captures:\n   - Selected plan (GB and cost)\n   - Current disk usage percentage\n   - Primary use case (accounting data, files, backups, etc.)\n   - Preferred start date\n\n5. Chatbot automatically emails POC/Account Manager with:\n   - Customer request\n   - Selected plan\n   - Business justification\n   - Approval link/form\n\n6. User receives confirmation: \"Your storage upgrade request has been sent to [POC Name]. Expected approval: 24-48 hours.\"\n\n### For Support Team / POC\n1. Receive automated request from chatbot\n2. Review customer selection and current usage\n3. Approve or negotiate plan\n4. Send approval notification to customer\n5. Coordinate with billing/infrastructure team\n6. Provision storage\n7. Update",
+    "metadata": {
+      "source": "kb_file",
+      "file": "02_disk_storage_upgrade.md"
+    }
+  },
+  {
+    "id": "02_disk_storage_upgrade_2",
+    "content": "ticket status\n\n## Storage Recommendations\n- Light users (QB only, <50GB/month): 40-60 GB plan\n- Standard users (QB + files, 50-100GB/month): 80-100 GB plan\n- Heavy users (QB + large backups + archive, >100GB/month): 200 GB plan\n\n## Expected Outcome\n- Storage upgrade request processed in 24-48 hours\n- Customer self-selects plan (reduces negotiation)\n- POC receives pre-filled approval request\n- Clear communication and tracking\n- Proactive capacity management\n\n## Time Savings\n- Before: 20-30 minutes per request (agent collection, email, follow-up)\n- After: 3-5 minutes per request (POC review only)\n- Annual impact: ~5-8 hours saved per agent per month\n\n## Success Criteria\n- Customer receives plan options within 30 seconds\n- Storage upgrade processed within 48 hours of approval\n- Zero follow-u",
+    "metadata": {
+      "source": "kb_file",
+      "file": "02_disk_storage_upgrade.md"
+    }
+  },
+  {
+    "id": "02_disk_storage_upgrade_3",
+    "content": "ps needed for clarification\n- Billing and provisioning teams receive complete information\n\n## Preventing Disk Full Issues\n1. Monitor disk usage monthly\n2. Archive old files regularly\n3. Delete temporary/backup files not needed\n4. Schedule automatic backups to separate storage\n5. Request proactive upgrade before reaching 85% capacity\n\n## Related Topics\n- Server Performance\n- System Maintenance\n- Backup Management\n- Disk Usage Monitoring\n\n## Troubleshooting\nIf storage not increasing after upgrade:\n1. Verify provisioning completed on server\n2. Check if OS needs refresh to recognize new space\n3. Verify system is using new storage\n4. Escalate to infrastructure team if issue persists",
+    "metadata": {
+      "source": "kb_file",
+      "file": "02_disk_storage_upgrade.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_0",
+    "content": "# RDP Connection Issues - Remote Desktop Problems - AceBuddy Knowledge Base\n\n## Issue\nUser cannot connect to Remote Desktop (RDP) or connection is extremely slow/laggy.\n\n## Symptoms\n- Cannot connect to RDP server\n- \"Server not responding\" error\n- Connection drops frequently\n- Extremely slow response times\n- Lag while typing or moving mouse\n- Error messages when attempting RDP connection\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks diagnostic questions about internet connectivity and RDP error messages, then provides targeted fixes or escalates to NOC/SysAdmin team with all diagnostic information.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"I can't connect to RDP\" or \"RDP is very slow\"\n2. Chatbot asks diagnostic questions:\n   - \"Are you curre",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_1",
+    "content": "ntly connected to the internet? (Yes/No)\"\n   - \"Are you using WiFi or Ethernet?\"\n   - \"Can you see an error message when trying to connect? If yes, what does it say?\"\n   - \"Is this the first time this has happened?\"\n   - \"Can you access other internet services (email, websites)?\"\n\n3. Based on responses, chatbot provides one of three paths:\n\n**Path A: Internet Connectivity Issues**\n- Error: No internet connection detected\n- Solution: \n  1. Restart your WiFi router/modem (power off for 10 seconds)\n  2. Wait 30 seconds for it to fully restart\n  3. Reconnect to network\n  4. Try RDP connection again\n- ETA: Immediate\n- If fails: \"Escalating to NOC team...\"\n\n**Path B: RDP Configuration Issues**\n- Error: Cannot connect to RDP server / Server not found\n- Solution:\n  1. Verify correct server address",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_2",
+    "content": ": [Company RDP Server Address]\n  2. Ensure you're within office network or VPN connected\n  3. Try from different application: Use mstsc command (Windows)\n  4. Wait 2-3 minutes and retry (server may be temporarily unavailable)\n- ETA: 5-15 minutes\n- If fails: \"Escalating to NOC team...\"\n\n**Path C: Network/Firewall Issues**\n- Error: Connection refused / Timeout\n- Solution:\n  1. Check if firewall is blocking connection\n  2. Verify VPN is connected (if required)\n  3. Try from different network (mobile hotspot) to test\n  4. Contact IT: \"Creating support request...\"\n- ETA: 30-60 minutes with IT support\n\n4. For complex issues, chatbot automatically creates ticket with:\n   - All diagnostic questions and answers\n   - Error messages captured\n   - Network information\n   - Suggested priority (high if c",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_3",
+    "content": "ompletely blocked)\n   - Suggested troubleshooting steps already attempted\n\n### For NOC/SysAdmin Team\n1. Receive automated ticket with all diagnostic data\n2. Check server status and logs\n3. Verify user's IP is whitelisted\n4. Check for network connectivity issues\n5. Review recent changes to RDP configuration\n6. If server issue: Restart RDP service\n7. If user issue: Provide remote support or phone guidance\n\n## Common RDP Error Codes and Solutions\n\n### Error: \"The Remote Desktop Gateway server cannot be reached\"\n- Check internet connection\n- Verify VPN is connected\n- Restart router/modem\n\n### Error: \"Remote Desktop cannot connect to the remote computer\"\n- Verify correct server address\n- Check firewall settings\n- Ensure RDP service is running on server\n- Verify credentials\n\n### Slow RDP Connect",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_4",
+    "content": "ion\n- Check network bandwidth usage\n- Reduce remote display resolution\n- Close unused applications on local machine\n- Move closer to WiFi router or use Ethernet\n\n## IP Change Impact (Static IP Requirement)\nIf user's IP address changes (mobile/new location):\n- Chatbot captures new static IP\n- Automatically creates request for SysAdmin/NOC\n- SysAdmin whitelists new IP\n- User can reconnect within 1-2 hours\n\n## Expected Outcome\n- Basic issues resolved in 5-15 minutes by user\n- Complex issues escalated with complete diagnostic information\n- NOC receives pre-filled support request\n- Clear communication of ETA to user\n- Reduced back-and-forth troubleshooting\n\n## Time Savings\n- Before: 15-25 minutes per ticket (diagnostic questions, escalation)\n- After: 8-15 minutes per ticket (if automated fix wo",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_5",
+    "content": "rks), 5 min (if escalated)\n- Annual impact: ~3-5 hours saved per support agent\n\n## Success Criteria\n- 40-50% of RDP issues resolved by chatbot diagnostics\n- Escalated issues include all necessary diagnostic information\n- User receives clear next steps and ETA\n- Zero repeat tickets from missing information\n\n## Prevention Tips\n1. Keep Windows updated\n2. Maintain stable internet connection\n3. Use Ethernet for better RDP performance\n4. Ensure VPN is running before attempting RDP\n5. Whitelist your IP address with IT\n\n## Related Topics\n- Network Connectivity\n- VPN Setup\n- Server Access\n- Internet Connectivity Issues\n- Firewall Configuration\n\n## Troubleshooting\nIf issue persists after troubleshooting:\n1. Contact NOC team with complete diagnostic information\n2. Provide error messages and screensho",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "03_rdp_connection_issues_6",
+    "content": "ts\n3. Note any recent changes to network or system\n4. Escalate to SysAdmin if server reboot needed",
+    "metadata": {
+      "source": "kb_file",
+      "file": "03_rdp_connection_issues.md"
+    }
+  },
+  {
+    "id": "04_user_addition_deletion_0",
+    "content": "# User Addition and Deletion - Employee Onboarding/Offboarding - AceBuddy Knowledge Base\n\n## Issue\nNew employee needs account creation or departing employee needs account removal.\n\n## Symbols\n**User Addition (Onboarding):**\n- New employee hired\n- Needs AceBuddy account\n- Needs system access\n- Starting date coming up\n\n**User Deletion (Offboarding):**\n- Employee departure\n- Need to disable account\n- Remove access rights\n- Archival of data\n\n## Automated Solution Overview\nThe AceBuddy chatbot collects all required user information through structured questions, then automatically creates a support ticket for the IT/HR team to process.\n\n## Step-by-Step Solution\n\n### For Users / Managers (via Chatbot)\n1. User or manager initiates chat: \"I need to add a new user\" or \"I need to delete a user\"\n2. Ch",
+    "metadata": {
+      "source": "kb_file",
+      "file": "04_user_addition_deletion.md"
+    }
+  },
+  {
+    "id": "04_user_addition_deletion_1",
+    "content": "atbot asks: \"Are you adding a new user or deleting an existing user?\"\n\n**For User Addition:**\n1. Chatbot collects information:\n   - Full Name\n   - Email Address (personal or company)\n   - Customer ID (CID) or Account Number\n   - Department/Role\n   - Start Date\n   - Manager Name\n   - Access Level Required\n   - Additional Systems Needed (QB, RDP, Email, etc.)\n\n2. Chatbot captures information into support ticket\n3. Chatbot confirms: \"Sending user creation request to IT team\"\n4. Automated email sent to IT/HR with:\n   - All user details\n   - Start date\n   - Required access levels\n   - Manager approval reference\n5. User receives confirmation email with ticket number\n6. Expected turnaround: 1-2 business days\n\n**For User Deletion:**\n1. Chatbot collects information:\n   - Employee Name\n   - Last Wor",
+    "metadata": {
+      "source": "kb_file",
+      "file": "04_user_addition_deletion.md"
+    }
+  },
+  {
+    "id": "04_user_addition_deletion_2",
+    "content": "king Date\n   - Reason for Deletion (Resignation, Termination, Transfer, etc.)\n   - Data Archival Required? (Yes/No)\n   - Final access date\n   - Manager Name/Approval\n\n2. Chatbot captures information into support ticket\n3. Automated email sent to IT/HR with:\n   - User details\n   - Last working date\n   - Archival requirements\n   - Access removal timeline\n4. User receives confirmation email\n5. Expected turnaround: Completed by last working date\n\n### For IT/HR Team\n1. Receive automated ticket from chatbot\n2. Verify all required information is present\n3. For additions:\n   - Create user account\n   - Set up email\n   - Grant system access\n   - Update employee directory\n4. For deletions:\n   - Archive user data if requested\n   - Disable account\n   - Revoke system access\n   - Remove from distribution",
+    "metadata": {
+      "source": "kb_file",
+      "file": "04_user_addition_deletion.md"
+    }
+  },
+  {
+    "id": "04_user_addition_deletion_3",
+    "content": "lists\n5. Send confirmation to requesting manager/HR\n6. Update ticket status\n\n## Information Needed for User Addition\n- Full Legal Name\n- Email Address\n- Employee ID/CID\n- Department\n- Job Title\n- Manager Name\n- Start Date\n- Access Requirements (which systems)\n- Equipment Needed (laptop, monitor, etc.)\n\n## Information Needed for User Deletion\n- Full Name\n- Employee ID\n- Last Working Date\n- Reason for Deletion\n- Data Archival: Yes/No\n- Manager Signature/Approval\n- Equipment Return Checklist\n\n## Access Levels and Systems\n- **Basic**: Email, General file access, AceBuddy chat\n- **Standard**: Basic + QB access, RDP, Network folders\n- **Administrative**: Full access including user management\n- **Limited**: Specific application access only\n\n## Expected Outcome\n- User creation completed within 1-",
+    "metadata": {
+      "source": "kb_file",
+      "file": "04_user_addition_deletion.md"
+    }
+  },
+  {
+    "id": "04_user_addition_deletion_4",
+    "content": "2 business days\n- User deletion completed by last working date\n- All required information captured upfront\n- No back-and-forth for clarification\n- Clear audit trail for compliance\n\n## Time Savings\n- Before: 20-30 minutes per ticket (collection, email, follow-up)\n- After: 3-5 minutes per request (IT processing only)\n- Annual impact: ~10-15 hours saved per support agent\n\n## Success Criteria\n- 100% of required information captured\n- IT receives complete pre-filled request\n- No follow-ups needed\n- User added/removed within SLA\n- Proper approval trail maintained\n\n## Security Considerations\n- Verify requesting manager has authority\n- Ensure proper approval workflow\n- Maintain audit trail for compliance\n- Confirm data archival before deletion\n- Verify all access revoked before final deletion\n\n##",
+    "metadata": {
+      "source": "kb_file",
+      "file": "04_user_addition_deletion.md"
+    }
+  },
+  {
+    "id": "04_user_addition_deletion_5",
+    "content": "Related Topics\n- Account Management\n- Employee Onboarding\n- Employee Offboarding\n- Access Control\n- Data Archival\n- Compliance Requirements\n\n## Troubleshooting\nIf user creation delayed:\n1. Verify all required information was provided\n2. Confirm manager approval received\n3. Check IT queue status\n4. Escalate if SLA breached\n\nIf user deletion issues:\n1. Verify last working date\n2. Ensure all equipment returned\n3. Confirm data archival completed\n4. Verify access properly revoked",
+    "metadata": {
+      "source": "kb_file",
+      "file": "04_user_addition_deletion.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_0",
+    "content": "# Monitor Setup - Single and Multi-Monitor Configuration - AceBuddy Knowledge Base\n\n## Issue\nUser needs to set up monitors for Remote Desktop session or switch between single and multi-monitor configurations.\n\n## Symptoms\n- User wants to use multiple monitors with RDP\n- Currently using single monitor, wants multi-monitor\n- Multi-monitor not working in RDP session\n- Display resolution issues\n- Application windows not appearing on correct monitor\n\n## Automated Solution Overview\nThe AceBuddy chatbot identifies whether user needs single or multi-monitor setup, then provides step-by-step configuration instructions tailored to their setup.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"I want to set up multiple monitors\" or \"Configure my monitor setup\"\n2. Chatbot",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_1",
+    "content": "asks: \"Are you setting up a single monitor or multi-monitor configuration?\"\n\n**For Multi-Monitor Setup:**\n\nSolution Steps:\n1. Open **Remote Desktop Connection** (search for \"mstsc\" on your computer)\n2. Enter the RDP server address: [Your Company RDP Server]\n3. Click **Show Options** (bottom of dialog)\n4. Go to the **Display** tab\n5. Look for the option: \"Use all my monitors for the remote session\"\n6. **Check this box** to enable multi-monitor\n7. You can also set resolution to \"Fill my monitors\"\n8. Click **Connect**\n\nResult: Your Remote Desktop session will now span across all connected monitors.\n\n**Benefits of Multi-Monitor with RDP:**\n- Increased workspace and productivity\n- Can view multiple applications simultaneously\n- Better use of screen real estate\n- Improved workflow efficiency\n\n*",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_2",
+    "content": "*For Single Monitor Setup:**\n\nSolution Steps:\n1. Open **Remote Desktop Connection** (search for \"mstsc\")\n2. Click **Show Options**\n3. Go to **Display** tab\n4. Uncheck \"Use all my monitors for the remote session\"\n5. Set resolution to preferred single-monitor resolution\n6. Click **Connect**\n\nResult: Your Remote Desktop session will use only one monitor.\n\n### Monitor Count Guide\n- **Single Monitor**: Standard setup, adequate for most tasks\n- **Dual Monitor** (2 monitors): Better for QB + communication + web browsing\n- **Triple Monitor** (3+ monitors): Advanced setup for power users, specialized workflows\n\n### Recommended Configurations by Role\n- **Accounting**: Dual monitor (QB on one, documents/email on other)\n- **Admin**: Triple monitor (system management, QB, communication)\n- **Support**:",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_3",
+    "content": "Dual monitor (ticketing system, customer info)\n- **General User**: Single monitor (adequate for most daily tasks)\n\n### Troubleshooting Monitor Setup\n\n**Issue: Multi-monitor option not available**\n- Solution: Update Remote Desktop client\n- Download: https://support.microsoft.com/en-us/help/2828362\n- Restart RDP connection\n\n**Issue: Only one monitor shows up in RDP**\n- Check all monitors are connected and powered on\n- Verify all monitors detected by Windows (Settings → Display)\n- Restart RDP connection\n- May need to disable and re-enable in Display settings\n\n**Issue: RDP session spans monitors incorrectly**\n- Adjust monitor positions in Windows Display settings\n- Windows → Settings → System → Display → Arrange displays\n- Position monitors to match physical layout\n- Reconnect RDP after arrang",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_4",
+    "content": "ement\n\n**Issue: Performance degradation with multi-monitor**\n- Multi-monitor = higher bandwidth requirements\n- Consider reducing resolution\n- Close unused applications\n- Use Ethernet instead of WiFi for better performance\n- Reduce remote desktop quality setting\n\n### Performance Optimization\nFor optimal multi-monitor performance:\n1. Use Ethernet connection (not WiFi)\n2. Keep network bandwidth available\n3. Close unnecessary applications\n4. Monitor network latency\n5. Reduce resolution if experiencing lag\n\n### Remote Desktop Quality Settings\n- **High Quality**: Slower, more details (local network)\n- **Medium Quality**: Balanced (good for most setups)\n- **Low Quality**: Fast, reduced details (slow networks)\n\n### Expected Outcome\n- User can enable/disable multi-monitor in 2-3 minutes\n- Configura",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_5",
+    "content": "tion persists across sessions\n- Increased productivity with multi-monitor\n- Clear troubleshooting steps if issues arise\n\n## Time Savings\n- Before: 15-20 minutes per ticket (detailed explanation)\n- After: 2-3 minutes per user (automated setup guide)\n- Annual impact: ~2-3 hours saved per support agent\n\n## Success Criteria\n- User completes configuration in under 5 minutes\n- RDP session uses correct monitors after restart\n- No performance issues with multi-monitor setup\n- User can toggle between single/multi-monitor as needed\n\n## Related Topics\n- Remote Desktop (RDP) Setup\n- Display Configuration\n- Network Optimization\n- RDP Performance\n- Workspace Optimization\n\n## Automation Opportunity\nWhen user selects monitor setup via chatbot:\n1. Chatbot creates automatic ticket for configuration confirma",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "05_monitor_setup_6",
+    "content": "tion\n2. If multi-monitor fails: Auto-escalate to IT with system info\n3. Provide performance metrics if needed\n4. Follow up on user satisfaction\n\n## Troubleshooting\nIf configuration fails after following steps:\n1. Verify Remote Desktop client is updated\n2. Check if monitors properly detected by Windows\n3. Try single monitor first, then enable multi-monitor\n4. Escalate to IT support with screenshot of Display settings",
+    "metadata": {
+      "source": "kb_file",
+      "file": "05_monitor_setup.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_0",
+    "content": "# Printer Not Working / Offline / Stuck - Printer Troubleshooting - AceBuddy Knowledge Base\n\n## Issue\nPrinter is offline, cannot find printer, or print jobs are stuck/not printing.\n\n## Symptoms\n- \"Printer not found\" or \"Printer offline\" error\n- Print job appears in queue but never prints\n- Cannot add printer to system\n- Printer appears offline in settings\n- Print job stuck/pending indefinitely\n- Printer not responding to print commands\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks which printer problem the user is experiencing, then provides targeted troubleshooting steps or escalation to IT support.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"My printer is not working\" or \"Printer offline\"\n2. Chatbot asks: \"What is your printer issue?\"\n   -",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_1",
+    "content": "Can't find/connect to printer\n   - Printer offline\n   - Print job stuck/won't print\n   - Printer not responding\n   - Other issue\n\n---\n\n## Solution A: Printer Offline\n\n**Problem**: Printer shows as \"Offline\" in Windows settings\n\n**Quick Fix - 5 Minutes:**\n1. **Restart the printer**:\n   - Locate power button on printer\n   - Hold button or turn off for 10 seconds\n   - Count to 10 while it shuts down\n   - Turn back on and wait for startup (30-60 seconds)\n\n2. **Restart your computer**:\n   - Save all work\n   - Restart Windows completely\n   - Wait for full startup\n   - Try printing again\n\n3. **Check printer connection**:\n   - Verify printer is connected to network (WiFi or Ethernet)\n   - Look for WiFi/network icon on printer display\n   - Note any error lights or messages on printer\n\n4. **Print a",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_2",
+    "content": "test page**:\n   - Windows → Settings → Devices → Printers & Scanners\n   - Select your printer\n   - Click \"Open queue\"\n   - Right-click → \"Printer properties\"\n   - Click \"Print Test Page\"\n   - Listen for printer response\n\n**If still offline:**\n- Printer may need WiFi reconnection\n- Check if WiFi password changed\n- Restart WiFi router\n- Contact IT support: \"Escalating to IT team...\"\n\n---\n\n## Solution B: Print Job Stuck\n\n**Problem**: Print job appears in queue but never prints, blocking other jobs\n\n**Quick Fix - 3 Minutes:**\n1. **Clear the print queue**:\n   - Windows → Settings → Devices → Printers & Scanners\n   - Click on your printer\n   - Click \"Open queue\"\n   - Look for stuck print job\n   - Right-click on stuck job → \"Cancel\"\n\n2. **If queue won't clear**:\n   - Press **Windows Key + R**",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_3",
+    "content": "- Type: `services.msc`\n   - Find \"Print Spooler\"\n   - Right-click → \"Stop\"\n   - Wait 10 seconds\n   - Right-click → \"Start\"\n\n3. **Restart printer again**:\n   - Power off for 10 seconds\n   - Power back on\n   - Try printing test page\n\n4. **Try printing again**:\n   - Open document\n   - File → Print\n   - Select printer\n   - Click \"Print\"\n\n**If job still stuck:**\n- Printer may have hardware issue\n- Contact IT support with printer name and model\n\n---\n\n## Solution C: Can't Find/Connect to Printer\n\n**Problem**: Printer not appearing in available printers list\n\n**Quick Fix - 5 Minutes:**\n1. **Verify printer is on network**:\n   - Check printer power\n   - Verify printer connected to WiFi or Ethernet\n   - Look for network indicator on printer\n\n2. **Add printer to Windows**:\n   - Windows → Settings → De",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_4",
+    "content": "vices → Printers & Scanners\n   - Click \"Add a printer or scanner\"\n   - Wait 30 seconds for scan\n   - Look for your printer in the list\n   - Click on it and \"Add device\"\n\n3. **If printer not found in scan**:\n   - Try \"The printer that I want isn't listed\"\n   - Select \"Add a printer using an IP address or hostname\"\n   - Enter printer IP address: **[Check printer settings or ask IT for IP]**\n   - Click Next and follow wizard\n\n4. **If still not found**:\n   - Printer may need to be reset\n   - Restart printer (power off 10 seconds, power on)\n   - Wait 1 minute for network connection\n   - Try adding again\n\n**If still not available:**\n- Printer may need IT configuration\n- Contact IT support: \"Escalating to IT team...\"\n\n---\n\n## Solution D: Printer Not Responding\n\n**Problem**: Printer appears connec",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_5",
+    "content": "ted but doesn't respond to print commands\n\n**Quick Fix - 5 Minutes:**\n1. **Verify printer status**:\n   - Check printer display screen\n   - Look for error lights (red, orange, blinking)\n   - Note any error messages\n\n2. **Check for common issues**:\n   - **Out of paper**: Refill paper tray\n   - **Paper jam**: Open all access doors and remove jammed paper\n   - **Toner/ink low**: Replace cartridge if indicated\n   - **Door open**: Close all covers and access doors\n\n3. **Power cycle printer**:\n   - Turn off for 10 seconds\n   - Turn back on\n   - Wait for startup complete\n\n4. **Print test page** (from printer menu):\n   - Use printer control panel buttons\n   - Navigate to \"Settings\" or \"Maintenance\"\n   - Select \"Print Test Page\" or \"Test Print\"\n   - If test page prints, printer is working\n\n**If prin",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_6",
+    "content": "ter still not responding:**\n- Hardware may be malfunctioning\n- Contact IT support with error messages\n\n---\n\n## Printer Information Needed for IT Support\nWhen escalating to IT, provide:\n- **Printer model and name**: [Example: HP LaserJet Pro MFP M428]\n- **Location**: [Office, floor, room number]\n- **Current status**: Offline / Not found / Not responding / Stuck job\n- **Error messages**: Any messages displayed on printer\n- **Steps already tried**: What troubleshooting you've completed\n- **Print job details**: What document you're trying to print\n\n---\n\n## Printer Maintenance Tips\n1. **Regular cleaning**: Keep printer clean from dust\n2. **Paper quality**: Use appropriate paper type/weight\n3. **Toner/ink**: Keep supplies stocked to avoid empty cartridge\n4. **Firmware updates**: Check for printe",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_7",
+    "content": "r software updates monthly\n5. **Network connection**: Ensure stable network for printer\n\n---\n\n## Expected Outcome\n- 60-70% of printer issues resolved by user in 5-10 minutes\n- Remaining issues escalated with complete diagnostic info\n- IT receives clear problem description and symptoms\n- Minimal back-and-forth for clarification\n- User can print within 15-30 minutes\n\n## Time Savings\n- Before: 15-20 minutes per ticket (troubleshooting guidance)\n- After: 5-7 minutes per user (if self-resolved), 3 min (if escalated)\n- Annual impact: ~4-6 hours saved per support agent\n\n## Success Criteria\n- User successfully prints within 15 minutes\n- Problem resolved or escalated with complete info\n- No repeat tickets for same issue\n- Printer functionality restored\n\n## Related Topics\n- Network Connectivity\n- De",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "06_printer_troubleshooting_8",
+    "content": "vice Management\n- IT Support Escalation\n- Office Equipment\n- Maintenance\n\n## Troubleshooting\nFor persistent printer issues:\n1. Document all error messages and codes\n2. Verify network connectivity\n3. Check printer IP address and settings\n4. Review recent system changes or updates\n5. Contact IT support with complete information",
+    "metadata": {
+      "source": "kb_file",
+      "file": "06_printer_troubleshooting.md"
+    }
+  },
+  {
+    "id": "07_server_performance_0",
+    "content": "# Server Performance Issues - CPU / RAM / Disk Full - AceBuddy Knowledge Base\n\n## Issue\nServer or computer is running slowly, freezing, or showing high resource usage.\n\n## Symptoms\n- Computer running slowly or freezing\n- High CPU usage\n- High RAM (memory) usage\n- Low disk space\n- Applications taking long time to load\n- System becomes unresponsive periodically\n- Fan running loudly\n- Programs crashing or quitting unexpectedly\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks users to check their Task Manager for resource usage (CPU, RAM, Disk), then provides targeted solutions based on the readings.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"My computer is running slowly\" or \"Computer freezing\"\n2. Chatbot asks: \"Let's diagnose the issue. Open Task",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_1",
+    "content": "Manager and check these metrics:\"\n\n**Opening Task Manager:**\n- Press **Ctrl + Shift + Esc** (fastest method)\n- Or: Right-click taskbar → \"Task Manager\"\n- Or: Press **Ctrl + Alt + Delete** → Click \"Task Manager\"\n\n---\n\n## Diagnostic Questions and Solutions\n\n### Question 1: CPU Usage\n**Chatbot asks**: \"What is your CPU usage percentage? (Look at 'Performance' tab, 'CPU')\"\n\n**If CPU < 50%**: Normal, not the issue\n\n**If CPU 50-80%**: Moderately high\n- Solution:\n  1. Look at \"Processes\" tab\n  2. Find processes using high CPU (look at \"CPU\" column)\n  3. If unknown application: Close it\n  4. If critical application: Try closing and reopening\n  5. Restart computer\n\n**If CPU > 80%**: High (causing slowness)\n- Solution:\n  1. Go to \"Processes\" tab\n  2. Sort by CPU column (click header)\n  3. Close non",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_2",
+    "content": "-critical applications\n  4. Close web browsers (Chrome uses significant CPU)\n  5. Disable background applications\n  6. If issue persists: Restart computer\n\n**If CPU stays high after closing apps:**\n- Potential malware or system issue\n- Contact IT support\n- System may need antivirus scan\n\n---\n\n### Question 2: RAM (Memory) Usage\n**Chatbot asks**: \"What is your RAM usage percentage? (Look at 'Performance' tab, 'Memory')\"\n\n**If RAM < 60%**: Normal, not the issue\n\n**If RAM 60-85%**: Moderately high\n- Solution:\n  1. Close unused applications\n  2. Close web browser tabs (each tab uses memory)\n  3. Restart programs using high memory\n  4. Restart computer\n\n**If RAM > 85%**: Critical (causing system slowness)\n- Solution:\n  1. Save all work immediately\n  2. Close all non-critical applications\n  3. Cl",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_3",
+    "content": "ose web browsers completely\n  4. Restart your computer\n  5. After restart, your memory will be cleared\n\n**If memory usage high even after restart:**\n- Application may have memory leak\n- Contact IT support\n- May need to reinstall problematic application\n\n---\n\n### Question 3: Disk Space\n**Chatbot asks**: \"What is your Disk usage percentage? (Look at 'Processes' tab → click any process → 'Performance' → 'Disk' OR check disk space in Windows)\"\n\n**If Disk < 85%**: Normal, not the issue\n\n**If Disk 85-95%**: Running low on space\n- Solution:\n  1. Delete temporary files\n  2. Remove old/unused applications\n  3. Empty Recycle Bin\n  4. Archive old documents\n  5. Clear Downloads folder\n  6. Request disk upgrade from IT\n\n**If Disk > 95%**: Critical (system will slow down severely)\n- Solution:\n  1. Immed",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_4",
+    "content": "iately stop any new file creation\n  2. Move large files to external drive (if available)\n  3. Delete unnecessary files aggressively\n  4. Delete installer files (.exe, .msi files)\n  5. Uninstall unused applications\n  6. Contact IT: \"I need a disk upgrade urgently\"\n\n**Check disk space:**\n- Click \"This PC\" in Windows File Explorer\n- Right-click your C: drive\n- Click \"Properties\"\n- See \"Used space\" vs \"Free space\"\n\n---\n\n## Complete Diagnostic Process\n\n**User Provides All Three Metrics:**\n\n1. **All normal (CPU <50%, RAM <60%, Disk <85%)**\n   - System should be running fine\n   - Slowness may be caused by:\n     - Network latency\n     - Software issue (QB, application bug)\n     - Background processes\n   - Chatbot suggests: \"Restart your computer and monitor performance\"\n\n2. **One metric high**",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_5",
+    "content": "- CPU high: Close applications, restart\n   - RAM high: Close applications, restart\n   - Disk high: Delete files, request upgrade\n\n3. **Multiple metrics high**\n   - Indicates system is overloaded\n   - Solution: Restart computer immediately\n   - Close unused applications after restart\n   - If problem persists: Contact IT support\n\n---\n\n## Recommended Actions by Combination\n\n| CPU | RAM | Disk | Recommended Action |\n|-----|-----|------|-------------------|\n| Low | Low | Low | Everything normal |\n| High | Low | Low | Close CPU-heavy apps, restart |\n| Low | High | Low | Close applications, restart |\n| Low | Low | High | Delete files, request upgrade |\n| High | High | Low | Restart computer |\n| High | Low | High | Restart, then delete files |\n| Low | High | High | Restart, close apps, delete file",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_6",
+    "content": "s |\n| High | High | High | Restart immediately, aggressive cleanup needed |\n\n---\n\n## Prevention Tips\n\n**For CPU Issues:**\n1. Limit number of applications running\n2. Keep Windows updated\n3. Run antivirus scans regularly\n4. Close web browser when not in use\n\n**For RAM Issues:**\n1. Restart computer regularly (weekly)\n2. Close unused applications\n3. Limit web browser tabs (each = memory)\n4. Consider RAM upgrade if frequent issues\n\n**For Disk Issues:**\n1. Archive old files regularly\n2. Delete temporary files monthly\n3. Clean up Downloads folder\n4. Request upgrade before reaching 90%\n\n---\n\n## When to Escalate to IT Support\n\nContact IT if:\n- CPU high after closing all applications\n- RAM high immediately after restart\n- Disk > 95% and no files to delete\n- System still slow after troubleshooting\n-",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_7",
+    "content": "Performance affecting work productivity\n- Error messages appearing\n- System crashes or freezes frequently\n\n---\n\n## Expected Outcome\n- 60-70% of performance issues resolved by user\n- User understands their system resources\n- Clear escalation path for complex issues\n- IT receives diagnostic data upfront\n- Reduced support tickets through prevention\n\n## Time Savings\n- Before: 20-30 minutes per ticket (remote diagnosis)\n- After: 5-10 minutes per user (self-diagnosis)\n- Annual impact: ~5-8 hours saved per support agent\n\n## Success Criteria\n- User can diagnose own performance issue\n- System performance improved or escalated appropriately\n- IT receives complete diagnostic information\n- No repeat tickets for same issue\n\n## Related Topics\n- System Performance\n- Resource Monitoring\n- Application Mana",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "07_server_performance_8",
+    "content": "gement\n- Storage Management\n- Computer Maintenance\n\n## Troubleshooting\nFor persistent performance issues:\n1. Document resource metrics when issue occurs\n2. Note which applications are running\n3. Check for recently installed software\n4. Verify no malware present\n5. Contact IT with complete diagnostic data",
+    "metadata": {
+      "source": "kb_file",
+      "file": "07_server_performance.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_0",
+    "content": "# QuickBooks (QB) Issues - Won't Start / Bank Feed / File Corrupt - AceBuddy Knowledge Base\n\n## Issue\nQuickBooks won't start, bank feed not syncing, or company file is corrupted.\n\n## Symptoms\n- QuickBooks won't open or crashes on startup\n- \"QuickBooks is not responding\" error\n- Bank feeds not syncing with accounts\n- Transactions missing from bank feed\n- Company file won't open / error message\n- File appears corrupted or damaged\n- Slow performance in QB\n- Cannot access company data\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks which QB problem the user is experiencing, then provides targeted troubleshooting steps or escalates to support team with complete diagnostic information.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"QuickBooks is not wor",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_1",
+    "content": "king\" or \"QB problem\"\n2. Chatbot asks: \"What is your QuickBooks issue?\"\n   - Won't start / crashes\n   - Bank feed not syncing\n   - Company file corrupted / won't open\n   - Login issues\n   - Other issue\n\n---\n\n## Solution A: QuickBooks Won't Start / Crashes on Startup\n\n**Problem**: QB won't open or crashes immediately after launching\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Restart your computer**:\n   - Save all work in other applications\n   - Restart Windows completely\n   - Wait for full startup (2-3 minutes)\n   - Try opening QuickBooks again\n\n2. **Check internet connection**:\n   - QB requires active internet connection\n   - Verify WiFi or Ethernet is connected\n   - Try visiting a website to confirm connectivity\n   - Restart WiFi router if needed\n\n3. **Restart QuickBooks**:\n   - Close QB if ope",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_2",
+    "content": "n\n   - Wait 10 seconds\n   - Open QB again\n   - Give it 30 seconds to load\n\n4. **Update QuickBooks**:\n   - Open QB\n   - Go to **Help** menu\n   - Click **Update QuickBooks**\n   - Install all available updates\n   - Restart QB\n\n5. **Check QB company file**:\n   - If QB opens but specific company won't load:\n   - Try opening different company file (if available)\n   - If other files open: Problem is with that specific file\n   - If no files open: Problem is with QB installation\n\n**If QB still won't start:**\n- QB installation may be corrupted\n- Contact IT support: \"QB won't start after troubleshooting\"\n\n---\n\n## Solution B: Bank Feed Not Syncing\n\n**Problem**: Bank feed not updating or transactions not appearing from bank\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Check feed settings**:\n   - Open QB compan",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_3",
+    "content": "y file\n   - Go to **Banking** menu\n   - Click **My Bank Feeds**\n   - Verify feed is **connected** (green status)\n   - If red status: Click **Connect**\n\n2. **Force feed sync**:\n   - Go to **Banking** → **My Bank Feeds**\n   - Click on the feed\n   - Click **Download New Transactions**\n   - Wait 1-2 minutes for download\n\n3. **Verify account connection**:\n   - Go to **Banking** → **My Bank Feeds**\n   - Check that correct bank account is connected\n   - Verify login credentials for bank\n   - If wrong account: Delete feed and re-add\n\n4. **Check bank settings**:\n   - Login to your bank's website\n   - Verify QB is authorized to access your account\n   - Check if you need to approve QB connection\n   - Re-authorize if needed\n\n5. **Wait and try again**:\n   - Bank syncs may take 24-48 hours\n   - Don't de",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_4",
+    "content": "lete duplicate transactions immediately\n   - Wait a day to see if transactions appear\n   - Then reconcile and delete duplicates\n\n**If feed still not syncing:**\n- Bank connection issue\n- Chatbot creates support ticket with:\n  - Bank name\n  - Account type (checking, savings, credit card)\n  - Last successful sync date\n  - Error messages (if any)\n\n---\n\n## Solution C: Company File Corrupted / Won't Open\n\n**Problem**: File appears damaged, won't open, or gives error message\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Try opening from backup**:\n   - Ask: Do you have a recent backup of this file?\n   - If yes: Open the backup file from backup location\n   - Try making it your working file if backup works\n\n2. **Try opening in Safe Mode**:\n   - Open QB\n   - Open the company file\n   - If error appears: Click",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_5",
+    "content": "\"Open in Safe Mode\"\n   - This disables some features but may recover file\n\n3. **Restart QB and computer**:\n   - Close QB and all applications\n   - Restart computer completely\n   - Open QB and try file again\n\n4. **Validate/Rebuild file**:\n   - Open QB\n   - Go to **File** menu\n   - Click **Utilities** → **Validate/Rebuild Data**\n   - This checks and repairs file integrity\n   - QB will restart and rebuild file\n\n5. **Check company file location**:\n   - Verify file is on local hard drive (not shared network)\n   - Avoid network file sharing (causes corruption)\n   - Make copy to local drive and work from there\n\n**If file still corrupted:**\n- File may need professional recovery\n- Contact IT support with:\n  - File location and name\n  - When file became corrupted\n  - Any error messages\n  - Last back",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_6",
+    "content": "up date\n\n---\n\n## Solution D: Login / Authentication Issues\n\n**Problem**: Cannot log in to QB or getting authentication errors\n\n**Quick Fix - 5 Minutes:**\n\n1. **Verify account login**:\n   - Confirm username/email is correct\n   - Verify password is correct (passwords are case-sensitive)\n   - Try resetting password if unsure\n\n2. **Check internet connection**:\n   - QB requires internet for login\n   - Verify connectivity before attempting login\n   - Restart WiFi if needed\n\n3. **Clear cached credentials**:\n   - Close QB\n   - Go to Windows Settings → Accounts → Credentials Manager\n   - Remove any stored QB credentials\n   - Restart QB and log in again\n\n4. **Update QB if needed**:\n   - Go to **Help** → **Update QuickBooks**\n   - Install all updates\n   - Sometimes updates fix authentication issues",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_7",
+    "content": "**If still cannot login:**\n- Account may be locked or suspended\n- Contact QB support or your account administrator\n\n---\n\n## Information Needed for IT Support\nWhen escalating QB issues, provide:\n- **QB version and edition**: (Desktop Pro, Premier, Enterprise, Online)\n- **Company file name and location**: Where the file is stored\n- **Problem description**: What exactly is happening\n- **Error messages**: Any error codes or messages displayed\n- **When problem started**: Today, this week, etc.\n- **Recent changes**: Any updates, network changes, etc.\n- **Steps already tried**: What troubleshooting you've done\n- **Backup available**: Is there a recent backup\n\n---\n\n## Prevention Tips\n\n**For QB Stability:**\n1. Keep QB updated with latest patches\n2. Restart QB once per week\n3. Run verification/rebui",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_8",
+    "content": "ld monthly\n4. Keep antivirus updated\n5. Use uninterruptible power supply (UPS)\n\n**For Bank Feed Reliability:**\n1. Reconcile transactions promptly\n2. Don't delete unreconciled transactions\n3. Update bank credentials if changed\n4. Monitor feed status weekly\n\n**For File Integrity:**\n1. Store company file on local drive\n2. Regular backups (daily minimum)\n3. Don't share file over network\n4. Use single-user mode when possible\n5. Keep QB installed on local drive\n\n---\n\n## Expected Outcome\n- 50-60% of QB issues resolved by user in 5-15 minutes\n- File corruption issues escalated with diagnostic info\n- IT receives complete problem description\n- Backup restores minimize data loss\n- Minimal disruption to accounting work\n\n## Time Savings\n- Before: 25-40 minutes per ticket (QB troubleshooting)\n- After: 1",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "08_quickbooks_issues_9",
+    "content": "0-15 minutes per user (if resolved), 5 min (if escalated)\n- Annual impact: ~8-12 hours saved per support agent\n\n## Success Criteria\n- QB opens and company file loads\n- Bank feeds syncing properly\n- File integrity verified\n- No data loss\n- User can continue work\n\n## Related Topics\n- Data File Management\n- Backup and Recovery\n- Bank Reconciliation\n- Financial Software\n- Data Security\n\n## Troubleshooting\nFor persistent QB issues:\n1. Check QB system requirements\n2. Verify adequate hard drive space\n3. Ensure QB is fully updated\n4. Run disk cleanup and optimization\n5. Contact QB support with complete diagnostic data",
+    "metadata": {
+      "source": "kb_file",
+      "file": "08_quickbooks_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_0",
+    "content": "# Email Issues - Outlook Configuration and Sync Problems - AceBuddy Knowledge Base\n\n## Issue\nEmail not working in Outlook, can't send/receive messages, or experiencing sync problems.\n\n## Symptoms\n- Outlook won't open\n- Cannot send emails\n- Cannot receive emails\n- Email sync not working\n- \"Cannot connect to server\" error\n- Login error or authentication failed\n- Outlook crashes or freezes\n- Email stuck in outbox\n- Settings or mailbox empty\n\n## Automated Solution Overview\nThe AceBuddy chatbot asks diagnostic questions about the email issue type and error messages, then provides targeted troubleshooting steps or escalates to IT support with complete diagnostic information.\n\n## Step-by-Step Solution\n\n### For Users (via Chatbot)\n1. User initiates chat: \"My email is not working\" or \"Outlook probl",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_1",
+    "content": "em\"\n2. Chatbot asks: \"What email issue are you experiencing?\"\n   - Can't send emails\n   - Can't receive emails\n   - Login/authentication error\n   - Outlook crashes or won't open\n   - Sync not working\n   - Other issue\n\n---\n\n## Solution A: Cannot Receive Emails\n\n**Problem**: Emails not coming into Outlook inbox\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Check internet connection**:\n   - Verify WiFi or Ethernet is connected\n   - Try visiting a website to confirm connectivity\n   - Outlook requires active internet to sync\n\n2. **Check account configuration**:\n   - Open Outlook\n   - Go to **File** → **Account Settings** → **Account Settings**\n   - Select your email account\n   - Click **Change** or **Repair**\n   - Verify email address and password are correct\n\n3. **Check mailbox connection**:\n   - Go to",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_2",
+    "content": "**Send / Receive** tab\n   - Click **Send / Receive All**\n   - Wait 30 seconds for sync\n   - Check if emails arrive\n\n4. **Check inbox rules**:\n   - Go to **Home** tab → **Rules** → **Manage Rules & Alerts**\n   - Look for any rules that might be blocking emails\n   - Verify no rules are redirecting emails to another folder\n   - Disable suspicious rules temporarily\n\n5. **Check server settings**:\n   - Go to **File** → **Account Settings** → **Account Settings**\n   - Select your email account\n   - Click **Change**\n   - Verify incoming server settings:\n     - Server type: IMAP or POP3 (ask IT which one)\n     - Server address: (should be provided by IT)\n     - Port: 993 (IMAP) or 995 (POP3)\n     - Encryption: SSL/TLS\n\n6. **Restart Outlook**:\n   - Close Outlook completely\n   - Wait 10 seconds\n   -",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_3",
+    "content": "Open Outlook again\n   - Check inbox again\n\n**If emails still not receiving:**\n- Server connection issue\n- Server may be down\n- Contact IT support\n\n---\n\n## Solution B: Cannot Send Emails\n\n**Problem**: Can receive emails but cannot send\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Check outbox**:\n   - Open Outlook\n   - Go to **Outbox** folder\n   - Check if emails are stuck in outbox\n   - If emails there: Try **Send / Receive All**\n\n2. **Clear stuck emails**:\n   - If email still stuck in outbox:\n   - Right-click email\n   - Click **Delete**\n   - Start fresh with new email\n\n3. **Check outgoing server settings**:\n   - Go to **File** → **Account Settings** → **Account Settings**\n   - Select your email account\n   - Click **Change**\n   - Verify outgoing server settings:\n     - SMTP server address: (provid",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_4",
+    "content": "ed by IT)\n     - Port: 587 or 25\n     - Encryption: StartTLS or SSL/TLS\n     - Authentication: Required (with your email/password)\n\n4. **Verify authentication**:\n   - Ensure \"Require Authentication\" is checked\n   - Verify username and password are correct\n   - If password recently changed: Update here\n\n5. **Test send**:\n   - Create new email to yourself\n   - Send it\n   - Check if email arrives in inbox in 30 seconds\n\n**If still cannot send:**\n- Outgoing server may be down\n- Port may be blocked\n- Contact IT support: \"Cannot send emails from Outlook\"\n\n---\n\n## Solution C: Login / Authentication Error\n\n**Problem**: Cannot log in to email or getting authentication errors\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Verify credentials**:\n   - Confirm email address is correct\n   - Confirm password is cor",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_5",
+    "content": "rect (case-sensitive)\n   - Verify no CAPS LOCK is on\n   - Try password reset if unsure\n\n2. **Add account again**:\n   - Go to **File** → **Account Settings** → **Account Settings**\n   - Click your email account\n   - Click **Delete**\n   - Confirm deletion\n   - Click **New** to add account again\n   - Enter email and password\n   - Let Outlook auto-configure if possible\n\n3. **Check for old password**:\n   - Password recently changed?\n   - Outlook may still have old password stored\n   - Delete account and re-add with new password\n\n4. **Verify multi-factor authentication (MFA)**:\n   - Some accounts require MFA\n   - If using MFA: May need app-specific password\n   - Contact IT for app-specific password if required\n   - Use app password instead of regular password\n\n5. **Clear password cache**:\n   - G",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_6",
+    "content": "o to Windows **Control Panel** → **Credential Manager**\n   - Remove any stored Outlook/email credentials\n   - Restart Outlook\n   - Enter credentials fresh\n\n**If still cannot authenticate:**\n- Account may be locked\n- Contact IT support: \"Cannot log in to email\"\n\n---\n\n## Solution D: Outlook Crashes or Won't Open\n\n**Problem**: Outlook crashes on startup or freezes frequently\n\n**Quick Fix - 5-10 Minutes:**\n\n1. **Restart Outlook**:\n   - Close Outlook if open\n   - Wait 10 seconds\n   - Open Outlook again\n\n2. **Restart computer**:\n   - Save all work\n   - Restart Windows completely\n   - Open Outlook again\n\n3. **Disable add-ins**:\n   - Outlook add-ins can cause crashes\n   - Start Outlook in Safe Mode:\n     - Hold CTRL while starting Outlook\n     - Accept \"Safe Mode\" prompt\n   - If Outlook works in S",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_7",
+    "content": "afe Mode: Problematic add-in exists\n   - Contact IT to disable add-in\n\n4. **Check for updates**:\n   - Go to **File** → **Office Account**\n   - Click **Update Options** → **Update Now**\n   - Install all available updates\n   - Restart Outlook\n\n5. **Try repairing Outlook**:\n   - Go to **Control Panel** → **Programs** → **Programs and Features**\n   - Find \"Microsoft Office\" or \"Outlook\"\n   - Click it and select **Repair** or **Change**\n   - Choose **Quick Repair** first\n   - If that fails: Try **Online Repair**\n   - Restart computer after repair\n\n**If Outlook still crashes:**\n- Installation may be corrupted\n- Contact IT support: \"Outlook keeps crashing\"\n\n---\n\n## Solution E: Email Sync Not Working\n\n**Problem**: Emails not syncing between devices or recent emails missing\n\n**Quick Fix - 5-10 Minu",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_8",
+    "content": "tes:**\n\n1. **Force sync**:\n   - Open Outlook\n   - Go to **Send / Receive** tab\n   - Click **Send / Receive All**\n   - Wait 1-2 minutes\n\n2. **Check sync settings**:\n   - Go to **File** → **Options** → **Advanced**\n   - Look for **Sync and Offline Settings**\n   - Verify \"Sync Email\" is enabled\n   - Check sync folder settings\n\n3. **Check folder settings**:\n   - Right-click your email account\n   - Click **Folder Properties**\n   - Verify folder is set to sync\n   - For IMAP: Check if specific folders are syncing\n\n4. **Increase sync time range**:\n   - Go to **File** → **Options** → **Advanced**\n   - Look for sync settings\n   - Change to sync \"All\" emails (not just last 3 months)\n\n5. **Clear offline cache**:\n   - Close Outlook\n   - Delete outlook.ost file:\n     - Go to: C:\\Users\\[YourUsername]\\App",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_9",
+    "content": "Data\\Local\\Microsoft\\Outlook\n     - Find outlook.ost file\n     - Delete it\n   - Restart Outlook\n   - Wait for new .ost file to download\n\n**If sync still not working:**\n- Server sync issue\n- Contact IT support: \"Email not syncing\"\n\n---\n\n## Information Needed for IT Support\nWhen escalating email issues, provide:\n- **Email account type**: (Outlook.com, Office 365, Gmail, Corporate, etc.)\n- **Device and OS**: (Windows, Mac, which version)\n- **Outlook version**: Go to File → Office Account to see version\n- **Error message**: Any specific error text\n- **When problem started**: Today, this week, after update, etc.\n- **Steps already tried**: What troubleshooting completed\n- **Other devices**: Does email work on other devices (phone, tablet, etc.)\n\n---\n\n## Prevention Tips\n1. Keep Outlook updated\n2.",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_10",
+    "content": "Maintain strong password\n3. Enable MFA if available\n4. Disable untrusted add-ins\n5. Regularly clear old emails\n6. Archive emails for better performance\n7. Restart Outlook weekly\n\n---\n\n## Expected Outcome\n- 60-70% of email issues resolved by user\n- Complex issues escalated with diagnostic information\n- Email restored within 15-30 minutes for most issues\n- Improved productivity with working email\n- Prevention tips reduce future issues\n\n## Time Savings\n- Before: 20-30 minutes per ticket (email troubleshooting)\n- After: 8-15 minutes per user (if resolved), 5 min (if escalated)\n- Annual impact: ~4-6 hours saved per support agent\n\n## Success Criteria\n- Email send/receive working\n- Outlook opens without crashing\n- Emails syncing properly\n- User can access all email folders\n- No authentication er",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  },
+  {
+    "id": "09_email_issues_11",
+    "content": "rors\n\n## Related Topics\n- Email Configuration\n- Account Management\n- Outlook Settings\n- Email Sync\n- IT Support Escalation\n\n## Troubleshooting\nFor persistent email issues:\n1. Document all error messages\n2. Check email works on other devices\n3. Verify IT server settings\n4. Check firewall blocking email ports\n5. Contact IT support with complete diagnostic data",
+    "metadata": {
+      "source": "kb_file",
+      "file": "09_email_issues.md"
+    }
+  }
+]

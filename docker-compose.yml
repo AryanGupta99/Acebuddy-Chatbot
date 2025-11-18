@@ -1,0 +1,65 @@
+services:
+  # FastAPI application
+  acebuddy-api:
+    build: 
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: acebuddy-api
+    ports:
+      - "8000:8000"
+    environment:
+      - CHROMA_HOST=chroma
+      - CHROMA_PORT=8000
+      - OLLAMA_HOST=http://host.docker.internal:11434
+      - OLLAMA_MODEL=phi
+      - FASTAPI_HOST=0.0.0.0
+      - FASTAPI_PORT=8000
+      - VECTOR_DB_COLLECTION=acebuddy_kb
+      - LOG_LEVEL=info
+      - EMBEDDING_OFFLINE=true
+    volumes:
+      - ./data:/app/data
+      - ./data/chroma:/app/data/chroma
+    depends_on:
+      - chroma
+    networks:
+      - acebuddy_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Chroma vector database
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: acebuddy-chroma
+    ports:
+      - "8001:8000"
+    # Persist Chroma data to a named Docker volume by default (recommended).
+    # This keeps DB files outside the container lifecycle and avoids OneDrive sync issues.
+    volumes:
+      - chroma_data:/chroma/chroma
+      # If you prefer a host bind (NOT recommended when your repo is inside OneDrive),
+      # set the CHROMA_HOST_DIR env var or replace the line above with a direct bind:
+      # - ${CHROMA_HOST_DIR:-C:/acebuddy_data/chroma}:/chroma/chroma
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_PORT=8000
+      - ANONYMIZED_TELEMETRY=false
+    networks:
+      - acebuddy_network
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+
+networks:
+  acebuddy_network:
+    driver: bridge
+
+volumes:
+  # Named Docker volume used by Chroma for persistent storage
+  chroma_data:
+    driver: local

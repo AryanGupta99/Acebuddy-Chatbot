@@ -1,0 +1,57 @@
+Password Reset Instructions
+
+If you are unable to log into your account, follow these steps:
+
+1. Go to the login page and click "Forgot Password"
+2. Enter your email address associated with your account
+3. Check your email for a password reset link
+4. Click the link and create a new password
+5. Use your new password to log in
+
+Common Password Reset Issues:
+- Email not received: Check spam/junk folder
+- Link expired: Request a new password reset
+- Invalid email: Ensure you're using the correct email address
+
+For additional help, contact support at support@acebuddy.com or chat with us.
+
+Remote Desktop Connection Issues
+
+If you cannot connect to your remote desktop:
+
+1. Check your internet connection
+2. Verify the server name is correct
+3. Ensure you have the correct username and password
+4. Try restarting the Remote Desktop application
+5. Check if the server is online and accessible
+
+Error Messages:
+- "Cannot find computer": Server name might be incorrect
+- "Connection denied": Check username and password
+- "Network error": Check internet connection and firewall settings
+
+Contact IT support if the issue persists.
+
+QuickBooks Support
+
+Common QuickBooks issues and solutions:
+
+File Access Problems:
+- Ensure QuickBooks is updated to the latest version
+- Check file permissions and user access rights
+- Verify the company file path is correct
+- Try opening QuickBooks in safe mode
+
+Performance Issues:
+- Close unnecessary programs running in background
+- Restart QuickBooks and your computer
+- Check available disk space
+- Run QuickBooks file doctor tool
+
+Bank Feed Issues:
+- Update bank connection settings
+- Re-enter bank login credentials
+- Check with your bank for service outages
+- Clear browser cache if using web connect
+
+For technical support, contact our QuickBooks specialists.

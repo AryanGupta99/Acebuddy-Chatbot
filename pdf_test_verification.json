@@ -1,0 +1,40 @@
+{
+  "total": 8,
+  "successful": 0,
+  "success_rate": "0.0%",
+  "avg_confidence": "0.0%",
+  "results": [
+    {
+      "query": "How do I connect to a server drive using WebDAV on Windows?",
+      "confidence": 0
+    },
+    {
+      "query": "What are the steps to export reports from QuickBooks to Excel?",
+      "confidence": 0
+    },
+    {
+      "query": "How do I setup email in QuickBooks with Gmail?",
+      "confidence": 0
+    },
+    {
+      "query": "How can I publish a remote app on a local computer?",
+      "confidence": 0
+    },
+    {
+      "query": "Tell me about WebDAV connections",
+      "confidence": 0
+    },
+    {
+      "query": "QuickBooks report export process",
+      "confidence": 0
+    },
+    {
+      "query": "Remote app publishing steps",
+      "confidence": 0
+    },
+    {
+      "query": "Configuring Outlook in QuickBooks",
+      "confidence": 0
+    }
+  ]
+}
