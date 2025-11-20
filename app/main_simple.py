@@ -251,8 +251,19 @@ def salesiq_chat(request: SalesIQChatRequest) -> SalesIQChatResponse:
 
 
 # Zobot third-party webhook endpoint
+@app.get("/zobot/webhook")
+def zobot_webhook_info():
+    """Informational GET for the Zobot webhook URL.
+    Browsers or humans hitting the webhook URL will see this helpful note
+    instead of a 405. The actual webhook should POST JSON to this endpoint.
+    """
+    return {
+        "info": "This endpoint accepts POST requests from Zoho Zobot. Use POST /zobot/webhook with JSON body {'message': '<text>'} and optionally ?sync=true or header X-Zobot-Sync:true for synchronous replies."
+    }
+
+
 @app.post("/zobot/webhook")
-async def zobot_webhook(request: Request, body: dict = Body(...)):
+async def zobot_webhook(request: Request, body: dict = Body(None)):
     """Endpoint to receive Zobot webhook calls from Zoho SalesIQ.
     - If caller expects a synchronous Zobot response, include header `X-Zobot-Sync: true` or query `?sync=true`.
     - Otherwise the endpoint will return a quick ack and push the final message asynchronously when credentials exist.
@@ -265,24 +276,38 @@ async def zobot_webhook(request: Request, body: dict = Body(...)):
     except Exception:
         pass
 
-    # Extract text from common Zobot shapes
+    # Extract text from common Zobot shapes and also accept form-encoded bodies
     query_text = None
     try:
+        content_type = request.headers.get('content-type', '')
+        # If body is None (FastAPI couldn't parse JSON), try to read form data
+        if (not body) and ('application/x-www-form-urlencoded' in content_type or 'multipart/form-data' in content_type):
+            form = await request.form()
+            # form behaves like a dict; prefer 'message' or 'text'
+            form_dict = {k: v for k, v in form.items()}
+            body = form_dict
+
+        # Accept a variety of keys that might carry visitor text
         if isinstance(body, dict):
-            # common fields: message, text, data.message, data.text
-            if 'message' in body and isinstance(body['message'], str):
-                query_text = body['message']
-            elif 'text' in body and isinstance(body['text'], str):
-                query_text = body['text']
-            elif 'data' in body and isinstance(body['data'], dict):
-                q = body['data'].get('message') or body['data'].get('text')
-                if isinstance(q, str):
-                    query_text = q
+            # prioritized keys
+            for key in ('message', 'text', 'userMessage', 'visitorMessage', 'query'):
+                v = body.get(key)
+                if isinstance(v, str) and v.strip():
+                    query_text = v.strip()
+                    break
+
+            # nested patterns
+            if not query_text and 'data' in body and isinstance(body['data'], dict):
+                for key in ('message', 'text'):
+                    v = body['data'].get(key)
+                    if isinstance(v, str) and v.strip():
+                        query_text = v.strip(); break
+
             # last resort: search for likely keys
             if not query_text:
                 for k, v in body.items():
                     if isinstance(v, str) and any(w in k.lower() for w in ('message', 'text', 'query')):
-                        query_text = v
+                        query_text = v.strip()
                         break
     except Exception:
         query_text = None
@@ -444,3 +469,27 @@ if __name__ == "__main__":
     print("\n" + "="*70 + "\n")
     
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+# Debug echo endpoint to help inspect headers + body from SalesIQ/Zobot test calls
+@app.post("/debug/echo")
+async def debug_echo(request: Request):
+    try:
+        # capture headers
+        headers = {k: v for k, v in request.headers.items()}
+        # try JSON first
+        try:
+            body = await request.json()
+        except Exception:
+            try:
+                form = await request.form()
+                body = {k: v for k, v in form.items()}
+            except Exception:
+                body = await request.body()
+                try:
+                    body = body.decode('utf-8')
+                except Exception:
+                    pass
+        return JSONResponse(content={"headers": headers, "body": body})
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)
