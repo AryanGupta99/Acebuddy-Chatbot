@@ -1,0 +1,68 @@
+{
+  "id": "75169901-184c-428d-bbb1-234c735ae300",
+  "name": "Sage - How do I send message?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "If you're also getting an update popup, please grab a screenshot of the error message and share it to support@acecloudhosting.com. Our engineers will manually check and implement the patches if need be and share a confirmation via email."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_57_how_do_i_send_message_165-phr-0",
+      "data": [
+        {
+          "text": "How do I send message  165?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_57_how_do_i_send_message_165-phr-1",
+      "data": [
+        {
+          "text": "How do I send message  165"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_57_how_do_i_send_message_165-phr-2",
+      "data": [
+        {
+          "text": "send message  165?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

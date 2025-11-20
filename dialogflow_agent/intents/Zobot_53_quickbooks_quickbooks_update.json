@@ -1,0 +1,46 @@
+{
+  "id": "c7c27aae-c5fe-4b82-afb2-434dd74a1f33",
+  "name": "Quickbooks - QuickBooks Update",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "What type of QuickBooks Issue are you facing?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_53_quickbooks_update-phr-0",
+      "data": [
+        {
+          "text": "QuickBooks Update"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

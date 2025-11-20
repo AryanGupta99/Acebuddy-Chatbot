@@ -1,0 +1,46 @@
+{
+  "id": "55781ed4-13f1-422d-a005-7ae2d8b98eea",
+  "name": "Quickbooks - QuickBooks Login Issue",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "What type of QuickBooks Issue are you facing?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_52_quickbooks_login_issue-phr-0",
+      "data": [
+        {
+          "text": "QuickBooks Login Issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

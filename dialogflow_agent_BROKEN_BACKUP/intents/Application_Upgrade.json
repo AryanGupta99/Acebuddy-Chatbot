@@ -1,0 +1,459 @@
+{
+  "id": "83511b8f-0cc8-4603-814b-6794db69b4a1",
+  "name": "Application Upgrade",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "application.upgrade",
+      "affectedContexts": [
+        {
+          "name": "app-upgrade-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "application",
+          "name": "application",
+          "required": true,
+          "dataType": "@Application",
+          "value": "$application",
+          "promptMessages": [
+            {
+              "type": "0",
+              "lang": "en",
+              "speech": "Which application would you like to upgrade?\n\n• QuickBooks\n• ProSeries\n• Lacerte\n• Drake\n• Sage\n• Office 365\n• Other\n\nPlease specify:"
+            }
+          ],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": []
+        }
+      ],
+      "messages": [
+        {
+          "type": "0",
+          "lang": "en",
+          "speech": [
+            "✅ Your $application upgrade request has been received!\n\n**Next Steps:**\n\n1️⃣ Please download the latest setup file for $application from the application portal\n2️⃣ Save it to your server Desktop\n3️⃣ Email support@acecloudhosting.com to confirm you've completed this step\n\n**Timeline:**\nApplication upgrades are typically performed overnight (after business hours) to avoid downtime. We'll send you an email confirmation once the upgrade is complete.\n\n**Estimated Time:** 1-2 hours after you confirm the setup file is ready\n\nIf you need the upgrade at a specific time, please mention that in your email.\n\nAnything else I can help with?",
+            "Generally, application upgrades are completed during the night hours to avoid any downtime. Please do specify if you need the request processed at a specific time.",
+            "Once you find your desired plan, Kindly email us the details at support@acecloudhosting.com and your request will be processed within 24 hours.",
+            "Looks like you've selected an invalid option, Please try again!",
+            "Once done, Please email us at support@acecloudhosting.com, and we will provide you with an update via email.",
+            "Please send us an email from your registered email address to support@acecloudhosting.com with the following information :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "56649dfd-e93f-49ec-852a-2f300571ae9d",
+      "data": [
+        {
+          "text": "Upgrade application"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "6f4f7635-93f5-41f4-99f7-6b2f26133018",
+      "data": [
+        {
+          "text": "Update QuickBooks"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "aa9708a3-7256-459b-87cc-4fefdcea809b",
+      "data": [
+        {
+          "text": "ProSeries upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "8d2cb80f-4b5b-4c06-80b4-9b4f3b7f5894",
+      "data": [
+        {
+          "text": "Update software"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "9bb501ff-a434-49e4-b880-cc7d13cbf173",
+      "data": [
+        {
+          "text": "Application update"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "e2962dc6-99ce-4ec6-8984-35c99c54043e",
+      "data": [
+        {
+          "text": "Need to upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "36795d3d-d0ac-4eba-b84e-59c5226f3b22",
+      "data": [
+        {
+          "text": "Software upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c61cd78d-a9f8-4099-855c-1b266aa7121c",
+      "data": [
+        {
+          "text": "I need you to update my QB from 2023 to 2024"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c46028aa-6246-4e97-9872-8edfbbc20a52",
+      "data": [
+        {
+          "text": "I need a new quickbooks installed"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c103b571-03bb-43b2-9758-48a02fbda834",
+      "data": [
+        {
+          "text": "I need to update my qb"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "59e44bf1-1b0a-4836-8cb8-b9daf7ed709e",
+      "data": [
+        {
+          "text": "We would like to upgrade from Quickbooks Non-profit Enterprise Desktop 2022 to 2024 in a couple weeks"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "84a5706d-8819-42de-b4c3-0d90cb5d8f19",
+      "data": [
+        {
+          "text": "Hello, I need assistance to install QB in a new computer"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "4fed4b4e-9806-4fd1-a376-d189fd6a2dee",
+      "data": [
+        {
+          "text": "Selfcare portal access and Quickbooks update information"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "b721c008-2b57-4188-8b0a-058faeb9c36f",
+      "data": [
+        {
+          "text": "the welcome page on the quickbooks online desktop app will not close"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "94402c22-3f17-4f19-a96b-a25a13dc167e",
+      "data": [
+        {
+          "text": "I want to install Microsoft Remote Desktop on a new Mac"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "2b765929-ff28-447a-8914-390b94cf543d",
+      "data": [
+        {
+          "text": "checking status of quickbooks update"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c0a5049f-640a-4289-93e2-2b44c2a69dba",
+      "data": [
+        {
+          "text": "Could you do a reboot of our remote desktop server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "b2e3cac0-f9fc-4828-9439-2820cda921f6",
+      "data": [
+        {
+          "text": "APpraisals1 - I cannot open APpraisal Linx"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "b0895d3c-f467-4a5c-910a-d5dff540d72f",
+      "data": [
+        {
+          "text": "I need to update my password into Ace"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "7ac6f1b8-1449-4f10-9aea-4991481396e0",
+      "data": [
+        {
+          "text": "PLEASE HELP UPDATE QUICKBOOK"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "950a7441-67cf-4ef6-9849-23e2e1c52d4b",
+      "data": [
+        {
+          "text": "Hello, I need your assistance with obtaining access to a newly installed application"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "613b6408-85a6-4366-8cc9-90a3246269dc",
+      "data": [
+        {
+          "text": "I have a new laptop and I need to install the server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "4b5f2830-c5bf-4ada-82bd-8ccb3aa0027e",
+      "data": [
+        {
+          "text": "My server prompting me to update my password"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "4f356d89-1ff1-4bbc-a811-dcea4563d8c9",
+      "data": [
+        {
+          "text": "Can someone please give me a status update on a ticket submitted last week"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "a84ae52a-0568-4b9f-8ce5-9942bc987e00",
+      "data": [
+        {
+          "text": "QuickBooks froze while I was using it"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "da0b5b73-583d-4cb8-9b7f-d7e2d622f821",
+      "data": [
+        {
+          "text": "Appraisal1 and Appraisal 2 have a QuickBooks 2024 LIcense"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "dc64bdfb-eeca-473d-a8b5-03804916e803",
+      "data": [
+        {
+          "text": "I need access to connect to the remote app and access the shortcuts for microsoft apps and quickbooks, outside of using the remote desktop app"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "31ac149a-2129-422c-8fe7-e14868df5a3e",
+      "data": [
+        {
+          "text": "I need help installing or setting up rdp on my new computer"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "3382bb50-e7fa-4da3-844c-d2afd6c425dc",
+      "data": [
+        {
+          "text": "Apparently - ACE has initiated an auto password change without notification to end user"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "01ac3b74-f7f1-4a0f-ae5c-2bf02ff3389a",
+      "data": [
+        {
+          "text": "My quickbooks keep freezing up"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "6faa458e-57df-4a01-9b57-5500619bcd29",
+      "data": [
+        {
+          "text": "Need to update admin password"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "8da6a5b7-da10-485d-bf7b-e2cb72b91a53",
+      "data": [
+        {
+          "text": "Hello, our application, Sage 100, is not working after you all upgraded the application"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c8c51b4b-a165-41b4-ac86-39f55fa953ae",
+      "data": [
+        {
+          "text": "I have requested to upload 2024 Drake and Lacerte Application but don&#39;t see anything in the remote hosting"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "724ce178-6d77-4aba-be92-25dc44cc66af",
+      "data": [
+        {
+          "text": "Hi, can you please update the quickbooks"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "29c15616-957c-49e7-8759-13546ffb4135",
+      "data": [
+        {
+          "text": "Hi please help to update the QB company file from QB Enterprise 22 to 24"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "b2d1b46d-b9e9-431e-97a8-73b15e48b79d",
+      "data": [
+        {
+          "text": "I’m running into an issue with QuickBooks access"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "f7e15299-cc22-41d9-b41a-41c4c7a18fcd",
+  "name": "Memory/Ram - How do I ramadd?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Based on your Request, Please share the amount of RAM you would like us to increase on your server by sending an email at support@acecloudhosting.com"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_138_how_do_i_ramadd2-phr-0",
+      "data": [
+        {
+          "text": "How do I ramadd2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_138_how_do_i_ramadd2-phr-1",
+      "data": [
+        {
+          "text": "How do I ramadd2"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_138_how_do_i_ramadd2-phr-2",
+      "data": [
+        {
+          "text": "ramadd2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_138_how_do_i_ramadd2-phr-3",
+      "data": [
+        {
+          "text": "Memory/RAM"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

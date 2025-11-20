@@ -1,0 +1,68 @@
+{
+  "id": "c88d0ef3-3e30-43d5-b3d1-06ba5ffed271",
+  "name": "General Support - Printer/Scanner Addition",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please select your request type."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_155_printerscanner_addition-phr-0",
+      "data": [
+        {
+          "text": "Printer/Scanner Addition"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_155_printerscanner_addition-phr-1",
+      "data": [
+        {
+          "text": "PrinterScanner Addition"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_155_printerscanner_addition-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

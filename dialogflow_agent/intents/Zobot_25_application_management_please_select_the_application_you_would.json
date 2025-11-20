@@ -1,0 +1,68 @@
+{
+  "id": "93a593f8-c244-4363-9dbe-8f4b7a009e9f",
+  "name": "Application Management - Please select the application you wou...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please select the application you would like to upgrade :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_25_please_select_the_application_you_would_-phr-0",
+      "data": [
+        {
+          "text": "Please select the application you would like to upgrade :"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_25_please_select_the_application_you_would_-phr-1",
+      "data": [
+        {
+          "text": "Please select the application you would like to upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_25_please_select_the_application_you_would_-phr-2",
+      "data": [
+        {
+          "text": "Application Management"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

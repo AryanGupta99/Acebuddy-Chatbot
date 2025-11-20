@@ -1,0 +1,79 @@
+{
+  "id": "7e43107e-b88a-4de5-ade2-f222b70f4b16",
+  "name": "Office - How do I okoffice?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Office 365 is a subscription based application and there are several plans to chose from."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_178_how_do_i_okoffice1-phr-0",
+      "data": [
+        {
+          "text": "How do I okoffice1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_178_how_do_i_okoffice1-phr-1",
+      "data": [
+        {
+          "text": "How do I okoffice1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_178_how_do_i_okoffice1-phr-2",
+      "data": [
+        {
+          "text": "okoffice1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_178_how_do_i_okoffice1-phr-3",
+      "data": [
+        {
+          "text": "Office 365"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

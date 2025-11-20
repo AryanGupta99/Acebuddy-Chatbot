@@ -1,0 +1,95 @@
+{
+  "id": "a92e47a6-4a2d-4c2c-9ead-5da0b8a6ecfe",
+  "name": "Disk Space Upgrade",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "disk.upgrade",
+      "affectedContexts": [
+        {
+          "name": "disk-upgrade-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Running low on disk space? I can help upgrade your storage. Let me connect you with our team."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Disk_Space_Upgrade.json-phrase-0",
+      "data": [
+        {
+          "text": "disk is full"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space_Upgrade.json-phrase-1",
+      "data": [
+        {
+          "text": "need more storage"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space_Upgrade.json-phrase-2",
+      "data": [
+        {
+          "text": "disk space upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space_Upgrade.json-phrase-3",
+      "data": [
+        {
+          "text": "storage upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space_Upgrade.json-phrase-4",
+      "data": [
+        {
+          "text": "low on disk space"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

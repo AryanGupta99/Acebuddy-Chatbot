@@ -1,0 +1,68 @@
+{
+  "id": "34ade6fb-ad6a-400d-aede-936e88bd1278",
+  "name": "General Support - Whom Would You Like to Connect With?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Whom Would You Like to Connect With?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_93_whom_would_you_like_to_connect_with-phr-0",
+      "data": [
+        {
+          "text": "Whom Would You Like to Connect With?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_93_whom_would_you_like_to_connect_with-phr-1",
+      "data": [
+        {
+          "text": "Whom Would You Like to Connect With"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_93_whom_would_you_like_to_connect_with-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

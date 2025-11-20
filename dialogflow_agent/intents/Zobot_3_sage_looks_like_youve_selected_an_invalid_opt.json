@@ -1,0 +1,68 @@
+{
+  "id": "0490d552-5bac-4589-b659-4c57250eafb5",
+  "name": "Sage - Looks like you've selected an invalid...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Looks like you've selected an invalid option, Please try again!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_3_looks_like_youve_selected_an_invalid_opt-phr-0",
+      "data": [
+        {
+          "text": "Looks like you've selected an invalid option, Please try again!"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_3_looks_like_youve_selected_an_invalid_opt-phr-1",
+      "data": [
+        {
+          "text": "Looks like youve selected an invalid option Please try again"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_3_looks_like_youve_selected_an_invalid_opt-phr-2",
+      "data": [
+        {
+          "text": "Sage"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

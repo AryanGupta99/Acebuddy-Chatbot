@@ -1,0 +1,79 @@
+{
+  "id": "6f62a7f3-d5d1-4ef7-919f-22091289c200",
+  "name": "Disk Space - How do I diskspace?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "If you wish to free up additional disk space or want to explore our Disk Space Plans & Pricing, Please refer to the below links :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_38_how_do_i_diskspace3-phr-0",
+      "data": [
+        {
+          "text": "How do I diskspace3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_38_how_do_i_diskspace3-phr-1",
+      "data": [
+        {
+          "text": "How do I diskspace3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_38_how_do_i_diskspace3-phr-2",
+      "data": [
+        {
+          "text": "diskspace3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_38_how_do_i_diskspace3-phr-3",
+      "data": [
+        {
+          "text": "Disk Space"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

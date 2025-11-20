@@ -1,0 +1,59 @@
+{
+  "name": "StoragePlan",
+  "isOverridable": true,
+  "isEnum": false,
+  "automatedExpansion": false,
+  "entries": [
+    {
+      "value": "200GB",
+      "synonyms": [
+        "200 GB",
+        "200gb",
+        "two hundred GB",
+        "200 gigabyte"
+      ],
+      "id": "57689db7-9409-4a6b-b7e2-8b598eab367b"
+    },
+    {
+      "value": "100GB",
+      "synonyms": [
+        "100 GB",
+        "100gb",
+        "one hundred GB",
+        "100 gigabyte"
+      ],
+      "id": "65137c52-9263-4e80-84e8-bedd2d76d884"
+    },
+    {
+      "value": "80GB",
+      "synonyms": [
+        "80 GB",
+        "80gb",
+        "eighty GB",
+        "80 gigabyte"
+      ],
+      "id": "c88ac6ce-c30f-4e2d-a381-0ea7b0517a48"
+    },
+    {
+      "value": "60GB",
+      "synonyms": [
+        "60 GB",
+        "60gb",
+        "sixty GB",
+        "60 gigabyte"
+      ],
+      "id": "2e3be738-906b-4562-94d8-cedb730830fb"
+    },
+    {
+      "value": "40GB",
+      "synonyms": [
+        "40 GB",
+        "40gb",
+        "forty GB",
+        "40 gigabyte"
+      ],
+      "id": "84bb92dc-d4c7-4178-b779-041786501992"
+    }
+  ],
+  "id": "961954e1-64dd-4da7-b3e5-4c6668692f9f"
+}

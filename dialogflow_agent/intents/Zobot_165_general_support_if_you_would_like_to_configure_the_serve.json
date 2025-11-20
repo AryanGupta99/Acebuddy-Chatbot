@@ -1,0 +1,68 @@
+{
+  "id": "c206f11f-46a9-427b-b16c-2e619427bacf",
+  "name": "General Support - If you would like to configure the se...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "If you would like to configure the server access link on your computer, Kindly select your desired Operating System"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_165_if_you_would_like_to_configure_the_serve-phr-0",
+      "data": [
+        {
+          "text": "If you would like to configure the server access link on your computer, Kindly select your desired Operating System"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_165_if_you_would_like_to_configure_the_serve-phr-1",
+      "data": [
+        {
+          "text": "If you would like to configure the server access link on your computer Kindly select your desired Operating System"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_165_if_you_would_like_to_configure_the_serve-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

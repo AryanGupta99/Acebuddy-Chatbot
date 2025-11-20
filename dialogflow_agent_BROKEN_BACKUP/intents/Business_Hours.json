@@ -1,0 +1,145 @@
+{
+  "id": "4d6b5cd1-2524-4d5b-a7af-11b9dc983e24",
+  "name": "Business_Hours",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "business_hours",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "🕐 **Business Hours**\nOur technical support team is available:\n• Monday - Friday: 6:00 AM - 6:00 PM PST\n• Saturday - Sunday: 8:00 AM - 5:00 PM PST\n\n📞 **Contact Information**\n• Phone: +1 (888) 415-5240\n• Email: support@acecloudhosting.com\n• Website: https://www.acecloudhosting.com\n\n💬 **After Hours Support**\nFor urgent issues outside business hours, please:\n1. Call our emergency hotline (menu option 1)\n2. Email with \"URGENT\" in subject line\n3. Use live chat - we'll respond as soon as we're back online\n\nHow can I assist you today?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "a75ed4ef-3449-453b-a160-9889f6bb64e3",
+      "data": [
+        {
+          "text": "What are your business hours?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c3bc91d6-f40b-41e1-b95b-5b7ac965d39e",
+      "data": [
+        {
+          "text": "When are you open?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "398c0e00-7706-4262-823b-6c8764314a05",
+      "data": [
+        {
+          "text": "What time does support close?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "a3c1d6f3-399c-4bfa-822c-5280ebfe2f9d",
+      "data": [
+        {
+          "text": "How do I contact support?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "aab17667-17b6-4f4b-8f30-b750fb6cc660",
+      "data": [
+        {
+          "text": "What's your phone number?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "9771dfc6-742b-4710-be6a-ecab8a573fbc",
+      "data": [
+        {
+          "text": "Support hours"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "bae3dd8e-767c-4896-9e1c-7e941aa4db9c",
+      "data": [
+        {
+          "text": "Are you available 24/7?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "66f3da5c-5067-4a15-9aa5-32f6045f0278",
+      "data": [
+        {
+          "text": "Operating hours"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "67a4a2ec-adfd-4c9c-aa49-0d013bdac8ef",
+      "data": [
+        {
+          "text": "How to reach you"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "afcc156c-30fe-47bf-a1bc-995db437abcb",
+      "data": [
+        {
+          "text": "Contact information"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

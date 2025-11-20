@@ -1,0 +1,68 @@
+{
+  "id": "31d120cb-adf8-4607-8529-61c0ece08c1d",
+  "name": "Sage - How do I send message?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "We do not recommend modifying an existing user due to technical challenges. Hence we request you to disable the existing user (that you'd like to replace) and instead add a new user from MyPortal."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_74_how_do_i_send_message_167-phr-0",
+      "data": [
+        {
+          "text": "How do I send message  167?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_74_how_do_i_send_message_167-phr-1",
+      "data": [
+        {
+          "text": "How do I send message  167"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_74_how_do_i_send_message_167-phr-2",
+      "data": [
+        {
+          "text": "send message  167?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

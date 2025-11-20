@@ -1,0 +1,57 @@
+{
+  "id": "c90f3158-beb2-4687-8218-6a73af7bdc19",
+  "name": "General Support - Would like to lease the License from Ace",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please select an option :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_161_would_like_to_lease_the_license_from_ace-phr-0",
+      "data": [
+        {
+          "text": "Would like to lease the License from Ace"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_161_would_like_to_lease_the_license_from_ace-phr-1",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

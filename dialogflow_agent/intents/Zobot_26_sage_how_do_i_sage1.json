@@ -1,0 +1,68 @@
+{
+  "id": "63bed3ec-ee3e-4cb6-9d37-d907f72d8c98",
+  "name": "Sage - How do I sage?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Kindly download the latest setup file from the application web portal and save it on your server Desktop."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_26_how_do_i_sage1-phr-0",
+      "data": [
+        {
+          "text": "How do I sage1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_26_how_do_i_sage1-phr-1",
+      "data": [
+        {
+          "text": "How do I sage1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_26_how_do_i_sage1-phr-2",
+      "data": [
+        {
+          "text": "sage1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

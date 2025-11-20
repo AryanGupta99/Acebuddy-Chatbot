@@ -1,0 +1,79 @@
+{
+  "id": "35ba344e-0ad2-4e87-b874-bee82406eb2e",
+  "name": "General Support - How do I share article(s)?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hmm, That doesn't sound good. But here's a quick way to unfreeze your QuickBooks"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_111_how_do_i_share_articles_160-phr-0",
+      "data": [
+        {
+          "text": "How do I share article(s)  160?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_111_how_do_i_share_articles_160-phr-1",
+      "data": [
+        {
+          "text": "How do I share articles  160"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_111_how_do_i_share_articles_160-phr-2",
+      "data": [
+        {
+          "text": "share article(s)  160?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_111_how_do_i_share_articles_160-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

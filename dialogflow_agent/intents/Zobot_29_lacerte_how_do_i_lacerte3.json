@@ -1,0 +1,68 @@
+{
+  "id": "fd065b81-188e-43e2-b519-badecde46ba1",
+  "name": "Lacerte - How do I lacerte?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "We will update you via email once the installation is complete.\n\nApplication Addition usually takes 1-2 Hour(s)"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_29_how_do_i_lacerte3-phr-0",
+      "data": [
+        {
+          "text": "How do I lacerte3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_29_how_do_i_lacerte3-phr-1",
+      "data": [
+        {
+          "text": "How do I lacerte3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_29_how_do_i_lacerte3-phr-2",
+      "data": [
+        {
+          "text": "lacerte3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

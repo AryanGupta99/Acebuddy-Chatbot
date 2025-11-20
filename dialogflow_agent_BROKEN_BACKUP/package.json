@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "description": "Dialogflow ES agent scaffold generated from AceBuddy KB",
+  "type": "dialogflow-agent",
+  "language": "en"
+}

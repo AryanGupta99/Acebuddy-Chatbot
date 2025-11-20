@@ -1,0 +1,79 @@
+{
+  "id": "3515f11f-73f3-402d-9ad4-b198b16b70f0",
+  "name": "Office - How do I okoffice?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "For better understanding of the features and functionality on offer within each available subscription plan, Kindly refer to the attached link below.\n\n(Please Note: O365 E1 Plan is \"web only\")"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_122_how_do_i_okoffice2-phr-0",
+      "data": [
+        {
+          "text": "How do I okoffice2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_122_how_do_i_okoffice2-phr-1",
+      "data": [
+        {
+          "text": "How do I okoffice2"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_122_how_do_i_okoffice2-phr-2",
+      "data": [
+        {
+          "text": "okoffice2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_122_how_do_i_okoffice2-phr-3",
+      "data": [
+        {
+          "text": "Office 365"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "c5d7e2ca-aeb2-4535-a0a0-ecc53253c3d3",
+  "name": "Welcome",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.welcome",
+      "affectedContexts": [
+        {
+          "name": "awaiting_issue",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hey there! I'm AceBuddy. What can I help you with today?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 1000000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Welcome.json-phrase-0",
+      "data": [
+        {
+          "text": "hi"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-1",
+      "data": [
+        {
+          "text": "hii"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-2",
+      "data": [
+        {
+          "text": "hiiii"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-3",
+      "data": [
+        {
+          "text": "hello"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-4",
+      "data": [
+        {
+          "text": "hellooo"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-5",
+      "data": [
+        {
+          "text": "hey"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-6",
+      "data": [
+        {
+          "text": "start"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-7",
+      "data": [
+        {
+          "text": "help"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-8",
+      "data": [
+        {
+          "text": "support"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-9",
+      "data": [
+        {
+          "text": "sup"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Welcome.json-phrase-10",
+      "data": [
+        {
+          "text": "yo"
+        }
+      ],
+      "isTemplate": true,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

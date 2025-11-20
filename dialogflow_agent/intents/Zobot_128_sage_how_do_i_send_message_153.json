@@ -1,0 +1,68 @@
+{
+  "id": "dc4aa2d2-3c8e-4b4b-9b9d-1aa85cb64836",
+  "name": "Sage - How do I send message?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Oops, Looks like you've chosen an invalid option. Please try again!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_128_how_do_i_send_message_153-phr-0",
+      "data": [
+        {
+          "text": "How do I send message  153?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_128_how_do_i_send_message_153-phr-1",
+      "data": [
+        {
+          "text": "How do I send message  153"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_128_how_do_i_send_message_153-phr-2",
+      "data": [
+        {
+          "text": "send message  153?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

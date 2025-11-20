@@ -1,0 +1,79 @@
+{
+  "id": "d40064a8-d542-4906-aa49-a4dbfce8fe7a",
+  "name": "General Support - How do I ts nlicense?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Kindly email us the request at support@acecloudhosting.com so that we could procure the license for TSSCAN and register it on your server."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_14_how_do_i_ts_nlicense1-phr-0",
+      "data": [
+        {
+          "text": "How do I ts nlicense1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_14_how_do_i_ts_nlicense1-phr-1",
+      "data": [
+        {
+          "text": "How do I ts nlicense1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_14_how_do_i_ts_nlicense1-phr-2",
+      "data": [
+        {
+          "text": "ts nlicense1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_14_how_do_i_ts_nlicense1-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

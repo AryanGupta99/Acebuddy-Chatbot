@@ -1,0 +1,79 @@
+{
+  "id": "1280d109-4e6e-4eb2-9454-b70040bfdad3",
+  "name": "Quickbooks - How do I qbupgrade?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "• QuickBooks Year\n• Variant : Pro / Premier / Enterprise / Accountant\n• License Number\n• Product Code"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_40_how_do_i_qbupgrade2-phr-0",
+      "data": [
+        {
+          "text": "How do I qbupgrade2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_40_how_do_i_qbupgrade2-phr-1",
+      "data": [
+        {
+          "text": "How do I qbupgrade2"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_40_how_do_i_qbupgrade2-phr-2",
+      "data": [
+        {
+          "text": "qbupgrade2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_40_how_do_i_qbupgrade2-phr-3",
+      "data": [
+        {
+          "text": "QuickBooks"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

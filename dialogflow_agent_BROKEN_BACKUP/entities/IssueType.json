@@ -1,0 +1,107 @@
+{
+  "name": "IssueType",
+  "isOverridable": true,
+  "isEnum": false,
+  "automatedExpansion": true,
+  "entries": [
+    {
+      "value": "password_reset",
+      "synonyms": [
+        "forgot password",
+        "can't login",
+        "reset password",
+        "locked out",
+        "password expired"
+      ],
+      "id": "755934d4-6d15-4a55-b059-587fe36572c8"
+    },
+    {
+      "value": "disk_full",
+      "synonyms": [
+        "low disk space",
+        "storage full",
+        "out of space",
+        "disk space warning",
+        "need more storage"
+      ],
+      "id": "f4a72774-b3ec-4721-8546-2af14f0d22b2"
+    },
+    {
+      "value": "rdp_issue",
+      "synonyms": [
+        "can't connect",
+        "remote desktop not working",
+        "RDP connection failed",
+        "connection error",
+        "can't access server"
+      ],
+      "id": "8337585c-7721-47ab-80d7-a3e1636816bf"
+    },
+    {
+      "value": "printer_issue",
+      "synonyms": [
+        "printer not working",
+        "printer offline",
+        "print job stuck",
+        "paper jam",
+        "can't print"
+      ],
+      "id": "519b8437-06e2-4785-8b7b-5efe1e27e9de"
+    },
+    {
+      "value": "email_issue",
+      "synonyms": [
+        "email not working",
+        "can't send email",
+        "can't receive email",
+        "outlook issue",
+        "email error"
+      ],
+      "id": "eaf9de42-fb6e-4578-acb8-175b21de0921"
+    },
+    {
+      "value": "server_slow",
+      "synonyms": [
+        "server performance",
+        "slow server",
+        "high CPU",
+        "server freezing",
+        "server not responding"
+      ],
+      "id": "d80b95b2-4457-4d62-9c06-f362d9ae5339"
+    },
+    {
+      "value": "application_crash",
+      "synonyms": [
+        "app won't start",
+        "application not opening",
+        "software crashed",
+        "program freeze"
+      ],
+      "id": "144af8b9-de53-4c9b-aedc-66cc7d6fcc98"
+    },
+    {
+      "value": "monitor_setup",
+      "synonyms": [
+        "display issue",
+        "monitor not detected",
+        "dual monitor",
+        "multi-monitor",
+        "screen resolution"
+      ],
+      "id": "bbe60c8d-8826-4677-b807-05b6a527d13a"
+    },
+    {
+      "value": "user_management",
+      "synonyms": [
+        "add user",
+        "remove user",
+        "delete user",
+        "new employee",
+        "user departed"
+      ],
+      "id": "f38a3ae7-0704-4838-ad72-1bc8441eb212"
+    }
+  ],
+  "id": "3be5772c-ef2e-4bde-8fa4-2e821be15f1c"
+}

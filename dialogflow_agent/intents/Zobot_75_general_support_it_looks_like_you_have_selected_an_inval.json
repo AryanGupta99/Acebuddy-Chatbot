@@ -1,0 +1,68 @@
+{
+  "id": "31951f09-707e-4343-acd0-b4ed5345ac8a",
+  "name": "General Support - It looks like you have selected an In...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "It looks like you have selected an Invalid Option."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_75_it_looks_like_you_have_selected_an_inval-phr-0",
+      "data": [
+        {
+          "text": "It looks like you have selected an Invalid Option."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_75_it_looks_like_you_have_selected_an_inval-phr-1",
+      "data": [
+        {
+          "text": "It looks like you have selected an Invalid Option"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_75_it_looks_like_you_have_selected_an_inval-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

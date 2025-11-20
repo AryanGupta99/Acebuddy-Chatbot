@@ -1,0 +1,178 @@
+{
+  "id": "77736845-9a17-4e4f-9517-04b235e6bd02",
+  "name": "Printer_Issue",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "printer.help",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Let me help with your printer. What's the specific issue?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 850000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Printer_Issue-0",
+      "data": [
+        {
+          "text": "printer"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-1",
+      "data": [
+        {
+          "text": "printer offline"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-2",
+      "data": [
+        {
+          "text": "can't print"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-3",
+      "data": [
+        {
+          "text": "paper jam"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-4",
+      "data": [
+        {
+          "text": "printer error"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-5",
+      "data": [
+        {
+          "text": "print issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-6",
+      "data": [
+        {
+          "text": "printing problem"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-7",
+      "data": [
+        {
+          "text": "printer not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-8",
+      "data": [
+        {
+          "text": "my printer is offline"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-9",
+      "data": [
+        {
+          "text": "can't print document"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-10",
+      "data": [
+        {
+          "text": "printer stuck"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-11",
+      "data": [
+        {
+          "text": "printer jammed"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Issue-12",
+      "data": [
+        {
+          "text": "print spooler error"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

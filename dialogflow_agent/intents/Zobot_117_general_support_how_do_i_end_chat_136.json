@@ -1,0 +1,79 @@
+{
+  "id": "365c8d7f-3c82-4dc5-a7e7-e48ed203059d",
+  "name": "General Support - How do I end chat?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Thank you for contacting Ace Support. Have a nice day!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_117_how_do_i_end_chat_136-phr-0",
+      "data": [
+        {
+          "text": "How do I end chat  136?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_117_how_do_i_end_chat_136-phr-1",
+      "data": [
+        {
+          "text": "How do I end chat  136"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_117_how_do_i_end_chat_136-phr-2",
+      "data": [
+        {
+          "text": "end chat  136?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_117_how_do_i_end_chat_136-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

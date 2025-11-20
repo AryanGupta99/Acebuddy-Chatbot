@@ -1,0 +1,111 @@
+{
+  "id": "31df9760-84de-4686-8641-ae0f39a45b23",
+  "name": "ZobotTopic",
+  "isOverridable": true,
+  "isEnum": false,
+  "automatedExpansion": true,
+  "entries": [
+    {
+      "value": "ProSeries",
+      "synonyms": [
+        "ProSeries"
+      ]
+    },
+    {
+      "value": "Office 365",
+      "synonyms": [
+        "Office 365"
+      ]
+    },
+    {
+      "value": "Sage",
+      "synonyms": [
+        "Sage"
+      ]
+    },
+    {
+      "value": "Support Escalation",
+      "synonyms": [
+        "Support Escalation"
+      ]
+    },
+    {
+      "value": "Printer Setup",
+      "synonyms": [
+        "Printer Setup"
+      ]
+    },
+    {
+      "value": "Server Access",
+      "synonyms": [
+        "Server Access"
+      ]
+    },
+    {
+      "value": "General Support",
+      "synonyms": [
+        "General Support"
+      ]
+    },
+    {
+      "value": "Lacerte",
+      "synonyms": [
+        "Lacerte"
+      ]
+    },
+    {
+      "value": "User Management",
+      "synonyms": [
+        "User Management"
+      ]
+    },
+    {
+      "value": "Application Management",
+      "synonyms": [
+        "Application Management"
+      ]
+    },
+    {
+      "value": "Drake Tax",
+      "synonyms": [
+        "Drake Tax"
+      ]
+    },
+    {
+      "value": "Disk Space",
+      "synonyms": [
+        "Disk Space"
+      ]
+    },
+    {
+      "value": "QuickBooks",
+      "synonyms": [
+        "QuickBooks"
+      ]
+    },
+    {
+      "value": "Server Management",
+      "synonyms": [
+        "Server Management"
+      ]
+    },
+    {
+      "value": "Memory/RAM",
+      "synonyms": [
+        "Memory/RAM"
+      ]
+    },
+    {
+      "value": "Password Reset",
+      "synonyms": [
+        "Password Reset"
+      ]
+    },
+    {
+      "value": "ATX",
+      "synonyms": [
+        "ATX"
+      ]
+    }
+  ]
+}

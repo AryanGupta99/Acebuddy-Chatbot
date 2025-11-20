@@ -1,0 +1,38 @@
+[
+  {
+    "category": "slow",
+    "suggested_intent": "General Performance Issues",
+    "ticket_count": 29,
+    "sample_issues": [
+      "I am not able to log into the server. It says invalid password but i have not changed it so I know its correct ",
+      "unable to log in and change password. States contact admnistrator",
+      "need to change password",
+      "change harold lohf password",
+      "My quickbooks keep freezing up. I had excel installed and now when I try to download a report it freezes up and I cant get back in"
+    ]
+  },
+  {
+    "category": "crash",
+    "suggested_intent": "Application Crashes",
+    "ticket_count": 45,
+    "sample_issues": [
+      "Hello! I am having trouble accessing my remote desktop. I received error &quot;[Window Title]\nRemote Desktop Connection\n\n[Content]\nRemote Desktop can&#39;t find the computer &quot;QblivePro.myrealdata.net&quot;. This might mean that &quot;QblivePro.myrealdata.net&quot; does not belong to the specified network.  Verify the computer name and domain that you are trying to connect to.\n\n[^] Hide details  [OK]\n\n[Expanded Information]\nError code: 0x3000016\nExtended error code: 0x0\nTimestamp (UTC): 04/21/25 07:13:20 PM\n\nPress Ctrl+C to copy.&quot;",
+      "can&#39;t get logged on - getting an error",
+      "Hi....I am trying to save a local copy of my quickbooks file to send to my accountant and I am not able to send it..  I get an error that I can't upload it because it contains system files.",
+      "Why am I receivving the followin errors when logging into RDT?",
+      "hi can you help me download the rdp?  it says Error occured- not valid IP found. thank you"
+    ]
+  },
+  {
+    "category": "error",
+    "suggested_intent": "General Error Messages",
+    "ticket_count": 109,
+    "sample_issues": [
+      "I am having issues logging on to quickbooks",
+      "Having issues logging in.",
+      "Hello! I am having trouble accessing my remote desktop. I received error &quot;[Window Title]\nRemote Desktop Connection\n\n[Content]\nRemote Desktop can&#39;t find the computer &quot;QblivePro.myrealdata.net&quot;. This might mean that &quot;QblivePro.myrealdata.net&quot; does not belong to the specified network.  Verify the computer name and domain that you are trying to connect to.\n\n[^] Hide details  [OK]\n\n[Expanded Information]\nError code: 0x3000016\nExtended error code: 0x0\nTimestamp (UTC): 04/21/25 07:13:20 PM\n\nPress Ctrl+C to copy.&quot;",
+      "Hello.  Having issues emailing from qB",
+      "self care portal issues "
+    ]
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "id": "5808c621-248a-4939-9ed5-63286ddae1b7",
+  "name": "Email Issues",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "email.support",
+      "affectedContexts": [
+        {
+          "name": "email-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Email not working? Let's fix this. What's the issue?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Email_Issues.json-phrase-0",
+      "data": [
+        {
+          "text": "email not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Email_Issues.json-phrase-1",
+      "data": [
+        {
+          "text": "outlook error"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Email_Issues.json-phrase-2",
+      "data": [
+        {
+          "text": "email not syncing"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Email_Issues.json-phrase-3",
+      "data": [
+        {
+          "text": "mail issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Email_Issues.json-phrase-4",
+      "data": [
+        {
+          "text": "can't send email"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

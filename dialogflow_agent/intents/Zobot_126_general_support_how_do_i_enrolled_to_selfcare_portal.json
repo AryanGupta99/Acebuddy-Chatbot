@@ -1,0 +1,79 @@
+{
+  "id": "34ed63be-0002-49d2-9e2f-b2e3be241755",
+  "name": "General Support - How do I enrolled to selfcare portal?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please follow the process mentioned in the link below inorder to reset your server password."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_126_how_do_i_enrolled_to_selfcare_portal-phr-0",
+      "data": [
+        {
+          "text": "How do I enrolled to selfcare portal?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_126_how_do_i_enrolled_to_selfcare_portal-phr-1",
+      "data": [
+        {
+          "text": "How do I enrolled to selfcare portal"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_126_how_do_i_enrolled_to_selfcare_portal-phr-2",
+      "data": [
+        {
+          "text": "enrolled to selfcare portal?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_126_how_do_i_enrolled_to_selfcare_portal-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "c8f3f58b-351d-41d2-8008-c736feb75e53",
+  "name": "General Support - Yes, I'm facing issues with my server",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "If you are facing any issue/problem with your server, Please select the appropriate option below :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_184_yes_im_facing_issues_with_my_server-phr-0",
+      "data": [
+        {
+          "text": "Yes, I'm facing issues with my server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_184_yes_im_facing_issues_with_my_server-phr-1",
+      "data": [
+        {
+          "text": "Yes Im facing issues with my server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_184_yes_im_facing_issues_with_my_server-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

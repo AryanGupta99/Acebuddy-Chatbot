@@ -1,0 +1,79 @@
+{
+  "id": "5907fcf1-801c-43e0-87ab-7fbe4c65ccec",
+  "name": "Support Escalation - How do I busy response?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Thanks for contacting us today, Unfortunately none of the technicians are available right now. Please leave a message and our representative will contact you shortly."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_33_how_do_i_busy_response_151-phr-0",
+      "data": [
+        {
+          "text": "How do I busy response  151?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_33_how_do_i_busy_response_151-phr-1",
+      "data": [
+        {
+          "text": "How do I busy response  151"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_33_how_do_i_busy_response_151-phr-2",
+      "data": [
+        {
+          "text": "busy response  151?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_33_how_do_i_busy_response_151-phr-3",
+      "data": [
+        {
+          "text": "Support Escalation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

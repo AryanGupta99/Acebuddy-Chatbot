@@ -1,0 +1,57 @@
+{
+  "id": "44a7ba90-3e9e-4dd3-b6ee-534734ce2cc3",
+  "name": "Quickbooks - What type of QuickBooks Issue are you...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "What type of QuickBooks Issue are you facing?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_55_what_type_of_quickbooks_issue_are_you_fa-phr-0",
+      "data": [
+        {
+          "text": "What type of QuickBooks Issue are you facing?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_55_what_type_of_quickbooks_issue_are_you_fa-phr-1",
+      "data": [
+        {
+          "text": "What type of QuickBooks Issue are you facing"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

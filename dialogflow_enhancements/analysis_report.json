@@ -1,0 +1,40 @@
+{
+  "analysis_date": "2025-11-19T12:58:42.770333",
+  "total_tickets": 13611,
+  "months_analyzed": 15,
+  "pattern_summary": {
+    "quickbooks": 181,
+    "password": 136,
+    "server": 121,
+    "error": 109,
+    "application": 100,
+    "rdp": 89,
+    "user": 78,
+    "crash": 45,
+    "slow": 29,
+    "email": 26,
+    "monitor": 19,
+    "disk": 16,
+    "printer": 15,
+    "network": 14,
+    "backup": 9
+  },
+  "priority_distribution": {},
+  "enhanced_intents": {
+    "Password_Reset": 30,
+    "Disk_Space_Upgrade": 15,
+    "RDP_Connection_Issues": 30,
+    "Printer_Troubleshooting": 15,
+    "Email_Issues": 23,
+    "QuickBooks_Issues": 30,
+    "Server_Performance": 30,
+    "User_Management": 30,
+    "Application_Upgrade": 30,
+    "Monitor_Setup": 17
+  },
+  "new_intent_candidates": 3,
+  "recommendations": [
+    "Consider adding 3 new intents for better coverage",
+    "Top 5 issue categories: quickbooks, password, server, error, application"
+  ]
+}

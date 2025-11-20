@@ -1,0 +1,97 @@
+{
+  "name": "Application",
+  "isOverridable": true,
+  "isEnum": false,
+  "automatedExpansion": false,
+  "entries": [
+    {
+      "value": "QuickBooks",
+      "synonyms": [
+        "QB",
+        "Quickbooks",
+        "QuickBooks Desktop",
+        "QBD",
+        "QuickBooks Enterprise",
+        "intuit quickbooks"
+      ],
+      "id": "00d74cda-1693-4268-8ac7-270db503bcb3"
+    },
+    {
+      "value": "ProSeries",
+      "synonyms": [
+        "Pro Series",
+        "Intuit ProSeries",
+        "pro-series"
+      ],
+      "id": "18457795-8bb0-4bbe-ba02-21174b3793fc"
+    },
+    {
+      "value": "Lacerte",
+      "synonyms": [
+        "Intuit Lacerte",
+        "lacerte tax"
+      ],
+      "id": "61ae6b04-6fbb-48ee-a2b1-cf6b3f18d3c4"
+    },
+    {
+      "value": "Drake",
+      "synonyms": [
+        "Drake Tax",
+        "Drake Software"
+      ],
+      "id": "05824ddd-20eb-4fb1-91a8-a611e8e8777d"
+    },
+    {
+      "value": "Sage",
+      "synonyms": [
+        "Sage 50",
+        "Sage 100",
+        "Sage Accounting"
+      ],
+      "id": "6b2ee798-bdc3-4113-9dbc-64ee786c823a"
+    },
+    {
+      "value": "Office 365",
+      "synonyms": [
+        "O365",
+        "Microsoft 365",
+        "M365",
+        "Office365",
+        "MS Office"
+      ],
+      "id": "ba2cdb71-dc87-46a4-b0f7-05b40848b83a"
+    },
+    {
+      "value": "Outlook",
+      "synonyms": [
+        "Microsoft Outlook",
+        "MS Outlook"
+      ],
+      "id": "dc344f03-e029-4b15-aa28-603c5102de14"
+    },
+    {
+      "value": "Excel",
+      "synonyms": [
+        "Microsoft Excel",
+        "MS Excel"
+      ],
+      "id": "d1942f1b-c7be-4c87-a31e-740c71c597d8"
+    },
+    {
+      "value": "TaxSlayer",
+      "synonyms": [
+        "Tax Slayer",
+        "TaxSlayer Pro"
+      ],
+      "id": "db210342-b1d1-4bd4-9a4c-044e8185428d"
+    },
+    {
+      "value": "ATX",
+      "synonyms": [
+        "ATX Tax"
+      ],
+      "id": "ff5b1d64-c4bd-46c5-9da9-087a01814d25"
+    }
+  ],
+  "id": "a7386b13-0719-429e-be00-600ac747494f"
+}

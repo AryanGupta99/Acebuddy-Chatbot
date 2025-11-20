@@ -1,0 +1,79 @@
+{
+  "id": "c8cd8c28-4861-49fd-a47b-899fe9388339",
+  "name": "Drake Tax - How do I drakeupg?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Kindly download the Drake setup file from your application portal and save it on your server desktop."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_130_how_do_i_drakeupg1-phr-0",
+      "data": [
+        {
+          "text": "How do I drakeupg1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_130_how_do_i_drakeupg1-phr-1",
+      "data": [
+        {
+          "text": "How do I drakeupg1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_130_how_do_i_drakeupg1-phr-2",
+      "data": [
+        {
+          "text": "drakeupg1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_130_how_do_i_drakeupg1-phr-3",
+      "data": [
+        {
+          "text": "Drake Tax"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

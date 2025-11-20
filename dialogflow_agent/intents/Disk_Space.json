@@ -1,0 +1,178 @@
+{
+  "id": "fc797c44-cf70-45ef-8d83-6fb9177b6cf7",
+  "name": "Disk_Space",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "disk.upgrade",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I can help you upgrade your disk space. Let me connect you with our team."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 850000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Disk_Space-0",
+      "data": [
+        {
+          "text": "disk space"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-1",
+      "data": [
+        {
+          "text": "disk full"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-2",
+      "data": [
+        {
+          "text": "storage upgrade"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-3",
+      "data": [
+        {
+          "text": "low on disk"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-4",
+      "data": [
+        {
+          "text": "need more storage"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-5",
+      "data": [
+        {
+          "text": "disk is full"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-6",
+      "data": [
+        {
+          "text": "out of disk space"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-7",
+      "data": [
+        {
+          "text": "increase disk space"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-8",
+      "data": [
+        {
+          "text": "upgrade storage"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-9",
+      "data": [
+        {
+          "text": "my disk is almost full"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-10",
+      "data": [
+        {
+          "text": "storage issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-11",
+      "data": [
+        {
+          "text": "disk space issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Disk_Space-12",
+      "data": [
+        {
+          "text": "not enough space"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

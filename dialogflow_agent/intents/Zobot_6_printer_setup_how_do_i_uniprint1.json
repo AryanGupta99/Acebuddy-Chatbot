@@ -1,0 +1,79 @@
+{
+  "id": "daea2a79-b571-4d5f-8237-5347687dfad5",
+  "name": "Printer Setup - How do I uniprint?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Kindly install the client version of ‘Uniprint’ on your local Desktop by following the instructions mentioned in the knowledge-base article attached below."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_6_how_do_i_uniprint1-phr-0",
+      "data": [
+        {
+          "text": "How do I uniprint1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_6_how_do_i_uniprint1-phr-1",
+      "data": [
+        {
+          "text": "How do I uniprint1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_6_how_do_i_uniprint1-phr-2",
+      "data": [
+        {
+          "text": "uniprint1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_6_how_do_i_uniprint1-phr-3",
+      "data": [
+        {
+          "text": "Printer Setup"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

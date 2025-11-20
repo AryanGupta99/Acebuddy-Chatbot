@@ -1,0 +1,97 @@
+{
+  "id": "11689831-fd9a-451d-8f1b-f62661fcdc59",
+  "name": "General_Performance_Issues",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "general_performance_issues",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I understand you're experiencing slow issues. Let me help you troubleshoot this.",
+            "",
+            "To better assist you, please provide:",
+            "1. When did this issue start?",
+            "2. What specific error message are you seeing?",
+            "3. What were you doing when this occurred?",
+            "",
+            "If you need immediate assistance, I can connect you with a technical support specialist. Would you like me to escalate this?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "1ab0b0d5-49db-4051-b2ab-ae9e3c9463ea",
+      "data": [
+        {
+          "text": "I am not able to log into the server. It says invalid password but i have not changed it so I know its correct "
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "d60a78ea-f3c8-4378-8433-f3058f88b093",
+      "data": [
+        {
+          "text": "unable to log in and change password. States contact admnistrator"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "38eb07f6-72ee-4b84-8d47-0fdc4be63655",
+      "data": [
+        {
+          "text": "need to change password"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "b435e727-de4f-4795-a2ec-c71373466852",
+      "data": [
+        {
+          "text": "change harold lohf password"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "22a8b90f-ada5-4bea-bf57-0d22b4e05c46",
+      "data": [
+        {
+          "text": "My quickbooks keep freezing up. I had excel installed and now when I try to download a report it freezes up and I cant get back in"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "79928354-2d7c-45bf-9dbe-ebf4ee9df186",
+  "name": "Memory/Ram - How do I ramadd?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "We understand that you want to increase the memory on your Ace Server."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_183_how_do_i_ramadd1-phr-0",
+      "data": [
+        {
+          "text": "How do I ramadd1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_183_how_do_i_ramadd1-phr-1",
+      "data": [
+        {
+          "text": "How do I ramadd1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_183_how_do_i_ramadd1-phr-2",
+      "data": [
+        {
+          "text": "ramadd1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_183_how_do_i_ramadd1-phr-3",
+      "data": [
+        {
+          "text": "Memory/RAM"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

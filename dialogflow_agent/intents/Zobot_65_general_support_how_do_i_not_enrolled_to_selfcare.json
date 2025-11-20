@@ -1,0 +1,79 @@
+{
+  "id": "498f4240-7e54-491b-82a4-07ff1961221e",
+  "name": "General Support - How do I not enrolled to selfcare?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please drop an email on support@acecloudhosting.com and mention the username for which the password needs to be reset and we'll share an update once the request is processed."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_65_how_do_i_not_enrolled_to_selfcare-phr-0",
+      "data": [
+        {
+          "text": "How do I not enrolled to selfcare?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_65_how_do_i_not_enrolled_to_selfcare-phr-1",
+      "data": [
+        {
+          "text": "How do I not enrolled to selfcare"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_65_how_do_i_not_enrolled_to_selfcare-phr-2",
+      "data": [
+        {
+          "text": "not enrolled to selfcare?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_65_how_do_i_not_enrolled_to_selfcare-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

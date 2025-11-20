@@ -1,0 +1,95 @@
+{
+  "id": "14c5528b-a44b-4c70-999e-f63b464554d9",
+  "name": "RDP Connection Issues",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "rdp.troubleshoot",
+      "affectedContexts": [
+        {
+          "name": "rdp-troubleshoot-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Can't connect to your server? Let me help troubleshoot. What error do you see?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "RDP_Connection_Issues.json-phrase-0",
+      "data": [
+        {
+          "text": "can't connect to server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "RDP_Connection_Issues.json-phrase-1",
+      "data": [
+        {
+          "text": "rdp connection failed"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "RDP_Connection_Issues.json-phrase-2",
+      "data": [
+        {
+          "text": "remote desktop not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "RDP_Connection_Issues.json-phrase-3",
+      "data": [
+        {
+          "text": "rdp error"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "RDP_Connection_Issues.json-phrase-4",
+      "data": [
+        {
+          "text": "server connection issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

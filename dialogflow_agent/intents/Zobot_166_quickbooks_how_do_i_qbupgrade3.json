@@ -1,0 +1,79 @@
+{
+  "id": "ac042add-0cbf-4f44-ac8f-165e7af78d21",
+  "name": "Quickbooks - How do I qbupgrade?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Generally, application upgrades are completed during the night hours to avoid any downtime. Please do specify if you need the request processed at a specific time."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_166_how_do_i_qbupgrade3-phr-0",
+      "data": [
+        {
+          "text": "How do I qbupgrade3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_166_how_do_i_qbupgrade3-phr-1",
+      "data": [
+        {
+          "text": "How do I qbupgrade3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_166_how_do_i_qbupgrade3-phr-2",
+      "data": [
+        {
+          "text": "qbupgrade3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_166_how_do_i_qbupgrade3-phr-3",
+      "data": [
+        {
+          "text": "QuickBooks"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

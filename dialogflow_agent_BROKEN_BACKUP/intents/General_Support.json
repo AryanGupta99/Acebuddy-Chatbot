@@ -1,0 +1,409 @@
+{
+  "id": "abf37255-00a5-4cc9-944f-071172481490",
+  "name": "General_Support",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "general_support",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I understand you need assistance. Let me connect you with the right resource.\n\nFor immediate help, you can:\n• Call our support line: +1 (888) 415-5240\n• Email: support@acecloudhosting.com\n• Check our knowledge base: https://www.acecloudhosting.com/knowledgebase/\n\nWould you like me to connect you to a support representative?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "1e8da70e-ccb4-4499-8a4d-507caea9b2e5",
+      "data": [
+        {
+          "text": "134"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "49a7e903-ec52-40cc-92e4-64a5e5e2ab8d",
+      "data": [
+        {
+          "text": "forward to operator  169"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "44af6253-2bc4-4169-8732-badb926b41e1",
+      "data": [
+        {
+          "text": "welcome to ace technical support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "0d7029e6-3dd0-40bb-9bb5-9cf812050cb1",
+      "data": [
+        {
+          "text": "end chat  170"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "2db34daa-b7b8-4ce2-abf4-620c21232bf4",
+      "data": [
+        {
+          "text": "Other Issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "0e2bb433-537b-418f-bfdc-d3d54e42aad9",
+      "data": [
+        {
+          "text": "Please select an option!"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "6be98ac6-2a79-4218-a528-0f5846683e17",
+      "data": [
+        {
+          "text": "Please select the resource type you'd like to add"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "c8949158-e230-4126-a7d1-231c3407b7c9",
+      "data": [
+        {
+          "text": "Was that helpful"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "5fe34dc6-7b34-4269-b5db-0e1d655b2b15",
+      "data": [
+        {
+          "text": "It looks like you have selected an Invalid Option."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "7509f170-b140-4cfd-97f4-43081c2e5fba",
+      "data": [
+        {
+          "text": "Do you need any further assistance on the topic"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "ed557174-151f-4d00-ada2-b4b0c322a4fb",
+      "data": [
+        {
+          "text": "end chat  152"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "39b31230-1d30-4172-a597-5466f348bddf",
+      "data": [
+        {
+          "text": "Sales & Solutions"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "5b63a4fe-0ff4-4c28-bac8-c4f7fad22e6e",
+      "data": [
+        {
+          "text": "VDI/DaaS Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "98743c88-9876-4792-8fd2-e65d68fa964d",
+      "data": [
+        {
+          "text": "Managed Security"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "ce647efe-1426-4090-aa66-9338e24d845d",
+      "data": [
+        {
+          "text": "Whom Would You Like to Connect With"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "aa38d32a-acb1-4692-bb22-6671a43dbdf2",
+      "data": [
+        {
+          "text": "I'd like to report an Issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "8755c656-9b25-43d9-8103-309c9d65f548",
+      "data": [
+        {
+          "text": "I'd like to raise a Request"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "ca14c374-8217-43b8-b2ad-9e8ccfd624d4",
+      "data": [
+        {
+          "text": "end chat  136"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "af5e0a54-e136-48f6-9261-8d9822b64405",
+      "data": [
+        {
+          "text": "end chat  168"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "427a5bbc-dcea-4954-9de9-45bd72e6083b",
+      "data": [
+        {
+          "text": "myportal"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "92e87dc4-aedf-4e12-8484-e87cb59018bf",
+      "data": [
+        {
+          "text": "135"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "a7f74051-440e-4058-97fb-3ce8687a74ba",
+      "data": [
+        {
+          "text": "136"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "d44f00aa-59c7-4835-8611-638ec2681aa1",
+      "data": [
+        {
+          "text": "Change in Users"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "ea1162ce-1cb4-4502-81fa-d7cdb36a36c3",
+      "data": [
+        {
+          "text": "Office 365 Addition"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "873c3df8-69f1-424d-a7b4-c7809923c62a",
+      "data": [
+        {
+          "text": "Other Request"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "5f5118eb-78bf-42b6-93e5-1d4940a603bb",
+      "data": [
+        {
+          "text": "Please select your request type."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "57eb3874-226f-4d1f-bc8b-ff70da762d9f",
+      "data": [
+        {
+          "text": "Already own a TSScan License"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "474b3bcf-d62e-4914-8c7e-8c0eab1cfc4c",
+      "data": [
+        {
+          "text": "Would like to lease the License from Ace"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "bcedc8a2-4092-4766-97b1-713a91a78d2f",
+      "data": [
+        {
+          "text": "Please select an option :"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "4f10bf11-a836-47ab-a23b-b02b0826348c",
+      "data": [
+        {
+          "text": "invalid(root)"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "334c406f-8f26-4514-95f7-33fb4d6aa148",
+      "data": [
+        {
+          "text": "137"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "5a368177-9b26-4a31-9e08-64b1ffd3e621",
+      "data": [
+        {
+          "text": "132"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "f6ecca66-58c3-4b52-b2d4-b5e6c5152476",
+      "data": [
+        {
+          "text": "133"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "a5a5bcb2-1eef-4a93-9b59-a302949de957",
+      "data": [
+        {
+          "text": "status page"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

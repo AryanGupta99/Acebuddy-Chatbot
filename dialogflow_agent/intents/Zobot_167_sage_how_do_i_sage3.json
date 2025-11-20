@@ -1,0 +1,68 @@
+{
+  "id": "0c04747c-12bd-47b4-b359-0aaeef60a53c",
+  "name": "Sage - How do I sage?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "You will be notified via email once the request has been fulfilled."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_167_how_do_i_sage3-phr-0",
+      "data": [
+        {
+          "text": "How do I sage3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_167_how_do_i_sage3-phr-1",
+      "data": [
+        {
+          "text": "How do I sage3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_167_how_do_i_sage3-phr-2",
+      "data": [
+        {
+          "text": "sage3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

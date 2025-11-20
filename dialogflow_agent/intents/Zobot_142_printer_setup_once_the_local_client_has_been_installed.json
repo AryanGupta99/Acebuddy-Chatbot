@@ -1,0 +1,68 @@
+{
+  "id": "b9c3d9c2-4857-4b1e-84e9-d8f2e43fd0db",
+  "name": "Printer Setup - Once the local client has been instal...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Once the local client has been installed, Please try printing  from the server and select  ‘Uniprint’ option from the printers list and select your desired printer when prompted."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_142_once_the_local_client_has_been_installed-phr-0",
+      "data": [
+        {
+          "text": "Once the local client has been installed, Please try printing  from the server and select  ‘Uniprint’ option from the printers list and select your desired printer when prompted."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_142_once_the_local_client_has_been_installed-phr-1",
+      "data": [
+        {
+          "text": "Once the local client has been installed Please try printing  from the server and select  Uniprint option from the printers list and select your desired printer when prompted"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_142_once_the_local_client_has_been_installed-phr-2",
+      "data": [
+        {
+          "text": "Printer Setup"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

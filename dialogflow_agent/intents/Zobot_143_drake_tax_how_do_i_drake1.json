@@ -1,0 +1,79 @@
+{
+  "id": "2bb01e54-eac2-41f3-a807-47018ea6b753",
+  "name": "Drake Tax - How do I drake?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please send us an email from your registered email address to support@acecloudhosting.com with the following information :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_143_how_do_i_drake1-phr-0",
+      "data": [
+        {
+          "text": "How do I drake1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_143_how_do_i_drake1-phr-1",
+      "data": [
+        {
+          "text": "How do I drake1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_143_how_do_i_drake1-phr-2",
+      "data": [
+        {
+          "text": "drake1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_143_how_do_i_drake1-phr-3",
+      "data": [
+        {
+          "text": "Drake Tax"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

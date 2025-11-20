@@ -1,0 +1,79 @@
+{
+  "id": "977b557b-3bab-4a04-a3f1-d17e4d0e4f02",
+  "name": "Office - How do I office?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "If you do not have any of the above mentioned subscription plans, Consider upgrading your existing plan to the one mentioned above or you may purchase a compatible license from Ace."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_71_how_do_i_office4-phr-0",
+      "data": [
+        {
+          "text": "How do I office4?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_71_how_do_i_office4-phr-1",
+      "data": [
+        {
+          "text": "How do I office4"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_71_how_do_i_office4-phr-2",
+      "data": [
+        {
+          "text": "office4?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_71_how_do_i_office4-phr-3",
+      "data": [
+        {
+          "text": "Office 365"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

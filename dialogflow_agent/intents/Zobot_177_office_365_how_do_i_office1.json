@@ -1,0 +1,79 @@
+{
+  "id": "a30e79fb-ce3e-44cf-9d2b-5a2c43187132",
+  "name": "Office - How do I office?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "As you want to install Office 365, Please be informed that only the following Subscriptions Plans are compatible on Windows Server Operating Systems :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_177_how_do_i_office1-phr-0",
+      "data": [
+        {
+          "text": "How do I office1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_177_how_do_i_office1-phr-1",
+      "data": [
+        {
+          "text": "How do I office1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_177_how_do_i_office1-phr-2",
+      "data": [
+        {
+          "text": "office1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_177_how_do_i_office1-phr-3",
+      "data": [
+        {
+          "text": "Office 365"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "9e3a63b3-04dd-458c-8c0a-215dad3d3d82",
+  "name": "General Support - How do I ts license?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Kindly download the TSScan license file and save it on your server desktop. Once done, email us at support@acecloudhosting.com so that we could register the application for you."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_72_how_do_i_ts_license_1-phr-0",
+      "data": [
+        {
+          "text": "How do I ts license 1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_72_how_do_i_ts_license_1-phr-1",
+      "data": [
+        {
+          "text": "How do I ts license 1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_72_how_do_i_ts_license_1-phr-2",
+      "data": [
+        {
+          "text": "ts license 1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_72_how_do_i_ts_license_1-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "b7188000-2e63-4fa1-b6c1-4d0173deabfa",
+  "name": "Support Escalation - How do I forward?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please wait while we connect you to an available Representative."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_4_how_do_i_forward_132-phr-0",
+      "data": [
+        {
+          "text": "How do I forward  132?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_4_how_do_i_forward_132-phr-1",
+      "data": [
+        {
+          "text": "How do I forward  132"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_4_how_do_i_forward_132-phr-2",
+      "data": [
+        {
+          "text": "forward  132?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_4_how_do_i_forward_132-phr-3",
+      "data": [
+        {
+          "text": "Support Escalation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

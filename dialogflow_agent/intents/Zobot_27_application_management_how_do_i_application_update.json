@@ -1,0 +1,79 @@
+{
+  "id": "ac8df158-fcfc-461b-9d9a-4f2d5ece86de",
+  "name": "Application Management - How do I application update?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please send us an email at support@acecloudhosting.com and we will provide you with an update once the task has been completed.\n\nTypically, the application update is performed overnight."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_27_how_do_i_application_update-phr-0",
+      "data": [
+        {
+          "text": "How do I application update?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_27_how_do_i_application_update-phr-1",
+      "data": [
+        {
+          "text": "How do I application update"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_27_how_do_i_application_update-phr-2",
+      "data": [
+        {
+          "text": "application update?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_27_how_do_i_application_update-phr-3",
+      "data": [
+        {
+          "text": "Application Management"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

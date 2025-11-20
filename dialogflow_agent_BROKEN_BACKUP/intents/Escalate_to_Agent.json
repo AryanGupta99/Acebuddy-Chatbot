@@ -1,0 +1,90 @@
+{
+  "id": "a4c534ba-8d78-4cb8-a1ce-07f7d6e13768",
+  "name": "Escalate to Agent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "escalate.agent",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Sure, let me connect you to a live agent. One moment..."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Escalate_to_Agent.json-phrase-0",
+      "data": [
+        {
+          "text": "talk to agent"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate_to_Agent.json-phrase-1",
+      "data": [
+        {
+          "text": "human"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate_to_Agent.json-phrase-2",
+      "data": [
+        {
+          "text": "speak to someone"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate_to_Agent.json-phrase-3",
+      "data": [
+        {
+          "text": "need help from agent"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate_to_Agent.json-phrase-4",
+      "data": [
+        {
+          "text": "escalate"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

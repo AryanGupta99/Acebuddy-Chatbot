@@ -1,0 +1,79 @@
+{
+  "id": "be8df92f-8822-40b7-967b-63712cd40dcc",
+  "name": "General Support - How do I app removal?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Kindly email us the application name that needs to be removed at support@acecloudhosting.com from your registered email address and we'll revert you in 1-2 hour(s)."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_125_how_do_i_app_removal-phr-0",
+      "data": [
+        {
+          "text": "How do I app removal?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_125_how_do_i_app_removal-phr-1",
+      "data": [
+        {
+          "text": "How do I app removal"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_125_how_do_i_app_removal-phr-2",
+      "data": [
+        {
+          "text": "app removal?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_125_how_do_i_app_removal-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "68392875-c576-468b-ab40-970d1bdff9f0",
+  "name": "General Support - If you are facing any issue/problem w...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "If you are facing any issue/problem with your server, Please select the appropriate option below :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_186_if_you_are_facing_any_issueproblem_with_-phr-0",
+      "data": [
+        {
+          "text": "If you are facing any issue/problem with your server, Please select the appropriate option below :"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_186_if_you_are_facing_any_issueproblem_with_-phr-1",
+      "data": [
+        {
+          "text": "If you are facing any issueproblem with your server Please select the appropriate option below"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_186_if_you_are_facing_any_issueproblem_with_-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

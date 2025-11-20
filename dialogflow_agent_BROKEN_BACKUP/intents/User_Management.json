@@ -1,0 +1,95 @@
+{
+  "id": "edb2940e-6da6-43c0-8a2b-00f6d2636e5b",
+  "name": "User Management",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "user.management",
+      "affectedContexts": [
+        {
+          "name": "user-management-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I can help you add or remove a user. What do you need?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "User_Management.json-phrase-0",
+      "data": [
+        {
+          "text": "add user"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "User_Management.json-phrase-1",
+      "data": [
+        {
+          "text": "remove user"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "User_Management.json-phrase-2",
+      "data": [
+        {
+          "text": "new user"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "User_Management.json-phrase-3",
+      "data": [
+        {
+          "text": "user management"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "User_Management.json-phrase-4",
+      "data": [
+        {
+          "text": "delete user"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

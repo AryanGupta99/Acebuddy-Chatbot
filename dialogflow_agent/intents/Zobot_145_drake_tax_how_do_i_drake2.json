@@ -1,0 +1,79 @@
+{
+  "id": "000e5fab-aa78-4bef-af96-983d7b98767b",
+  "name": "Drake Tax - How do I drake?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "• Drake Version/Year\n• Account Number\n• Serial Number\n\n• Please download the latest Drake Tax Setup/Installer file from the Application Portal and place it on your server Desktop."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_145_how_do_i_drake2-phr-0",
+      "data": [
+        {
+          "text": "How do I drake2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_145_how_do_i_drake2-phr-1",
+      "data": [
+        {
+          "text": "How do I drake2"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_145_how_do_i_drake2-phr-2",
+      "data": [
+        {
+          "text": "drake2?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_145_how_do_i_drake2-phr-3",
+      "data": [
+        {
+          "text": "Drake Tax"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "5c74376c-c068-4bb3-aed6-43b1f9af15e7",
+  "name": "RDP Setup Guide",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "rdp.setup",
+      "affectedContexts": [
+        {
+          "name": "rdp-setup-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "lang": "en",
+          "speech": [
+            "I can help you set up Remote Desktop access to your Ace Cloud server! 🖥️\n\n**For Windows:**\n\n1️⃣ Use our RDP Generator Tool:\n🔗 https://www.acecloudhosting.com/downloads/\n\n2️⃣ Download and run the tool\n3️⃣ Enter your server details\n4️⃣ Click \"Generate\" to create your RDP shortcut\n5️⃣ Double-click the shortcut to connect!\n\n**For Mac:**\n\n1️⃣ Download Microsoft Remote Desktop from App Store\n2️⃣ Follow our setup guide:\n🔗 https://www.acecloudhosting.com/knowledgebase/new-ace-cloud-hosting-setup-guide-mac/\n\n3️⃣ Add your server connection\n4️⃣ Enter credentials and connect\n\n**For Mobile (iOS/Android):**\n\n1️⃣ Install Microsoft Remote Desktop app\n2️⃣ Add new PC connection\n3️⃣ Enter server address and credentials\n\n**Need your server details?**\nCheck your welcome email or contact support@acecloudhosting.com\n\nHaving trouble? I can connect you to a technician!",
+            "Please refer to the below link for instructions on How you can setup the Ace Cloud server on your MacOS computer.\n\n📚 Helpful Resources:\n• How to setup Ace Server on MacOS: https://www.acecloudhosting.com/knowledgebase/new-ace-cloud-hosting-setup-guide-mac/\n• Windows RDP Generator: https://www.acecloudhosting.com/downloads/",
+            "Please Click on the below link and use the \"RDP Generator Tool\" to setup the Ace Cloud Server Access on your Windows PC\n\n📚 Helpful Resources:\n• How to setup Ace Server on MacOS: https://www.acecloudhosting.com/knowledgebase/new-ace-cloud-hosting-setup-guide-mac/\n• Windows RDP Generator: https://www.acecloudhosting.com/downloads/"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "e16eb057-437b-462c-aea7-3b5d7553f6c8",
+      "data": [
+        {
+          "text": "How do I connect to my server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "d70bd9b9-2aa5-461a-ae31-44bb927bce15",
+      "data": [
+        {
+          "text": "RDP setup"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "48cd3835-fd11-407e-87d8-ad3034b09af0",
+      "data": [
+        {
+          "text": "Remote desktop setup"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "3960161a-6f6d-4916-ab77-776e24d1b4ed",
+      "data": [
+        {
+          "text": "How to access server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "34af5b14-8780-4773-ba69-bcfa1b659a06",
+      "data": [
+        {
+          "text": "Setup RDP on Mac"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "98e5904a-e360-4276-a420-fe87cbb279e4",
+      "data": [
+        {
+          "text": "Connect to Ace server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "55abe700-4a79-4090-b5b9-4f8b5bbb7c15",
+      "data": [
+        {
+          "text": "Server access"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

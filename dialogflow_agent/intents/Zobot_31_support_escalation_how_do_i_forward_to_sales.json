@@ -1,0 +1,79 @@
+{
+  "id": "7229cde5-1ae8-4abc-86f2-064479cab5ce",
+  "name": "Support Escalation - How do I forward to sales?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please wait while we connect you to one of our Sales Representative."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_31_how_do_i_forward_to_sales-phr-0",
+      "data": [
+        {
+          "text": "How do I forward to sales?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_31_how_do_i_forward_to_sales-phr-1",
+      "data": [
+        {
+          "text": "How do I forward to sales"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_31_how_do_i_forward_to_sales-phr-2",
+      "data": [
+        {
+          "text": "forward to sales?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_31_how_do_i_forward_to_sales-phr-3",
+      "data": [
+        {
+          "text": "Support Escalation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "6432f1ba-a5f3-4f68-933a-236343dc518d",
+  "name": "Default Fallback Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.unknown",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Sorry, I didn't understand that. Try asking about password reset, disk space, printer issues, or server problems."
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Hmm, not sure what you mean. Can you rephrase that?"
+          ]
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I didn't quite get that. Want to talk to an agent?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 100000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": []
+}

@@ -1,0 +1,79 @@
+{
+  "id": "d64fde2f-7eaa-4c39-8eb6-9adbfb7a322b",
+  "name": "Quickbooks - How do I qb installation?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Request you to kindly share the following information with us via email on support@acecloudhosting.com so we can proceed with the installation."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_86_how_do_i_qb_installation1-phr-0",
+      "data": [
+        {
+          "text": "How do I qb installation1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_86_how_do_i_qb_installation1-phr-1",
+      "data": [
+        {
+          "text": "How do I qb installation1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_86_how_do_i_qb_installation1-phr-2",
+      "data": [
+        {
+          "text": "qb installation1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_86_how_do_i_qb_installation1-phr-3",
+      "data": [
+        {
+          "text": "QuickBooks"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

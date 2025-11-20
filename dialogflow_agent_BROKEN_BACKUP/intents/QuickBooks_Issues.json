@@ -1,0 +1,95 @@
+{
+  "id": "3c5129df-0fec-4370-8b07-5322ebf54002",
+  "name": "QuickBooks Issues",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "quickbooks.support",
+      "affectedContexts": [
+        {
+          "name": "quickbooks-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "QuickBooks giving you trouble? Tell me what's happening."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "QuickBooks_Issues.json-phrase-0",
+      "data": [
+        {
+          "text": "quickbooks not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "QuickBooks_Issues.json-phrase-1",
+      "data": [
+        {
+          "text": "qb issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "QuickBooks_Issues.json-phrase-2",
+      "data": [
+        {
+          "text": "quickbooks crash"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "QuickBooks_Issues.json-phrase-3",
+      "data": [
+        {
+          "text": "quickbooks frozen"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "QuickBooks_Issues.json-phrase-4",
+      "data": [
+        {
+          "text": "qb update issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

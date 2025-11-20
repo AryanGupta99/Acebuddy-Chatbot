@@ -1,0 +1,95 @@
+{
+  "id": "a63bb58b-8dc5-4001-8cb9-e82ffd1a2c6d",
+  "name": "Server Performance",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "server.performance",
+      "affectedContexts": [
+        {
+          "name": "server-performance-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Your server running slow? That could be high CPU, memory, or disk usage. Let me check with our team."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Server_Performance.json-phrase-0",
+      "data": [
+        {
+          "text": "server is slow"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Server_Performance.json-phrase-1",
+      "data": [
+        {
+          "text": "high cpu usage"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Server_Performance.json-phrase-2",
+      "data": [
+        {
+          "text": "server performance"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Server_Performance.json-phrase-3",
+      "data": [
+        {
+          "text": "slow server"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Server_Performance.json-phrase-4",
+      "data": [
+        {
+          "text": "performance issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

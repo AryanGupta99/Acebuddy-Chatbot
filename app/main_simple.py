@@ -3,21 +3,16 @@ Simplified FastAPI server for webhook testing.
 This version avoids problematic imports and provides basic functionality.
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request, Body
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import Optional
 import os
 from datetime import datetime
+import threading
 import logging
-
-try:
-    from salesiq_push import send_message_to_salesiq
-except Exception:
-    # fallback if module not available
-    def send_message_to_salesiq(*args, **kwargs):
-        logging.getLogger(__name__).info("salesiq_push not available — dry-run")
-        return {"dry_run": True}
+import json
+import requests
 
 app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple")
 
@@ -119,10 +114,40 @@ def chat(request: ChatRequest) -> ChatResponse:
 @app.post("/salesiq/chat")
 def salesiq_chat(request: SalesIQChatRequest) -> SalesIQChatResponse:
     """SalesIQ webhook endpoint"""
-    
-    # Use the same logic as main chat endpoint
-    query_lower = request.query.lower()
-    
+    # Log raw payload for inspection (helpful for Zobot schema variations)
+    try:
+        os.makedirs('logs', exist_ok=True)
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
+            f.write(f"{datetime.utcnow().isoformat()} - {json.dumps(request.dict())}\n")
+    except Exception:
+        pass
+
+    # Flexible parsing: accept different Zobot payload shapes
+    raw = request
+    # primary candidate
+    query_text = getattr(request, 'query', None)
+    if not query_text:
+        # Try nested fields if Zobot sends a different shape
+        try:
+            body = request.dict()
+            # common keys: message, text, data.message
+            if 'message' in body and isinstance(body['message'], str):
+                query_text = body['message']
+            elif 'message' in body and isinstance(body['message'], dict):
+                query_text = body['message'].get('text') or body['message'].get('message')
+            elif 'data' in body and isinstance(body['data'], dict):
+                query_text = body['data'].get('message') or body['data'].get('text')
+            else:
+                # last resort, search for any string field named 'text' or 'message'
+                for k, v in body.items():
+                    if isinstance(v, str) and len(v) < 2000 and any(w in k.lower() for w in ('text', 'message', 'query')):
+                        query_text = v
+                        break
+        except Exception:
+            query_text = None
+
+    query_lower = (query_text or '').lower()
+
     responses = {
         "webdav": {
             "answer": "WebDAV is a protocol for web-based file sharing. You can access shared files through File Explorer by mapping a network drive to the WebDAV server URL. Contact IT support if you need the server address.",
@@ -156,40 +181,204 @@ def salesiq_chat(request: SalesIQChatRequest) -> SalesIQChatResponse:
         response_key = "quickbooks"
     
     resp = responses[response_key]
-    
-    # Build response model
-    response_model = SalesIQChatResponse(
-        answer=resp["answer"],
-        confidence=resp["confidence"],
-        should_escalate=resp["confidence"] < 0.7,
-        escalation_reason="Low confidence" if resp["confidence"] < 0.7 else None,
-        sources=resp["sources"],
+    # Build the response object
+    answer = resp["answer"]
+    confidence = resp["confidence"]
+    should_escalate = confidence < 0.7
+
+    # Synchronous response payload for Zobot
+    sync_payload = {
+        "message": answer,
+        "type": "text",
+        "metadata": {
+            "confidence": confidence,
+            "sources": resp.get('sources', [])
+        }
+    }
+
+    # Asynchronously push to Zoho SalesIQ conversation (if credentials present)
+    def _async_push():
+        try:
+            SALESIQ_API_BASE = os.getenv('SALESIQ_API_BASE')
+            SALESIQ_ACCESS_TOKEN = os.getenv('SALESIQ_ACCESS_TOKEN')
+            conv_id = getattr(request, 'chat_id', None) or getattr(request, 'conversation_id', None) or getattr(request, 'chat_id', None)
+            if not SALESIQ_API_BASE or not SALESIQ_ACCESS_TOKEN or not conv_id:
+                # Nothing to do when no credentials or conversation id
+                return
+            headers = {
+                'Authorization': f'Zoho-oauthtoken {SALESIQ_ACCESS_TOKEN}',
+                'Content-Type': 'application/json'
+            }
+            payload = {
+                'type': 'message',
+                'source': 'bot',
+                'message': answer,
+                'metadata': {
+                    'confidence': confidence,
+                    'sources': resp.get('sources', [])
+                }
+            }
+            # Best-effort: POST to conversations/{conv_id}/messages (placeholder path)
+            url = f"{SALESIQ_API_BASE.rstrip('/')}/conversations/{conv_id}/messages"
+            r = requests.post(url, headers=headers, json=payload, timeout=8)
+            if r.status_code >= 400:
+                logging.warning(f"Zoho push failed: {r.status_code} {r.text}")
+        except Exception as e:
+            logging.warning(f"Zoho push exception: {e}")
+
+    try:
+        t = threading.Thread(target=_async_push, daemon=True)
+        t.start()
+    except Exception:
+        pass
+
+    return SalesIQChatResponse(
+        answer=answer,
+        confidence=confidence,
+        should_escalate=should_escalate,
+        escalation_reason="Low confidence" if should_escalate else None,
+        sources=resp.get('sources', []),
         metadata={
             "visitor_id": request.visitor_id,
             "chat_id": request.chat_id,
             "email": request.email,
             "name": request.name,
             "timestamp": datetime.now().isoformat(),
-            "integration": "salesiq"
+            "integration": "salesiq",
+            "sync_payload": sync_payload
         }
     )
 
-    # Attempt to push the reply asynchronously into SalesIQ conversation
-    # Use chat_id if available, otherwise visitor_id
-    conversation_id = request.chat_id or request.visitor_id
-    try:
-        send_message_to_salesiq(
-            conversation_id=conversation_id,
-            message=response_model.answer,
-            confidence=response_model.confidence,
-            should_escalate=response_model.should_escalate,
-            extra_metadata={"sources": response_model.sources}
-        )
-    except Exception as e:
-        logging.getLogger(__name__).exception(f"Error pushing to SalesIQ: {e}")
 
-    # Return acknowledgement to webhook caller
-    return response_model
+# Zobot third-party webhook endpoint
+@app.post("/zobot/webhook")
+async def zobot_webhook(request: Request, body: dict = Body(...)):
+    """Endpoint to receive Zobot webhook calls from Zoho SalesIQ.
+    - If caller expects a synchronous Zobot response, include header `X-Zobot-Sync: true` or query `?sync=true`.
+    - Otherwise the endpoint will return a quick ack and push the final message asynchronously when credentials exist.
+    """
+    # Log raw payload for debugging
+    try:
+        os.makedirs('logs', exist_ok=True)
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
+            f.write(f"{datetime.utcnow().isoformat()} - {json.dumps(body)}\n")
+    except Exception:
+        pass
+
+    # Extract text from common Zobot shapes
+    query_text = None
+    try:
+        if isinstance(body, dict):
+            # common fields: message, text, data.message, data.text
+            if 'message' in body and isinstance(body['message'], str):
+                query_text = body['message']
+            elif 'text' in body and isinstance(body['text'], str):
+                query_text = body['text']
+            elif 'data' in body and isinstance(body['data'], dict):
+                q = body['data'].get('message') or body['data'].get('text')
+                if isinstance(q, str):
+                    query_text = q
+            # last resort: search for likely keys
+            if not query_text:
+                for k, v in body.items():
+                    if isinstance(v, str) and any(w in k.lower() for w in ('message', 'text', 'query')):
+                        query_text = v
+                        break
+    except Exception:
+        query_text = None
+
+    # reuse existing simple matching logic
+    query_lower = (query_text or '').lower()
+    response_key = "default"
+    if any(word in query_lower for word in ["webdav", "web dav", "file share"]):
+        response_key = "webdav"
+    elif any(word in query_lower for word in ["password", "reset", "login"]):
+        response_key = "reset"
+    elif any(word in query_lower for word in ["quickbooks", "qb", "accounting"]):
+        response_key = "quickbooks"
+
+    # pull response map from existing code block
+    responses = {
+        "webdav": {
+            "answer": "WebDAV is a protocol for web-based file sharing. You can access shared files through File Explorer by mapping a network drive to the WebDAV server URL. Contact IT support if you need the server address.",
+            "confidence": 0.95,
+            "sources": ["knowledge_base/webdav_setup.md"]
+        },
+        "reset": {
+            "answer": "To reset your password: 1) Go to the login page and click 'Forgot Password' 2) Enter your email address 3) Check your email for the reset link 4) Follow the link and create a new password.",
+            "confidence": 0.98,
+            "sources": ["knowledge_base/password_reset.md"]
+        },
+        "quickbooks": {
+            "answer": "QuickBooks is accounting software. For issues, check your connection settings and ensure you have the latest version installed. Common fixes: restart QuickBooks, clear cache, or reinstall if needed.",
+            "confidence": 0.85,
+            "sources": ["knowledge_base/quickbooks.md"]
+        },
+        "default": {
+            "answer": "I'm here to help! You can ask me about password resets, WebDAV access, QuickBooks, remote apps, and other technical issues. What would you like help with?",
+            "confidence": 0.7,
+            "sources": []
+        }
+    }
+
+    resp = responses.get(response_key, responses['default'])
+    answer = resp['answer']
+    confidence = resp['confidence']
+
+    # Build Zobot synchronous payload (the widget can accept this when configured)
+    sync_payload = {
+        "message": answer,
+        "type": "text",
+        "metadata": {
+            "confidence": confidence,
+            "sources": resp.get('sources', [])
+        }
+    }
+
+    # If the request wants immediate synchronous display, return the sync payload directly
+    query_params = dict(request.query_params)
+    want_sync = (query_params.get('sync') == 'true') or (request.headers.get('X-Zobot-Sync', '').lower() == 'true')
+
+    # Async push to Zoho conversation if credentials present (same pattern as salesiq_chat)
+    def _async_push_zobot(conv_id=None):
+        try:
+            SALESIQ_API_BASE = os.getenv('SALESIQ_API_BASE')
+            SALESIQ_ACCESS_TOKEN = os.getenv('SALESIQ_ACCESS_TOKEN')
+            conv = conv_id or (body.get('conversation_id') if isinstance(body, dict) else None)
+            if not SALESIQ_API_BASE or not SALESIQ_ACCESS_TOKEN or not conv:
+                return
+            headers = {
+                'Authorization': f'Zoho-oauthtoken {SALESIQ_ACCESS_TOKEN}',
+                'Content-Type': 'application/json'
+            }
+            payload = {
+                'type': 'message',
+                'source': 'bot',
+                'message': answer,
+                'metadata': sync_payload['metadata']
+            }
+            url = f"{SALESIQ_API_BASE.rstrip('/')}/conversations/{conv}/messages"
+            r = requests.post(url, headers=headers, json=payload, timeout=8)
+            if r.status_code >= 400:
+                logging.warning(f"Zoho push failed: {r.status_code} {r.text}")
+        except Exception as e:
+            logging.warning(f"Zoho push exception: {e}")
+
+    # Start async push unless caller asked for synchronous behavior only
+    if not want_sync:
+        try:
+            conv_id = body.get('conversation_id') if isinstance(body, dict) else None
+            t = threading.Thread(target=_async_push_zobot, args=(conv_id,), daemon=True)
+            t.start()
+        except Exception:
+            pass
+
+    if want_sync:
+        # Return the payload that Zobot expects to display synchronously
+        return JSONResponse(content=sync_payload)
+
+    # Otherwise return an ack that the webhook was received
+    return JSONResponse(content={"status": "accepted", "message": "Processing"}, status_code=202)
 
 # SalesIQ status endpoint
 @app.get("/salesiq/status")

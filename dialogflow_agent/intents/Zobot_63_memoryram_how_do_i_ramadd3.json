@@ -1,0 +1,79 @@
+{
+  "id": "d0fbfe81-1640-488d-a838-795875aa1fb3",
+  "name": "Memory/Ram - How do I ramadd?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Do note that adding additional memory is usually required only when you experience server performance issues or if you plan to run a lot of memory intensive application/tasks at the same time."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_63_how_do_i_ramadd3-phr-0",
+      "data": [
+        {
+          "text": "How do I ramadd3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_63_how_do_i_ramadd3-phr-1",
+      "data": [
+        {
+          "text": "How do I ramadd3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_63_how_do_i_ramadd3-phr-2",
+      "data": [
+        {
+          "text": "ramadd3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_63_how_do_i_ramadd3-phr-3",
+      "data": [
+        {
+          "text": "Memory/RAM"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

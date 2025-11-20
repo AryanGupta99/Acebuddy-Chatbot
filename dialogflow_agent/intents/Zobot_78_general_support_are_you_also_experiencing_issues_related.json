@@ -1,0 +1,68 @@
+{
+  "id": "54ee5da8-c117-44b0-86d4-6c23a0c70fbb",
+  "name": "General Support - Are you also experiencing issues rela...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Are you also experiencing issues related to server connectivity?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_78_are_you_also_experiencing_issues_related-phr-0",
+      "data": [
+        {
+          "text": "Are you also experiencing issues related to server connectivity?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_78_are_you_also_experiencing_issues_related-phr-1",
+      "data": [
+        {
+          "text": "Are you also experiencing issues related to server connectivity"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_78_are_you_also_experiencing_issues_related-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

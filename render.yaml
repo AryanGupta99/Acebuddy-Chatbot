@@ -1,5 +1,18 @@
 services:
   - type: web
+    name: acebuddy-rag
+    env: docker
+    branch: main
+    dockerfilePath: Dockerfile
+    plan: free
+    # Optional env vars; set these in the Render dashboard or via the CLI rather than committing secrets here.
+    envVars:
+      - key: SALESIQ_API_BASE
+        value: ""
+      - key: SALESIQ_ACCESS_TOKEN
+        value: ""
+services:
+  - type: web
     name: acebuddy-rag-webhook
     runtime: docker
     region: oregon

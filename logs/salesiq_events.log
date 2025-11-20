@@ -1,0 +1,6 @@
+2025-11-20T11:35:23.348686 - {"query": "How do I reset my password?", "visitor_id": "visitor_123", "chat_id": "chat_abc", "email": "user@example.com", "name": "John Doe"}
+2025-11-20T11:36:43.046578 - {"query": "How do I reset my password?", "visitor_id": "v1", "chat_id": "c1", "email": "user1@example.com", "name": "User One"}
+2025-11-20T11:36:43.326774 - {"query": "I am unable to print from my workstation.", "visitor_id": "v2", "chat_id": "c2", "email": "user2@example.com", "name": "User Two"}
+2025-11-20T11:36:43.593307 - {"query": "How do I upgrade disk storage?", "visitor_id": "v3", "chat_id": "c3", "email": "user3@example.com", "name": "User Three"}
+2025-11-20T11:36:43.867043 - {"query": "My email is not syncing on Outlook.", "visitor_id": "v4", "chat_id": "c4", "email": "user4@example.com", "name": "User Four"}
+2025-11-20T11:36:44.131253 - {"query": "I want to speak to a human agent now.", "visitor_id": "v5", "chat_id": "c5", "email": "user5@example.com", "name": "User Five"}

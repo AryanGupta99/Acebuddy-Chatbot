@@ -1,0 +1,97 @@
+{
+  "id": "f3eb5e96-0ab4-4492-9bc4-475f8ad334bb",
+  "name": "Application_Crashes",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "application_crashes",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I understand you're experiencing crash issues. Let me help you troubleshoot this.",
+            "",
+            "To better assist you, please provide:",
+            "1. When did this issue start?",
+            "2. What specific error message are you seeing?",
+            "3. What were you doing when this occurred?",
+            "",
+            "If you need immediate assistance, I can connect you with a technical support specialist. Would you like me to escalate this?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "d24f2dae-4f17-4f75-a2c1-575f74504f25",
+      "data": [
+        {
+          "text": "Hello! I am having trouble accessing my remote desktop. I received error &quot;[Window Title]\nRemote Desktop Connection\n\n[Content]\nRemote Desktop can&#39;t find the computer &quot;QblivePro.myrealdata.net&quot;. This might mean that &quot;QblivePro.myrealdata.net&quot; does not belong to the specified network.  Verify the computer name and domain that you are trying to connect to.\n\n[^] Hide details  [OK]\n\n[Expanded Information]\nError code: 0x3000016\nExtended error code: 0x0\nTimestamp (UTC): 04/21/25 07:13:20 PM\n\nPress Ctrl+C to copy.&quot;"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "ad2569a4-7046-4b45-9a73-8b8cb32ad33f",
+      "data": [
+        {
+          "text": "can&#39;t get logged on - getting an error"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "e8996bd5-54e5-40b9-912b-f2654c6492c1",
+      "data": [
+        {
+          "text": "Hi....I am trying to save a local copy of my quickbooks file to send to my accountant and I am not able to send it..  I get an error that I can't upload it because it contains system files."
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "205ac018-4848-405c-acfc-6c8088c4a5b7",
+      "data": [
+        {
+          "text": "Why am I receivving the followin errors when logging into RDT?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "94efd0bc-58b6-4127-bc49-bc914d0b7633",
+      "data": [
+        {
+          "text": "hi can you help me download the rdp?  it says Error occured- not valid IP found. thank you"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

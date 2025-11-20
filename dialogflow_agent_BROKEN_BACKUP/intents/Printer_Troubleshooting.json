@@ -1,0 +1,95 @@
+{
+  "id": "dc6d5f23-d41e-44e9-8753-5a9bec96b049",
+  "name": "Printer Troubleshooting",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "printer.support",
+      "affectedContexts": [
+        {
+          "name": "printer-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Let me help fix your printer. First, try restarting both the printer and your computer. Still having issues?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Printer_Troubleshooting.json-phrase-0",
+      "data": [
+        {
+          "text": "printer not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Troubleshooting.json-phrase-1",
+      "data": [
+        {
+          "text": "printer offline"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Troubleshooting.json-phrase-2",
+      "data": [
+        {
+          "text": "paper jam"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Troubleshooting.json-phrase-3",
+      "data": [
+        {
+          "text": "printer issues"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Printer_Troubleshooting.json-phrase-4",
+      "data": [
+        {
+          "text": "can't print"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

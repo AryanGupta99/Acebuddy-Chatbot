@@ -1,0 +1,167 @@
+{
+  "id": "e7ffa564-a346-4921-b61d-a76930c62c2b",
+  "name": "Escalate",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "escalate.agent",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Let me connect you to a live agent. One moment..."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 800000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Escalate-0",
+      "data": [
+        {
+          "text": "talk to agent"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-1",
+      "data": [
+        {
+          "text": "human"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-2",
+      "data": [
+        {
+          "text": "speak to person"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-3",
+      "data": [
+        {
+          "text": "escalate"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-4",
+      "data": [
+        {
+          "text": "call agent"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-5",
+      "data": [
+        {
+          "text": "i need a person"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-6",
+      "data": [
+        {
+          "text": "speak to someone"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-7",
+      "data": [
+        {
+          "text": "connect me to support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-8",
+      "data": [
+        {
+          "text": "live chat"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-9",
+      "data": [
+        {
+          "text": "i want to talk to someone"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-10",
+      "data": [
+        {
+          "text": "get me an agent"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Escalate-11",
+      "data": [
+        {
+          "text": "i need help from a person"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "cee86418-3de3-4956-9af0-65d801c8bc28",
+  "name": "Proseries - How do I proseries?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please send us an email from your registered email address to support@acecloudhosting.com with the following information :"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_116_how_do_i_proseries1-phr-0",
+      "data": [
+        {
+          "text": "How do I proseries1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_116_how_do_i_proseries1-phr-1",
+      "data": [
+        {
+          "text": "How do I proseries1"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_116_how_do_i_proseries1-phr-2",
+      "data": [
+        {
+          "text": "proseries1?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

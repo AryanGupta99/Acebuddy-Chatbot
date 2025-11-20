@@ -1,0 +1,79 @@
+{
+  "id": "700433b9-d858-48f8-b20e-301270f86df0",
+  "name": "Support Escalation - How do I busy response?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Unfortunately, None of our operators are currently available. Please drop your query or for immediate assistance, You may also contact us via phone @ 888-590-2786 {Timings (M-F): 8.30AM to 5PM PST}."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_131_how_do_i_busy_response_152-phr-0",
+      "data": [
+        {
+          "text": "How do I busy response  152?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_131_how_do_i_busy_response_152-phr-1",
+      "data": [
+        {
+          "text": "How do I busy response  152"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_131_how_do_i_busy_response_152-phr-2",
+      "data": [
+        {
+          "text": "busy response  152?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_131_how_do_i_busy_response_152-phr-3",
+      "data": [
+        {
+          "text": "Support Escalation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

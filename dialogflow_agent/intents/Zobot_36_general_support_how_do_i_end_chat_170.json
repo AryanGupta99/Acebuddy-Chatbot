@@ -1,0 +1,79 @@
+{
+  "id": "5de59cd3-c820-4b68-bc94-c7bb2bc7c541",
+  "name": "General Support - How do I end chat?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I'm glad to hear that! Should you need further assistance, please do not hesitate to reach out to me!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_36_how_do_i_end_chat_170-phr-0",
+      "data": [
+        {
+          "text": "How do I end chat  170?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_36_how_do_i_end_chat_170-phr-1",
+      "data": [
+        {
+          "text": "How do I end chat  170"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_36_how_do_i_end_chat_170-phr-2",
+      "data": [
+        {
+          "text": "end chat  170?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_36_how_do_i_end_chat_170-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

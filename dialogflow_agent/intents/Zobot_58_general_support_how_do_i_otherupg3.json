@@ -1,0 +1,79 @@
+{
+  "id": "c2598598-644d-4ffe-8d1d-012f288a9f0f",
+  "name": "General Support - How do I otherupg?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Generally, application upgrades are completed during the night hours to avoid any downtime. Please do specify if you need the request processed at a specific time."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_58_how_do_i_otherupg3-phr-0",
+      "data": [
+        {
+          "text": "How do I otherupg3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_58_how_do_i_otherupg3-phr-1",
+      "data": [
+        {
+          "text": "How do I otherupg3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_58_how_do_i_otherupg3-phr-2",
+      "data": [
+        {
+          "text": "otherupg3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_58_how_do_i_otherupg3-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

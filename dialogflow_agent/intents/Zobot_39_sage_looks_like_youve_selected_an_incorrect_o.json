@@ -1,0 +1,68 @@
+{
+  "id": "b70e14c1-6312-4e32-aa2d-9437cc2b81e7",
+  "name": "Sage - Looks like you've selected an incorre...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Looks like you've selected an incorrect option, Please try again!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_39_looks_like_youve_selected_an_incorrect_o-phr-0",
+      "data": [
+        {
+          "text": "Looks like you've selected an incorrect option, Please try again!"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_39_looks_like_youve_selected_an_incorrect_o-phr-1",
+      "data": [
+        {
+          "text": "Looks like youve selected an incorrect option Please try again"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_39_looks_like_youve_selected_an_incorrect_o-phr-2",
+      "data": [
+        {
+          "text": "Sage"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

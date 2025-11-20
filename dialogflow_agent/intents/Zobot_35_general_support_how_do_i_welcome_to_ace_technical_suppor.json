@@ -1,0 +1,79 @@
+{
+  "id": "3e2c4b55-ac0d-43ef-8d45-7a317c369124",
+  "name": "General Support - How do I welcome to ace technical sup...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Welcome to Ace Support."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_35_how_do_i_welcome_to_ace_technical_suppor-phr-0",
+      "data": [
+        {
+          "text": "How do I welcome to ace technical support?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_35_how_do_i_welcome_to_ace_technical_suppor-phr-1",
+      "data": [
+        {
+          "text": "How do I welcome to ace technical support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_35_how_do_i_welcome_to_ace_technical_suppor-phr-2",
+      "data": [
+        {
+          "text": "welcome to ace technical support?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_35_how_do_i_welcome_to_ace_technical_suppor-phr-3",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

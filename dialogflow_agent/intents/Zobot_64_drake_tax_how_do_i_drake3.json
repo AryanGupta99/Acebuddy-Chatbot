@@ -1,0 +1,79 @@
+{
+  "id": "de3bcce8-d5cd-4bca-8d15-b2ae6ee7a81c",
+  "name": "Drake Tax - How do I drake?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "We will update you via email once the installation is complete.\n\nApplication Addition usually takes 1-2 Hour(s)"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_64_how_do_i_drake3-phr-0",
+      "data": [
+        {
+          "text": "How do I drake3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_64_how_do_i_drake3-phr-1",
+      "data": [
+        {
+          "text": "How do I drake3"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_64_how_do_i_drake3-phr-2",
+      "data": [
+        {
+          "text": "drake3?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_64_how_do_i_drake3-phr-3",
+      "data": [
+        {
+          "text": "Drake Tax"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

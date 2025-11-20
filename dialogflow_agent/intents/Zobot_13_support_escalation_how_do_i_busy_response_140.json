@@ -1,0 +1,79 @@
+{
+  "id": "3e0323b0-27cd-4bc8-bbf6-f2901ca82d95",
+  "name": "Support Escalation - How do I busy response?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Unfortunately, None of the operators are currently available at the present moment. You may try again later or Leave us a message and we'll get back to you shortly."
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_13_how_do_i_busy_response_140-phr-0",
+      "data": [
+        {
+          "text": "How do I busy response  140?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_13_how_do_i_busy_response_140-phr-1",
+      "data": [
+        {
+          "text": "How do I busy response  140"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_13_how_do_i_busy_response_140-phr-2",
+      "data": [
+        {
+          "text": "busy response  140?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_13_how_do_i_busy_response_140-phr-3",
+      "data": [
+        {
+          "text": "Support Escalation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

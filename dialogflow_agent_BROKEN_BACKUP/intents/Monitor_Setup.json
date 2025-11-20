@@ -1,0 +1,313 @@
+{
+  "id": "3b232604-2644-4a28-b4d3-03eea47bd8fb",
+  "name": "Monitor Setup",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "monitor.setup",
+      "affectedContexts": [
+        {
+          "name": "monitor-followup",
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "lang": "en",
+          "speech": "I can help you set up your monitor(s)! 🖥️\n\n**For Multi-Monitor Setup in RDP:**\n\n1️⃣ Open Remote Desktop Connection (mstsc)\n2️⃣ Click \"Show Options\"\n3️⃣ Go to the \"Display\" tab\n4️⃣ Check \"Use all my monitors for the remote session\"\n5️⃣ Click \"Connect\"\n\n**For Single Monitor Issues:**\n\n🔹 Monitor not detected:\n• Check cable connections (HDMI/DisplayPort/VGA)\n• Press Windows + P and select display mode\n• Update graphics drivers\n• Try a different cable/port\n\n🔹 Wrong resolution:\n• Right-click desktop > Display settings\n• Select recommended resolution\n• Apply and keep changes\n\n🔹 Display settings:\n• Identify monitors: Settings > System > Display > Identify\n• Arrange displays by dragging them\n• Set primary monitor\n• Adjust scaling (100%, 125%, 150%)\n\n**Quick Tip:**\nFor the best experience, use HDMI or DisplayPort instead of VGA.\n\nNeed more help with monitor setup?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "3c97fd6f-c91d-470b-8004-39ec8d42b960",
+      "data": [
+        {
+          "text": "How do I set up my monitor"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "9dca96d1-acfa-4b17-b7a2-9c14df8d0845",
+      "data": [
+        {
+          "text": "Monitor not detected"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "8da52511-6e84-4cbc-8e85-16c12ff206a6",
+      "data": [
+        {
+          "text": "Display not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "d2e79761-c305-4f61-a9b2-810272b06d57",
+      "data": [
+        {
+          "text": "Multi-monitor setup"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "88eda646-0243-40ff-b248-0fef40d670b6",
+      "data": [
+        {
+          "text": "Dual monitor"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "db47d91d-13cc-45f8-9317-741e21d5e34b",
+      "data": [
+        {
+          "text": "Second monitor not working"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "859de9b4-e88c-4f87-a6c3-81958eef9f53",
+      "data": [
+        {
+          "text": "Display settings"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "41084295-e9aa-4751-94ea-a57088dc8bbe",
+      "data": [
+        {
+          "text": "Screen resolution issue"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "2f424a77-1c29-40e6-8834-9a5bd8f4c3b8",
+      "data": [
+        {
+          "text": "After I click the link to login to acecloud, my screen goes all black"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "64993c4a-6ce9-4203-b978-58cfdf593457",
+      "data": [
+        {
+          "text": "I need to put the hosting on a new laptop and I&#39;ve completed forgotten how I did it before"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "3cb00429-002d-491f-842e-b65d37d43dc2",
+      "data": [
+        {
+          "text": "Hello, I am still having issues connecting with the remote app- Quickbooks application"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "2042d092-f40d-4f16-b536-811a5ba97a78",
+      "data": [
+        {
+          "text": "Hi, I'm accessing the payroll 2024 app in the remote desktop"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "04dffcac-5e36-44b0-a87c-9da97df8e771",
+      "data": [
+        {
+          "text": "Remote desktop is displaying on both computer screens despite never enabling the setting"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "60e979d7-39cc-4bae-a827-80f1cc679b58",
+      "data": [
+        {
+          "text": "hi when i log into my ace account it only brings up a black screen"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "a1530496-9c16-46e1-8d8f-46f7b9447a1c",
+      "data": [
+        {
+          "text": "My screen is frozen and will not let me do anything"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "0cc2191d-c703-41cb-9e59-e9aa48c806b8",
+      "data": [
+        {
+          "text": "I need to extend my remote display"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "713a3e8d-e43c-4146-9fa4-1c1d862719e5",
+      "data": [
+        {
+          "text": "Need urgent help"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "eb11af6e-b199-45c9-b40c-0f66cfbde69c",
+      "data": [
+        {
+          "text": "How do I remove 2 screen display on the RDP if we auto login and can"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "67046254-8e2f-4925-b670-b0b1aa0ced42",
+      "data": [
+        {
+          "text": "I’m running into an issue with QuickBooks access"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "1d2f6270-84e5-4b3c-bdbb-4e5ebc808cc9",
+      "data": [
+        {
+          "text": "using all my monitors with my connection"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "d9aa2e23-c3eb-4535-99f5-f74596cea350",
+      "data": [
+        {
+          "text": "I am trying to print a check in Quickbooks but it is not giving me the options on how I would like that check printed"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "57eeaf13-fad4-47b4-9591-257f43584eb1",
+      "data": [
+        {
+          "text": "My screen is still frozen"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "d5297311-0ea8-4c95-96fc-c45c1f3e25d1",
+      "data": [
+        {
+          "text": "When logging on to the cloud it said I am a &#39;temporary user&#39; when I look at the screen my icons are not laid out correctly"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "31126a76-482b-4ded-8f7d-18957dc10b88",
+      "data": [
+        {
+          "text": "Hello, I am unable to open anything in QuickBooks, after logging in"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "1f73151e-2a78-47d0-b82d-b0e3faa8b864",
+      "data": [
+        {
+          "text": "My desktop is currently set up for multi-screen sharing meaning I can run any apps on any screen when using the ace Cloud platform"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

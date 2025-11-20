@@ -1,0 +1,79 @@
+{
+  "id": "886305b3-d36d-4b3a-a3da-d1093dc4372f",
+  "name": "Server Access - How do I rdp - windows?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Please Click on the below link and use the \"RDP Generator Tool\" to setup the Ace Cloud Server Access on your Windows PC"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_8_how_do_i_rdp_-_windows-phr-0",
+      "data": [
+        {
+          "text": "How do I rdp - windows?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_8_how_do_i_rdp_-_windows-phr-1",
+      "data": [
+        {
+          "text": "How do I rdp  windows"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_8_how_do_i_rdp_-_windows-phr-2",
+      "data": [
+        {
+          "text": "rdp - windows?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_8_how_do_i_rdp_-_windows-phr-3",
+      "data": [
+        {
+          "text": "Server Access"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}

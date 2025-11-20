@@ -1,0 +1,68 @@
+{
+  "id": "b421c8a3-c5dc-4a0c-ba52-493413b9b0f1",
+  "name": "General Support - Do you need any further assistance on...",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "Do you need any further assistance on the topic?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 200000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "userSays": [
+    {
+      "id": "Zobot_82_do_you_need_any_further_assistance_on_th-phr-0",
+      "data": [
+        {
+          "text": "Do you need any further assistance on the topic?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_82_do_you_need_any_further_assistance_on_th-phr-1",
+      "data": [
+        {
+          "text": "Do you need any further assistance on the topic"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    },
+    {
+      "id": "Zobot_82_do_you_need_any_further_assistance_on_th-phr-2",
+      "data": [
+        {
+          "text": "General Support"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 0
+    }
+  ]
+}
