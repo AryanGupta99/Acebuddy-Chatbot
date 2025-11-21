@@ -375,7 +375,8 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
         "type": "text",
         "metadata": {
             "confidence": confidence,
-            "sources": resp.get('sources', [])
+            "sources": resp.get('sources', []),
+            "version": "2.0.1-greeting"
         }
     }
 
