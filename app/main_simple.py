@@ -60,6 +60,11 @@ def chat(request: ChatRequest) -> ChatResponse:
     
     # Simple hardcoded responses for testing
     responses = {
+        "greeting": {
+            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, and other IT issues. What can I help you with today?",
+            "confidence": 0.9,
+            "sources": []
+        },
         "webdav": {
             "answer": "WebDAV is a protocol for web-based file sharing. You can access shared files through File Explorer by mapping a network drive to the WebDAV server URL. Contact IT support if you need the server address.",
             "confidence": 0.95,
@@ -85,8 +90,12 @@ def chat(request: ChatRequest) -> ChatResponse:
     # Determine which response to use
     query_lower = request.query.lower()
     response_key = "default"
-    
-    if any(word in query_lower for word in ["webdav", "web dav", "file share"]):
+
+    # greeting detection: handle short greetings like hi/hello/hey first
+    greetings = ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings")
+    if any(g in query_lower for g in greetings) and len((query_text or "").strip()) < 40:
+        response_key = "greeting"
+    elif any(word in query_lower for word in ["webdav", "web dav", "file share"]):
         response_key = "webdav"
     elif any(word in query_lower for word in ["password", "reset", "login"]):
         response_key = "reset"
@@ -364,6 +373,9 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
     query_params = dict(request.query_params)
     want_sync = (query_params.get('sync') == 'true') or (request.headers.get('X-Zobot-Sync', '').lower() == 'true')
 
+    # allow an alternate response shape if the caller expects an array of messages
+    expect_messages_array = (query_params.get('format') == 'messages') or (request.headers.get('X-Zobot-Expect', '').lower() == 'messages')
+
     # Async push to Zoho conversation if credentials present (same pattern as salesiq_chat)
     def _async_push_zobot(conv_id=None):
         try:
@@ -399,7 +411,20 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
             pass
 
     if want_sync:
+        # Log the outgoing synchronous payload so we can inspect what the widget receives
+        try:
+            os.makedirs('logs', exist_ok=True)
+            with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+                rf.write(f"{datetime.utcnow().isoformat()} - response: {json.dumps(sync_payload)} - headers: {json.dumps(dict(request.headers))}\n")
+        except Exception:
+            pass
+
         # Return the payload that Zobot expects to display synchronously
+        if expect_messages_array:
+            # Some integrations expect an array of messages
+            messages_shape = {"messages": [{"type": "text", "message": answer, "metadata": sync_payload.get('metadata', {})}]}
+            return JSONResponse(content=messages_shape)
+
         return JSONResponse(content=sync_payload)
 
     # Otherwise return an ack that the webhook was received
