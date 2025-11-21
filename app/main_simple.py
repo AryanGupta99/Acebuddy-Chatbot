@@ -324,7 +324,12 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
     # reuse existing simple matching logic
     query_lower = (query_text or '').lower()
     response_key = "default"
-    if any(word in query_lower for word in ["webdav", "web dav", "file share"]):
+
+    # greeting detection: handle short greetings like hi/hello/hey first
+    greetings = ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings")
+    if any(g in query_lower for g in greetings) and len((query_text or "").strip()) < 40:
+        response_key = "greeting"
+    elif any(word in query_lower for word in ["webdav", "web dav", "file share"]):
         response_key = "webdav"
     elif any(word in query_lower for word in ["password", "reset", "login"]):
         response_key = "reset"
@@ -333,6 +338,11 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
 
     # pull response map from existing code block
     responses = {
+        "greeting": {
+            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, and other IT issues. What can I help you with today?",
+            "confidence": 0.9,
+            "sources": []
+        },
         "webdav": {
             "answer": "WebDAV is a protocol for web-based file sharing. You can access shared files through File Explorer by mapping a network drive to the WebDAV server URL. Contact IT support if you need the server address.",
             "confidence": 0.95,
