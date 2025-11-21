@@ -430,13 +430,18 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
         except Exception:
             pass
 
-        # Return the payload that Zobot expects to display synchronously
+        # Return the payload that Zobot expects to display synchronously.
+        # Some integrations expect a single object, others expect an array of messages.
+        # To maximize compatibility, return both shapes together when possible.
+        messages_shape = {"messages": [{"type": "text", "message": answer, "metadata": sync_payload.get('metadata', {})}]}
+
         if expect_messages_array:
-            # Some integrations expect an array of messages
-            messages_shape = {"messages": [{"type": "text", "message": answer, "metadata": sync_payload.get('metadata', {})}]}
             return JSONResponse(content=messages_shape)
 
-        return JSONResponse(content=sync_payload)
+        # Combined payload: include the simple `message` object and an array `messages`.
+        combined = dict(sync_payload)
+        combined["messages"] = messages_shape["messages"]
+        return JSONResponse(content=combined)
 
     # Otherwise return an ack that the webhook was received
     return JSONResponse(content={"status": "accepted", "message": "Processing"}, status_code=202)
