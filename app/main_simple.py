@@ -436,11 +436,32 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
         messages_shape = {"messages": [{"type": "text", "message": answer, "metadata": sync_payload.get('metadata', {})}]}
 
         if expect_messages_array:
+            # log what we're returning
+            try:
+                os.makedirs('logs', exist_ok=True)
+                with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+                    rf.write(f"{datetime.utcnow().isoformat()} - returning messages-only: {json.dumps(messages_shape)} - headers: {json.dumps(dict(request.headers))}\n")
+                # also mirror to events log for quick tracing
+                with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
+                    ef.write(f"{datetime.utcnow().isoformat()} - outgoing (messages-only): {json.dumps(messages_shape)}\n")
+            except Exception:
+                pass
             return JSONResponse(content=messages_shape)
 
         # Combined payload: include the simple `message` object and an array `messages`.
         combined = dict(sync_payload)
         combined["messages"] = messages_shape["messages"]
+
+        # log the combined response for debugging
+        try:
+            os.makedirs('logs', exist_ok=True)
+            with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+                rf.write(f"{datetime.utcnow().isoformat()} - returning combined: {json.dumps(combined)} - headers: {json.dumps(dict(request.headers))}\n")
+            with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
+                ef.write(f"{datetime.utcnow().isoformat()} - outgoing (combined): {json.dumps(combined)}\n")
+        except Exception:
+            pass
+
         return JSONResponse(content=combined)
 
     # Otherwise return an ack that the webhook was received
