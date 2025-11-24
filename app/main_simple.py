@@ -14,7 +14,7 @@ import logging
 import json
 import requests
 
-app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple")
+app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple-fixed")
 
 # In-memory last event storage for live debugging (not persisted)
 LAST_EVENT = {"inbound": None, "outbound": None}
