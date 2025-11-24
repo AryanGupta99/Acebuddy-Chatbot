@@ -474,8 +474,8 @@ async def zobot_webhook(request: Request):
 
             return JSONResponse(content=messages_shape)
 
-        # DEFAULT: Return ONLY messages array (most SalesIQ Zobot handlers expect this, not a combined shape)
-        # enhance compatibility: include both 'message' and 'content' keys inside messages items
+        # DEFAULT: SalesIQ Zobot handler expects messages as plain array (try pure array first for best compatibility)
+        # enhance compatibility: include 'message', 'content', and 'text' keys inside messages items
         enhanced_messages = []
         for m in messages_shape["messages"]:
             enhanced = dict(m)
@@ -486,26 +486,28 @@ async def zobot_webhook(request: Request):
                 enhanced['text'] = enhanced['message']
             enhanced_messages.append(enhanced)
 
-        messages_only = {"messages": enhanced_messages}
+        # Try returning just the array (not wrapped in {"messages": [...]})
+        # This is what some SalesIQ Zobot messagehandlers expect
+        response_body = enhanced_messages
 
         # log the response for debugging
         try:
             os.makedirs('logs', exist_ok=True)
             with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                rf.write(f"{datetime.utcnow().isoformat()} - returning messages-only: {json.dumps(messages_only)} - headers: {json.dumps(dict(request.headers))}\n")
+                rf.write(f"{datetime.utcnow().isoformat()} - returning array: {json.dumps(response_body)} - headers: {json.dumps(dict(request.headers))}\n")
             with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
-                ef.write(f"{datetime.utcnow().isoformat()} - outgoing (messages-only): {json.dumps(messages_only)}\n")
+                ef.write(f"{datetime.utcnow().isoformat()} - outgoing (array): {json.dumps(response_body)}\n")
         except Exception:
             pass
 
         # Save last event for live debugging
         try:
             LAST_EVENT['inbound'] = body
-            LAST_EVENT['outbound'] = messages_only
+            LAST_EVENT['outbound'] = response_body
         except Exception:
             pass
 
-        return JSONResponse(content=messages_only)
+        return JSONResponse(content=response_body)
 
     # Otherwise return an ack that the webhook was received
     return JSONResponse(content={"status": "accepted", "message": "Processing"}, status_code=202)
