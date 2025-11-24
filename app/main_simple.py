@@ -103,11 +103,6 @@ def chat(request: ChatRequest) -> ChatResponse:
         response_key = "webdav"
     elif any(word in query_lower for word in ["password", "reset", "login"]):
         response_key = "reset"
-
-    @app.get('/internal/last_event')
-    def internal_last_event():
-        """Return last inbound/outbound payload seen by the webhook (use for live debugging)."""
-        return LAST_EVENT
     elif any(word in query_lower for word in ["quickbooks", "qb", "accounting"]):
         response_key = "quickbooks"
     
@@ -579,3 +574,9 @@ async def debug_echo(request: Request):
         return JSONResponse(content={"headers": headers, "body": body})
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
+
+
+@app.get('/internal/last_event')
+def internal_last_event():
+    """Return last inbound/outbound payload seen by the webhook (use for live debugging)."""
+    return LAST_EVENT
