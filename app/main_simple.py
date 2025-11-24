@@ -344,22 +344,27 @@ async def zobot_webhook(request: Request):
     query_lower = (query_text or '').lower()
     response_key = "default"
 
-    # Check specific intents FIRST before greeting (so "how to reset password" doesn't match "hii" in greeting)
-    if any(word in query_lower for word in ["webdav", "web dav", "file share"]):
+    # Check specific intents FIRST before greeting
+    if any(word in query_lower for word in ["webdav", "web dav", "file share", "map network", "network drive"]):
         response_key = "webdav"
-    elif any(word in query_lower for word in ["password", "reset", "login"]):
+    elif any(word in query_lower for word in ["password", "reset", "login", "forgot", "change password"]):
         response_key = "reset"
-    elif any(word in query_lower for word in ["quickbooks", "qb", "accounting"]):
+    elif any(word in query_lower for word in ["quickbooks", "qb", "accounting", "invoice", "payroll"]):
         response_key = "quickbooks"
-    elif any(g in query_lower for g in ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "hii")):
-        # Only treat as greeting if it's a pure greeting (short length)
-        if len((query_text or "").strip()) < 20:
-            response_key = "greeting"
+    elif any(word in query_lower for word in ["printer", "print", "printing", "paper", "ink", "toner", "hp", "canon", "xerox"]):
+        response_key = "printer"
+    elif any(word in query_lower for word in ["rdp", "remote desktop", "connect", "connection", "access remote"]):
+        response_key = "rdp"
+    elif any(word in query_lower for word in ["disk", "storage", "space", "hard drive", "ssd", "upgrade"]):
+        response_key = "disk"
+    elif any(g in query_lower for g in ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "hii", "hiii")):
+        # Greeting detection
+        response_key = "greeting"
 
     # pull response map from existing code block
     responses = {
         "greeting": {
-            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, and other IT issues. What can I help you with today?",
+            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, printer issues, remote desktop, storage upgrades, and other IT issues. What can I help you with today?",
             "confidence": 0.9,
             "sources": []
         },
@@ -369,20 +374,36 @@ async def zobot_webhook(request: Request):
             "sources": ["knowledge_base/webdav_setup.md"]
         },
         "reset": {
-            "answer": "To reset your password: 1) Go to the login page and click 'Forgot Password' 2) Enter your email address 3) Check your email for the reset link 4) Follow the link and create a new password.",
+            "answer": "To reset your password: 1) Go to the login page and click 'Forgot Password' 2) Enter your email address 3) Check your email for the reset link 4) Follow the link and create a new password. If you don't receive the email, check your spam folder or contact IT support.",
             "confidence": 0.98,
             "sources": ["knowledge_base/password_reset.md"]
         },
         "quickbooks": {
-            "answer": "QuickBooks is accounting software. For issues, check your connection settings and ensure you have the latest version installed. Common fixes: restart QuickBooks, clear cache, or reinstall if needed.",
+            "answer": "QuickBooks is accounting software. For issues, check your connection settings and ensure you have the latest version installed. Common fixes: restart QuickBooks, clear cache, or reinstall if needed. Contact IT support for further assistance.",
             "confidence": 0.85,
             "sources": ["knowledge_base/quickbooks.md"]
         },
+        "printer": {
+            "answer": "To troubleshoot printer issues: 1) Check if the printer is powered on and connected to the network 2) Clear any paper jams 3) Check for error messages on the printer display 4) Reinstall or update printer drivers from the manufacturer's website 5) Restart both the printer and your computer. If the issue persists, contact IT support.",
+            "confidence": 0.85,
+            "sources": ["knowledge_base/printer_troubleshooting.md"]
+        },
+        "rdp": {
+            "answer": "Remote Desktop Protocol (RDP) allows you to connect to remote computers. To connect: 1) Use Remote Desktop Connection on Windows 2) Enter the computer name or IP address 3) Enter your credentials 4) Click Connect. If you have connection issues, ensure the remote computer is powered on and networked, and contact IT support.",
+            "confidence": 0.80,
+            "sources": ["knowledge_base/rdp_connection.md"]
+        },
+        "disk": {
+            "answer": "To manage disk storage: 1) Check available space in File Explorer > This PC 2) Delete unnecessary files or move them to external storage 3) Empty the Recycle Bin 4) Run Disk Cleanup (search for it in Windows) 5) Consider upgrading to a larger drive. Contact IT support if you need help with storage upgrades.",
+            "confidence": 0.80,
+            "sources": ["knowledge_base/disk_storage.md"]
+        },
         "default": {
-            "answer": "I'm here to help! You can ask me about password resets, WebDAV access, QuickBooks, remote apps, and other technical issues. What would you like help with?",
+            "answer": "I'm here to help! You can ask me about password resets, WebDAV access, QuickBooks, printer troubleshooting, remote desktop, storage upgrades, and other IT issues. What would you like help with?",
             "confidence": 0.7,
             "sources": []
         }
+
     }
 
     resp = responses.get(response_key, responses['default'])
