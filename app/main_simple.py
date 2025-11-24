@@ -305,44 +305,70 @@ async def zobot_webhook(request: Request):
             except Exception:
                 body = {}
 
-    # Log raw payload for debugging
+    # Log raw payload for debugging WITH ALL KEYS
     try:
         os.makedirs('logs', exist_ok=True)
+        # Log ALL keys in the payload for inspection
+        all_keys = list(body.keys()) if isinstance(body, dict) else []
+        debug_log = f"{datetime.utcnow().isoformat()} - PAYLOAD_DEBUG: keys={all_keys}, full={json.dumps(body)}\n"
         with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
-            f.write(f"{datetime.utcnow().isoformat()} - {json.dumps(body)}\n")
+            f.write(debug_log)
     except Exception:
         pass
 
-    # Extract text from common Zobot shapes
+    # Extract text from common Zobot shapes - EXPANDED to check MORE keys
     query_text = None
     try:
         if isinstance(body, dict):
-            # prioritized keys
-            for key in ('message', 'text', 'userMessage', 'visitorMessage', 'query'):
+            # EXPANDED: Check ALL string keys in the payload
+            for key in ('message', 'text', 'userMessage', 'visitorMessage', 'query', 'user_message', 'visitor_message', 'msg', 'content', 'input', 'user_input', 'question', 'intent_text', 'incoming_message'):
                 v = body.get(key)
                 if isinstance(v, str) and v.strip():
                     query_text = v.strip()
                     break
 
-            # nested patterns
+            # nested patterns - check MORE nested keys
             if not query_text and 'data' in body and isinstance(body['data'], dict):
-                for key in ('message', 'text'):
+                for key in ('message', 'text', 'content', 'input', 'query'):
                     v = body['data'].get(key)
                     if isinstance(v, str) and v.strip():
                         query_text = v.strip(); break
 
-            # last resort: search for likely keys
+            # check 'request' nested object (common in Zobot)
+            if not query_text and 'request' in body and isinstance(body['request'], dict):
+                for key in ('message', 'text', 'input', 'query'):
+                    v = body['request'].get(key)
+                    if isinstance(v, str) and v.strip():
+                        query_text = v.strip(); break
+
+            # check 'message' as nested object
+            if not query_text and 'message' in body and isinstance(body['message'], dict):
+                for key in ('text', 'content', 'input'):
+                    v = body['message'].get(key)
+                    if isinstance(v, str) and v.strip():
+                        query_text = v.strip(); break
+
+            # last resort: search for likely keys (ANY string-like value with text-related key name)
             if not query_text:
                 for k, v in body.items():
-                    if isinstance(v, str) and any(w in k.lower() for w in ('message', 'text', 'query')):
+                    if isinstance(v, str) and any(w in k.lower() for w in ('message', 'text', 'query', 'content', 'input', 'msg')):
                         query_text = v.strip()
                         break
-    except Exception:
+    except Exception as e:
         query_text = None
 
     # reuse existing simple matching logic
     query_lower = (query_text or '').lower()
     response_key = "default"
+
+    # Log what we extracted for debugging
+    try:
+        os.makedirs('logs', exist_ok=True)
+        extraction_log = f"{datetime.utcnow().isoformat()} - EXTRACTION: query_text='{query_text}' query_lower='{query_lower}'\n"
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
+            f.write(extraction_log)
+    except Exception:
+        pass
 
     # Check specific intents FIRST before greeting
     if any(word in query_lower for word in ["webdav", "web dav", "file share", "map network", "network drive"]):
@@ -360,6 +386,15 @@ async def zobot_webhook(request: Request):
     elif any(g in query_lower for g in ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "hii", "hiii")):
         # Greeting detection
         response_key = "greeting"
+
+    # Log which response was chosen
+    try:
+        os.makedirs('logs', exist_ok=True)
+        intent_log = f"{datetime.utcnow().isoformat()} - INTENT: response_key='{response_key}'\n"
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
+            f.write(intent_log)
+    except Exception:
+        pass
 
     # pull response map from existing code block
     responses = {
