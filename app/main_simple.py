@@ -344,16 +344,17 @@ async def zobot_webhook(request: Request):
     query_lower = (query_text or '').lower()
     response_key = "default"
 
-    # greeting detection: handle short greetings like hi/hello/hey first
-    greetings = ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings")
-    if any(g in query_lower for g in greetings) and len((query_text or "").strip()) < 40:
-        response_key = "greeting"
-    elif any(word in query_lower for word in ["webdav", "web dav", "file share"]):
+    # Check specific intents FIRST before greeting (so "how to reset password" doesn't match "hii" in greeting)
+    if any(word in query_lower for word in ["webdav", "web dav", "file share"]):
         response_key = "webdav"
     elif any(word in query_lower for word in ["password", "reset", "login"]):
         response_key = "reset"
     elif any(word in query_lower for word in ["quickbooks", "qb", "accounting"]):
         response_key = "quickbooks"
+    elif any(g in query_lower for g in ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "hii")):
+        # Only treat as greeting if it's a pure greeting (short length)
+        if len((query_text or "").strip()) < 20:
+            response_key = "greeting"
 
     # pull response map from existing code block
     responses = {
@@ -474,40 +475,37 @@ async def zobot_webhook(request: Request):
 
             return JSONResponse(content=messages_shape)
 
-        # DEFAULT: SalesIQ Zobot handler expects messages as plain array (try pure array first for best compatibility)
-        # enhance compatibility: include 'message', 'content', and 'text' keys inside messages items
-        enhanced_messages = []
-        for m in messages_shape["messages"]:
-            enhanced = dict(m)
-            # ensure alternative keys some widgets expect
-            if 'message' in enhanced and 'content' not in enhanced:
-                enhanced['content'] = enhanced['message']
-            if 'message' in enhanced and 'text' not in enhanced:
-                enhanced['text'] = enhanced['message']
-            enhanced_messages.append(enhanced)
-
-        # Try returning just the array (not wrapped in {"messages": [...]})
-        # This is what some SalesIQ Zobot messagehandlers expect
-        response_body = enhanced_messages
+        # DEFAULT: Return Zoho Zobot-compatible response format
+        # SalesIQ Zobot messagehandler expects: {messages: [{type: "text", message: "...", ...}]}
+        messages_payload = {
+            "messages": [
+                {
+                    "type": "text",
+                    "message": answer,
+                    "content": answer,
+                    "text": answer
+                }
+            ]
+        }
 
         # log the response for debugging
         try:
             os.makedirs('logs', exist_ok=True)
             with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                rf.write(f"{datetime.utcnow().isoformat()} - returning array: {json.dumps(response_body)} - headers: {json.dumps(dict(request.headers))}\n")
+                rf.write(f"{datetime.utcnow().isoformat()} - returning zobot-compatible: {json.dumps(messages_payload)}\n")
             with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
-                ef.write(f"{datetime.utcnow().isoformat()} - outgoing (array): {json.dumps(response_body)}\n")
+                ef.write(f"{datetime.utcnow().isoformat()} - outgoing: {json.dumps(messages_payload)}\n")
         except Exception:
             pass
 
         # Save last event for live debugging
         try:
             LAST_EVENT['inbound'] = body
-            LAST_EVENT['outbound'] = response_body
+            LAST_EVENT['outbound'] = messages_payload
         except Exception:
             pass
 
-        return JSONResponse(content=response_body)
+        return JSONResponse(content=messages_payload, media_type="application/json")
 
     # Otherwise return an ack that the webhook was received
     return JSONResponse(content={"status": "accepted", "message": "Processing"}, status_code=202)
