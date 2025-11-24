@@ -465,11 +465,29 @@ async def zobot_webhook(request: Request):
                     ef.write(f"{datetime.utcnow().isoformat()} - outgoing (messages-only): {json.dumps(messages_shape)}\n")
             except Exception:
                 pass
+            # Save last event for live debugging
+            try:
+                LAST_EVENT['inbound'] = body
+                LAST_EVENT['outbound'] = messages_shape
+            except Exception:
+                pass
+
             return JSONResponse(content=messages_shape)
 
         # Combined payload: include the simple `message` object and an array `messages`.
         combined = dict(sync_payload)
-        combined["messages"] = messages_shape["messages"]
+        # enhance compatibility: include both 'message' and 'content' keys inside messages items
+        enhanced_messages = []
+        for m in messages_shape["messages"]:
+            enhanced = dict(m)
+            # ensure alternative keys some widgets expect
+            if 'message' in enhanced and 'content' not in enhanced:
+                enhanced['content'] = enhanced['message']
+            if 'message' in enhanced and 'text' not in enhanced:
+                enhanced['text'] = enhanced['message']
+            enhanced_messages.append(enhanced)
+
+        combined["messages"] = enhanced_messages
 
         # log the combined response for debugging
         try:
@@ -478,6 +496,13 @@ async def zobot_webhook(request: Request):
                 rf.write(f"{datetime.utcnow().isoformat()} - returning combined: {json.dumps(combined)} - headers: {json.dumps(dict(request.headers))}\n")
             with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
                 ef.write(f"{datetime.utcnow().isoformat()} - outgoing (combined): {json.dumps(combined)}\n")
+        except Exception:
+            pass
+
+        # Save last event for live debugging
+        try:
+            LAST_EVENT['inbound'] = body
+            LAST_EVENT['outbound'] = combined
         except Exception:
             pass
 
