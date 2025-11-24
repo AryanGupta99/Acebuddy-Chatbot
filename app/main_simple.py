@@ -450,62 +450,36 @@ async def zobot_webhook(request: Request):
         except Exception:
             pass
 
-        # Return the payload that Zobot expects to display synchronously.
-        # Some integrations expect a single object, others expect an array of messages.
-        # To maximize compatibility, return both shapes together when possible.
-        messages_shape = {"messages": [{"type": "text", "message": answer, "metadata": sync_payload.get('metadata', {})}]}
-
-        if expect_messages_array:
-            # log what we're returning
-            try:
-                os.makedirs('logs', exist_ok=True)
-                with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                    rf.write(f"{datetime.utcnow().isoformat()} - returning messages-only: {json.dumps(messages_shape)} - headers: {json.dumps(dict(request.headers))}\n")
-                # also mirror to events log for quick tracing
-                with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
-                    ef.write(f"{datetime.utcnow().isoformat()} - outgoing (messages-only): {json.dumps(messages_shape)}\n")
-            except Exception:
-                pass
-            # Save last event for live debugging
-            try:
-                LAST_EVENT['inbound'] = body
-                LAST_EVENT['outbound'] = messages_shape
-            except Exception:
-                pass
-
-            return JSONResponse(content=messages_shape)
-
-        # DEFAULT: Return Zoho Zobot-compatible response format
-        # SalesIQ Zobot messagehandler expects: {messages: [{type: "text", message: "...", ...}]}
-        messages_payload = {
-            "messages": [
-                {
-                    "type": "text",
-                    "message": answer,
-                    "content": answer,
-                    "text": answer
-                }
-            ]
+        # OFFICIAL ZOHO ZOBOT RESPONSE FORMAT (from Zoho docs):
+        # {
+        #   "action": "reply",
+        #   "replies": ["message1", {"text": "message2", "image": "url"}],
+        #   "suggestions": ["suggestion1", "suggestion2"]
+        # }
+        
+        zoho_response = {
+            "action": "reply",
+            "replies": [answer]
         }
 
         # log the response for debugging
         try:
             os.makedirs('logs', exist_ok=True)
             with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                rf.write(f"{datetime.utcnow().isoformat()} - returning zobot-compatible: {json.dumps(messages_payload)}\n")
+                rf.write(f"{datetime.utcnow().isoformat()} - returning official zoho format: {json.dumps(zoho_response)}\n")
             with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
-                ef.write(f"{datetime.utcnow().isoformat()} - outgoing: {json.dumps(messages_payload)}\n")
+                ef.write(f"{datetime.utcnow().isoformat()} - outgoing: {json.dumps(zoho_response)}\n")
         except Exception:
             pass
 
         # Save last event for live debugging
         try:
             LAST_EVENT['inbound'] = body
-            LAST_EVENT['outbound'] = messages_payload
+            LAST_EVENT['outbound'] = zoho_response
         except Exception:
             pass
 
-        return JSONResponse(content=messages_payload, media_type="application/json")
+        return JSONResponse(content=zoho_response, media_type="application/json")
 
     # Otherwise return an ack that the webhook was received
     return JSONResponse(content={"status": "accepted", "message": "Processing"}, status_code=202)
