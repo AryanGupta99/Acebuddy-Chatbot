@@ -16,6 +16,8 @@ import requests
 
 app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple")
 
+# In-memory last event storage for live debugging (not persisted)
+LAST_EVENT = {"inbound": None, "outbound": None}
 # Simple request/response models
 class ChatRequest(BaseModel):
     query: str
@@ -59,6 +61,8 @@ def chat(request: ChatRequest) -> ChatResponse:
     """Main chat endpoint"""
     
     # Simple hardcoded responses for testing
+    from fastapi import FastAPI, HTTPException, Request, Body
+    from fastapi.responses import JSONResponse
     responses = {
         "greeting": {
             "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, and other IT issues. What can I help you with today?",
@@ -99,6 +103,11 @@ def chat(request: ChatRequest) -> ChatResponse:
         response_key = "webdav"
     elif any(word in query_lower for word in ["password", "reset", "login"]):
         response_key = "reset"
+
+    @app.get('/internal/last_event')
+    def internal_last_event():
+        """Return last inbound/outbound payload seen by the webhook (use for live debugging)."""
+        return LAST_EVENT
     elif any(word in query_lower for word in ["quickbooks", "qb", "accounting"]):
         response_key = "quickbooks"
     
@@ -121,39 +130,36 @@ def chat(request: ChatRequest) -> ChatResponse:
 
 # SalesIQ webhook endpoint
 @app.post("/salesiq/chat")
-def salesiq_chat(request: SalesIQChatRequest) -> SalesIQChatResponse:
-    """SalesIQ webhook endpoint"""
-    # Log raw payload for inspection (helpful for Zobot schema variations)
+async def salesiq_chat(request: Request):
+    """SalesIQ webhook endpoint (robust parsing for JSON/form shapes)"""
+    # Read incoming body robustly (JSON -> form -> raw)
+    body = None
+    try:
+        body = await request.json()
+    except Exception:
+        try:
+            form = await request.form()
+            body = {k: v for k, v in form.items()}
+        except Exception:
+            try:
+                raw = await request.body()
+                body_text = raw.decode('utf-8', errors='ignore')
+                body = json.loads(body_text)
+            except Exception:
+                body = {}
+
+    # Log raw payload for inspection
     try:
         os.makedirs('logs', exist_ok=True)
         with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
-            f.write(f"{datetime.utcnow().isoformat()} - {json.dumps(request.dict())}\n")
+            f.write(f"{datetime.utcnow().isoformat()} - {json.dumps(body)}\n")
     except Exception:
         pass
 
-    # Flexible parsing: accept different Zobot payload shapes
-    raw = request
     # primary candidate
-    query_text = getattr(request, 'query', None)
-    if not query_text:
-        # Try nested fields if Zobot sends a different shape
-        try:
-            body = request.dict()
-            # common keys: message, text, data.message
-            if 'message' in body and isinstance(body['message'], str):
-                query_text = body['message']
-            elif 'message' in body and isinstance(body['message'], dict):
-                query_text = body['message'].get('text') or body['message'].get('message')
-            elif 'data' in body and isinstance(body['data'], dict):
-                query_text = body['data'].get('message') or body['data'].get('text')
-            else:
-                # last resort, search for any string field named 'text' or 'message'
-                for k, v in body.items():
-                    if isinstance(v, str) and len(v) < 2000 and any(w in k.lower() for w in ('text', 'message', 'query')):
-                        query_text = v
-                        break
-        except Exception:
-            query_text = None
+    query_text = None
+    if isinstance(body, dict):
+        query_text = body.get('query') or body.get('message') or body.get('text')
 
     query_lower = (query_text or '').lower()
 
@@ -241,22 +247,32 @@ def salesiq_chat(request: SalesIQChatRequest) -> SalesIQChatResponse:
     except Exception:
         pass
 
-    return SalesIQChatResponse(
-        answer=answer,
-        confidence=confidence,
-        should_escalate=should_escalate,
-        escalation_reason="Low confidence" if should_escalate else None,
-        sources=resp.get('sources', []),
-        metadata={
-            "visitor_id": request.visitor_id,
-            "chat_id": request.chat_id,
-            "email": request.email,
-            "name": request.name,
+    # Build response object (mirror prior SalesIQChatResponse structure)
+    response_obj = {
+        "answer": answer,
+        "confidence": confidence,
+        "should_escalate": should_escalate,
+        "escalation_reason": "Low confidence" if should_escalate else None,
+        "sources": resp.get('sources', []),
+        "metadata": {
+            "visitor_id": body.get('visitor_id'),
+            "chat_id": body.get('chat_id'),
+            "email": body.get('email'),
+            "name": body.get('name'),
             "timestamp": datetime.now().isoformat(),
             "integration": "salesiq",
             "sync_payload": sync_payload
         }
-    )
+    }
+
+    # Save last event for live debugging
+    try:
+        LAST_EVENT['inbound'] = body
+        LAST_EVENT['outbound'] = response_obj
+    except Exception:
+        pass
+
+    return JSONResponse(content=response_obj)
 
 
 # Zobot third-party webhook endpoint
@@ -272,11 +288,28 @@ def zobot_webhook_info():
 
 
 @app.post("/zobot/webhook")
-async def zobot_webhook(request: Request, body: dict = Body(None)):
+async def zobot_webhook(request: Request):
     """Endpoint to receive Zobot webhook calls from Zoho SalesIQ.
     - If caller expects a synchronous Zobot response, include header `X-Zobot-Sync: true` or query `?sync=true`.
     - Otherwise the endpoint will return a quick ack and push the final message asynchronously when credentials exist.
+    This handler reads JSON and form bodies robustly and records last event in memory.
     """
+    # Read incoming body robustly (JSON -> form -> raw)
+    body = None
+    try:
+        body = await request.json()
+    except Exception:
+        try:
+            form = await request.form()
+            body = {k: v for k, v in form.items()}
+        except Exception:
+            try:
+                raw = await request.body()
+                body_text = raw.decode('utf-8', errors='ignore')
+                body = json.loads(body_text)
+            except Exception:
+                body = {}
+
     # Log raw payload for debugging
     try:
         os.makedirs('logs', exist_ok=True)
@@ -285,18 +318,9 @@ async def zobot_webhook(request: Request, body: dict = Body(None)):
     except Exception:
         pass
 
-    # Extract text from common Zobot shapes and also accept form-encoded bodies
+    # Extract text from common Zobot shapes
     query_text = None
     try:
-        content_type = request.headers.get('content-type', '')
-        # If body is None (FastAPI couldn't parse JSON), try to read form data
-        if (not body) and ('application/x-www-form-urlencoded' in content_type or 'multipart/form-data' in content_type):
-            form = await request.form()
-            # form behaves like a dict; prefer 'message' or 'text'
-            form_dict = {k: v for k, v in form.items()}
-            body = form_dict
-
-        # Accept a variety of keys that might carry visitor text
         if isinstance(body, dict):
             # prioritized keys
             for key in ('message', 'text', 'userMessage', 'visitorMessage', 'query'):
