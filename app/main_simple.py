@@ -15,11 +15,18 @@ import json
 import requests
 import glob
 import re
+import base64
+import urllib.parse
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives import serialization
 
 app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple-fixed")
 
 # In-memory last event storage for live debugging (not persisted)
 LAST_EVENT = {"inbound": None, "outbound": None}
+# Track conversations we've greeted so we only send the greeting once per conversation (in-memory)
+SEEN_CONVERSATIONS = set()
 # Simple request/response models
 class ChatRequest(BaseModel):
     query: str
@@ -144,6 +151,68 @@ def escalate_to_human(body: dict, note: str = None):
     except Exception:
         return False
 
+
+# Verify RSA signature if SalesIQ signed the request. Uses env var SALESIQ_VERIFY_SIGNATURE=true
+def verify_salesiq_signature(raw_body: bytes, headers) -> bool:
+    try:
+        enabled = os.getenv('SALESIQ_VERIFY_SIGNATURE', 'false').lower() == 'true'
+        if not enabled:
+            return True
+
+        # try several common header names
+        sig_header_names = [
+            'X-SalesIQ-Signature', 'X-Salesiq-Signature', 'X-Zobot-Signature', 'X-Zoho-Signature', 'X-Signature', 'Signature'
+        ]
+        sig_value = None
+        for hn in sig_header_names:
+            v = headers.get(hn)
+            if v:
+                sig_value = v
+                break
+        if not sig_value:
+            # no signature header present -> treat as invalid when verification is enabled
+            return False
+
+        # load public key either from env or file
+        pub_pem = os.getenv('SALESIQ_PUBLIC_KEY')
+        if not pub_pem:
+            path = os.getenv('SALESIQ_PUBLIC_KEY_PATH')
+            if path and os.path.exists(path):
+                with open(path, 'r', encoding='utf-8') as pf:
+                    pub_pem = pf.read()
+        if not pub_pem:
+            return False
+
+        # normalize PEM
+        if isinstance(pub_pem, str):
+            pub_bytes = pub_pem.encode('utf-8')
+        else:
+            pub_bytes = pub_pem
+
+        public_key = serialization.load_pem_public_key(pub_bytes)
+
+        # signature likely base64; try decode base64 then verify
+        sig_bytes = None
+        try:
+            sig_bytes = base64.b64decode(sig_value)
+        except Exception:
+            # try hex
+            try:
+                sig_bytes = bytes.fromhex(sig_value)
+            except Exception:
+                return False
+
+        # verify using PKCS1v15 + SHA256
+        public_key.verify(
+            sig_bytes,
+            raw_body,
+            padding.PKCS1v15(),
+            hashes.SHA256()
+        )
+        return True
+    except Exception:
+        return False
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
@@ -222,21 +291,26 @@ def chat(request: ChatRequest) -> ChatResponse:
 @app.post("/salesiq/chat")
 async def salesiq_chat(request: Request):
     """SalesIQ webhook endpoint (robust parsing for JSON/form shapes)"""
-    # Read incoming body robustly (JSON -> form -> raw)
-    body = None
+    # Read raw body bytes first (so we can verify signature)
+    body = {}
     try:
-        body = await request.json()
-    except Exception:
+        raw = await request.body()
+        # verify signature if enabled
+        if not verify_salesiq_signature(raw, request.headers):
+            return JSONResponse(content={"error": "Invalid signature"}, status_code=401)
+        raw_text = raw.decode('utf-8', errors='ignore')
         try:
-            form = await request.form()
-            body = {k: v for k, v in form.items()}
+            body = json.loads(raw_text)
         except Exception:
+            # try form-encoded parse
             try:
-                raw = await request.body()
-                body_text = raw.decode('utf-8', errors='ignore')
-                body = json.loads(body_text)
+                parsed = urllib.parse.parse_qs(raw_text)
+                # flatten to simple dict
+                body = {k: v[0] if isinstance(v, list) and v else v for k, v in parsed.items()}
             except Exception:
                 body = {}
+    except Exception:
+        body = {}
 
     # Log raw payload for inspection
     try:
@@ -384,21 +458,26 @@ async def zobot_webhook(request: Request):
     - Otherwise the endpoint will return a quick ack and push the final message asynchronously when credentials exist.
     This handler reads JSON and form bodies robustly and records last event in memory.
     """
-    # Read incoming body robustly (JSON -> form -> raw)
-    body = None
+    # Read raw body bytes first (so we can verify signature)
+    body = {}
     try:
-        body = await request.json()
-    except Exception:
+        raw = await request.body()
+        # verify signature if enabled
+        if not verify_salesiq_signature(raw, request.headers):
+            return JSONResponse(content={"error": "Invalid signature"}, status_code=401)
+        raw_text = raw.decode('utf-8', errors='ignore')
         try:
-            form = await request.form()
-            body = {k: v for k, v in form.items()}
+            body = json.loads(raw_text)
         except Exception:
+            # try form-encoded parse
             try:
-                raw = await request.body()
-                body_text = raw.decode('utf-8', errors='ignore')
-                body = json.loads(body_text)
+                parsed = urllib.parse.parse_qs(raw_text)
+                # flatten to simple dict
+                body = {k: v[0] if isinstance(v, list) and v else v for k, v in parsed.items()}
             except Exception:
                 body = {}
+    except Exception:
+        body = {}
 
     # Log raw payload for debugging WITH ALL KEYS
     try:
@@ -455,6 +534,43 @@ async def zobot_webhook(request: Request):
     # reuse existing simple matching logic
     query_lower = (query_text or '').lower()
     response_key = "default"
+
+    # compute a conversation key to track first-contact greeting
+    conv_key = None
+    try:
+        if isinstance(body, dict):
+            conv_key = body.get('conversation_id') or (body.get('visitor') or {}).get('active_conversation_id') or (body.get('chat_id') or (body.get('visitor') or {}).get('email'))
+    except Exception:
+        conv_key = None
+
+    # Determine if caller requested synchronous behavior
+    try:
+        query_params = dict(request.query_params)
+        want_sync = (query_params.get('sync') == 'true') or (request.headers.get('X-Zobot-Sync', '').lower() == 'true')
+    except Exception:
+        want_sync = False
+
+    # If this is the first message for this conversation, send the greeting and stop further processing
+    try:
+        if conv_key and conv_key not in SEEN_CONVERSATIONS:
+            SEEN_CONVERSATIONS.add(conv_key)
+            greeting = responses['greeting']['answer']
+            zoho_response = {"action": "reply", "replies": [greeting]}
+            # log and save last event
+            try:
+                os.makedirs('logs', exist_ok=True)
+                with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+                    rf.write(f"{datetime.utcnow().isoformat()} - greeting returned: {json.dumps(zoho_response)}\n")
+            except Exception:
+                pass
+            try:
+                LAST_EVENT['inbound'] = body
+                LAST_EVENT['outbound'] = zoho_response
+            except Exception:
+                pass
+            return JSONResponse(content=zoho_response, media_type="application/json")
+    except Exception:
+        pass
 
     # Log what we extracted for debugging
     try:
