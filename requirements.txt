@@ -10,5 +10,10 @@ numpy==1.24.4
 pandas==2.1.3
 python-dotenv==1.0.0
 huggingface-hub==0.13.3
-openai==1.8.3
-cryptography==41.0.3
+# Use a modern OpenAI client compatible with Python 3.11.
+# Pin to <2.0.0 to avoid potential breaking changes from a future major release.
+openai>=1.31.2,<2.0.0
+PyPDF2>=3.0.0
+pytesseract>=0.3.10
+pdf2image>=1.16.3
+Pillow>=10.0.0
