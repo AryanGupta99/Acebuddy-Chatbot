@@ -13,6 +13,8 @@ import threading
 import logging
 import json
 import requests
+import openai
+from pathlib import Path
 
 app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple-fixed")
 
@@ -441,9 +443,93 @@ async def zobot_webhook(request: Request):
 
     }
 
+    # Helper: simple KB search (files in data/kb/*.md)
+    def kb_search(query: str):
+        try:
+            kb_dir = Path("data/kb")
+            if not kb_dir.exists():
+                return None, None
+            qwords = [w.lower() for w in query.split() if len(w) > 2]
+            best_score = 0
+            best_file = None
+            best_text = None
+            for p in kb_dir.glob("*.md"):
+                try:
+                    txt = p.read_text(encoding='utf-8')
+                except Exception:
+                    continue
+                low = txt.lower()
+                score = sum(low.count(w) for w in qwords)
+                if score > best_score:
+                    best_score = score
+                    best_file = p
+                    # extract first 400 chars as snippet
+                    best_text = txt.strip().replace('\n', ' ')[:800]
+            if best_score > 0 and best_file:
+                return best_text, str(best_file)
+        except Exception:
+            pass
+        return None, None
+
+    # Helper: call LLM fallback (OpenAI) if API key is present
+    def llm_fallback(query: str, kb_snippet: str | None = None):
+        try:
+            api_key = os.getenv('OPENAI_API_KEY') or os.getenv('OPENAI_API') or os.getenv('OPENAI_KEY')
+            if not api_key:
+                return None
+            openai.api_key = api_key
+            system = "You are an IT support assistant that answers concisely and helpfully."
+            user_prompt = query
+            if kb_snippet:
+                user_prompt = f"User question: {query}\n\nRelevant KB excerpt: {kb_snippet}\n\nAnswer the user's question using the KB when possible, otherwise provide an actionable troubleshooting answer."
+            resp = openai.ChatCompletion.create(
+                model=os.getenv('OPENAI_MODEL', 'gpt-3.5-turbo'),
+                messages=[
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user_prompt},
+                ],
+                max_tokens=450,
+                temperature=0.2,
+            )
+            if resp and 'choices' in resp and len(resp['choices']) > 0:
+                return resp['choices'][0]['message']['content'].strip()
+        except Exception:
+            pass
+        return None
+
+    # First, honor explicit intent/node mapping (treat response_key as Zobot node match)
     resp = responses.get(response_key, responses['default'])
     answer = resp['answer']
     confidence = resp['confidence']
+
+    # If we matched a specific node (not just default/greeting), prefer that, but also try KB to augment
+    if response_key not in ("default", "greeting"):
+        # try to find KB info to append
+        try:
+            kb_snip, kb_file = kb_search(query_text or '')
+            if kb_snip:
+                answer = f"{answer}\n\nAdditional info from docs:\n{kb_snip}"
+                # slightly increase confidence
+                confidence = max(confidence, 0.85)
+        except Exception:
+            pass
+    else:
+        # For default or greeting, try KB first, then LLM, then escalate
+        kb_snip, kb_file = kb_search(query_text or '')
+        if kb_snip:
+            answer = f"{kb_snip}"
+            confidence = 0.88
+        else:
+            # try LLM
+            llm_answer = llm_fallback(query_text or '')
+            if llm_answer:
+                answer = llm_answer
+                confidence = 0.75
+            else:
+                # nothing helpful — escalate to human
+                answer = "I'm unable to find a helpful automated answer. Would you like me to connect you to a human agent?"
+                confidence = 0.25
+                resp['should_escalate'] = True
 
     # Build Zobot synchronous payload (the widget can accept this when configured)
     sync_payload = {
