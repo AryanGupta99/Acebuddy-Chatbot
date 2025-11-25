@@ -585,15 +585,27 @@ async def zobot_webhook(request: Request):
                     confidence = 0.75
                     resp_sources = ['llm']
                 else:
-                    # 5) escalate to human (best-effort async) and return a friendly escalation message
-                    try:
-                        t = threading.Thread(target=escalate_to_human, args=(body, f"User requested human escalation for: {query_text}"), daemon=True)
-                        t.start()
-                    except Exception:
-                        pass
-                    answer = "I couldn't find an automated answer. I've forwarded this to a human agent — someone will join shortly."
-                    confidence = 0.0
-                    resp_sources = []
+                    # 5) Decide whether to escalate or ask for clarification
+                    auto_escalate = os.getenv('AUTO_ESCALATE', 'false').lower() == 'true'
+                    escalation_triggers = (query_text or '').lower()
+                    wants_human = any(k in escalation_triggers for k in ("agent", "human", "representative", "speak to", "talk to human", "support", "help me", "customer care"))
+
+                    if auto_escalate or wants_human:
+                        try:
+                            t = threading.Thread(target=escalate_to_human, args=(body, f"User requested human escalation for: {query_text}"), daemon=True)
+                            t.start()
+                        except Exception:
+                            pass
+                        answer = "I couldn't find an automated answer. I've forwarded this to a human agent — someone will join shortly."
+                        confidence = 0.0
+                        resp_sources = []
+                        should_escalate_flag = True
+                    else:
+                        # Prefer to ask a clarifying question rather than escalate immediately
+                        answer = "I don't have an exact automated answer for that. Can you rephrase or type 'agent' to speak to a human?"
+                        confidence = 0.2
+                        resp_sources = []
+                        should_escalate_flag = False
 
     # Build Zobot synchronous payload (the widget can accept this when configured)
     sync_payload = {
