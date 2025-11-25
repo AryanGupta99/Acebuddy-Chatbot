@@ -550,6 +550,50 @@ async def zobot_webhook(request: Request):
     except Exception:
         want_sync = False
 
+    # DEFINE RESPONSES DICT EARLY - before greeting check (it was defined after, causing NameError)
+    responses = {
+        "greeting": {
+            "answer": "Hi I am AceBuddy how may I assist you",
+            "confidence": 0.9,
+            "sources": []
+        },
+        "webdav": {
+            "answer": "WebDAV is a protocol for web-based file sharing. You can access shared files through File Explorer by mapping a network drive to the WebDAV server URL. Contact IT support if you need the server address.",
+            "confidence": 0.95,
+            "sources": ["knowledge_base/webdav_setup.md"]
+        },
+        "reset": {
+            "answer": "To reset your password: 1) Go to the login page and click 'Forgot Password' 2) Enter your email address 3) Check your email for the reset link 4) Follow the link and create a new password. If you don't receive the email, check your spam folder or contact IT support.",
+            "confidence": 0.98,
+            "sources": ["knowledge_base/password_reset.md"]
+        },
+        "quickbooks": {
+            "answer": "QuickBooks is accounting software. For issues, check your connection settings and ensure you have the latest version installed. Common fixes: restart QuickBooks, clear cache, or reinstall if needed. Contact IT support for further assistance.",
+            "confidence": 0.85,
+            "sources": ["knowledge_base/quickbooks.md"]
+        },
+        "printer": {
+            "answer": "To troubleshoot printer issues: 1) Check if the printer is powered on and connected to the network 2) Clear any paper jams 3) Check for error messages on the printer display 4) Reinstall or update printer drivers from the manufacturer's website 5) Restart both the printer and your computer. If the issue persists, contact IT support.",
+            "confidence": 0.85,
+            "sources": ["knowledge_base/printer_troubleshooting.md"]
+        },
+        "rdp": {
+            "answer": "Remote Desktop Protocol (RDP) allows you to connect to remote computers. To connect: 1) Use Remote Desktop Connection on Windows 2) Enter the computer name or IP address 3) Enter your credentials 4) Click Connect. If you have connection issues, ensure the remote computer is powered on and networked, and contact IT support.",
+            "confidence": 0.80,
+            "sources": ["knowledge_base/rdp_connection.md"]
+        },
+        "disk": {
+            "answer": "To manage disk storage: 1) Check available space in File Explorer > This PC 2) Delete unnecessary files or move them to external storage 3) Empty the Recycle Bin 4) Run Disk Cleanup (search for it in Windows) 5) Consider upgrading to a larger drive. Contact IT support if you need help with storage upgrades.",
+            "confidence": 0.80,
+            "sources": ["knowledge_base/disk_storage.md"]
+        },
+        "default": {
+            "answer": "I'm here to help! You can ask me about password resets, WebDAV access, QuickBooks, printer troubleshooting, remote desktop, storage upgrades, and other IT issues. What would you like help with?",
+            "confidence": 0.7,
+            "sources": []
+        }
+    }
+
     # ALWAYS send initial greeting for FIRST contact with this conversation
     # This ensures the user sees the greeting FIRST, then answers questions in follow-ups
     if conv_key and conv_key not in SEEN_CONVERSATIONS:
@@ -604,51 +648,6 @@ async def zobot_webhook(request: Request):
             f.write(intent_log)
     except Exception:
         pass
-
-    # pull response map from existing code block
-    responses = {
-        "greeting": {
-            "answer": "Hi I am AceBuddy how may I assist you",
-            "confidence": 0.9,
-            "sources": []
-        },
-        "webdav": {
-            "answer": "WebDAV is a protocol for web-based file sharing. You can access shared files through File Explorer by mapping a network drive to the WebDAV server URL. Contact IT support if you need the server address.",
-            "confidence": 0.95,
-            "sources": ["knowledge_base/webdav_setup.md"]
-        },
-        "reset": {
-            "answer": "To reset your password: 1) Go to the login page and click 'Forgot Password' 2) Enter your email address 3) Check your email for the reset link 4) Follow the link and create a new password. If you don't receive the email, check your spam folder or contact IT support.",
-            "confidence": 0.98,
-            "sources": ["knowledge_base/password_reset.md"]
-        },
-        "quickbooks": {
-            "answer": "QuickBooks is accounting software. For issues, check your connection settings and ensure you have the latest version installed. Common fixes: restart QuickBooks, clear cache, or reinstall if needed. Contact IT support for further assistance.",
-            "confidence": 0.85,
-            "sources": ["knowledge_base/quickbooks.md"]
-        },
-        "printer": {
-            "answer": "To troubleshoot printer issues: 1) Check if the printer is powered on and connected to the network 2) Clear any paper jams 3) Check for error messages on the printer display 4) Reinstall or update printer drivers from the manufacturer's website 5) Restart both the printer and your computer. If the issue persists, contact IT support.",
-            "confidence": 0.85,
-            "sources": ["knowledge_base/printer_troubleshooting.md"]
-        },
-        "rdp": {
-            "answer": "Remote Desktop Protocol (RDP) allows you to connect to remote computers. To connect: 1) Use Remote Desktop Connection on Windows 2) Enter the computer name or IP address 3) Enter your credentials 4) Click Connect. If you have connection issues, ensure the remote computer is powered on and networked, and contact IT support.",
-            "confidence": 0.80,
-            "sources": ["knowledge_base/rdp_connection.md"]
-        },
-        "disk": {
-            "answer": "To manage disk storage: 1) Check available space in File Explorer > This PC 2) Delete unnecessary files or move them to external storage 3) Empty the Recycle Bin 4) Run Disk Cleanup (search for it in Windows) 5) Consider upgrading to a larger drive. Contact IT support if you need help with storage upgrades.",
-            "confidence": 0.80,
-            "sources": ["knowledge_base/disk_storage.md"]
-        },
-        "default": {
-            "answer": "I'm here to help! You can ask me about password resets, WebDAV access, QuickBooks, printer troubleshooting, remote desktop, storage upgrades, and other IT issues. What would you like help with?",
-            "confidence": 0.7,
-            "sources": []
-        }
-
-    }
 
     # Base response from canned intents (if matched)
     resp = responses.get(response_key, responses['default'])
