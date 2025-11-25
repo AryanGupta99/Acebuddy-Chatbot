@@ -399,7 +399,7 @@ async def zobot_webhook(request: Request):
     # pull response map from existing code block
     responses = {
         "greeting": {
-            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, printer issues, remote desktop, storage upgrades, and other IT issues. What can I help you with today?",
+            "answer": "Hello, I am AceBuddy How may i assist you ?",
             "confidence": 0.9,
             "sources": []
         },
@@ -434,7 +434,7 @@ async def zobot_webhook(request: Request):
             "sources": ["knowledge_base/disk_storage.md"]
         },
         "default": {
-            "answer": "I'm here to help! You can ask me about password resets, WebDAV access, QuickBooks, printer troubleshooting, remote desktop, storage upgrades, and other IT issues. What would you like help with?",
+            "answer": "Hello, I am AceBuddy How may i assist you ?",
             "confidence": 0.7,
             "sources": []
         }
