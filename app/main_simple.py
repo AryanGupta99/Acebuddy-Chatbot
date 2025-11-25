@@ -550,9 +550,23 @@ async def zobot_webhook(request: Request):
     except Exception:
         want_sync = False
 
-    # If this is the first message for this conversation, send the greeting and stop further processing
+    # If this is the first message for this conversation, or SalesIQ sent a 'trigger' (chat open) event,
+    # send the greeting and stop further processing. This ensures the widget sees the bot greeting first.
     try:
-        if conv_key and conv_key not in SEEN_CONVERSATIONS:
+        handler_val = None
+        if isinstance(body, dict):
+            handler_val = body.get('handler') or (body.get('request') or {}).get('handler')
+
+        should_send_greeting = False
+        # If SalesIQ indicates this is a trigger/open event, prefer greeting immediately
+        if handler_val and str(handler_val).lower() in ('trigger', 'init', 'start', 'open'):
+            should_send_greeting = True
+
+        # If there's no user message (query_text empty) and this is first contact, send greeting
+        if not query_text and conv_key and conv_key not in SEEN_CONVERSATIONS:
+            should_send_greeting = True
+
+        if should_send_greeting and conv_key and conv_key not in SEEN_CONVERSATIONS:
             SEEN_CONVERSATIONS.add(conv_key)
             greeting = responses['greeting']['answer']
             zoho_response = {"action": "reply", "replies": [greeting]}
@@ -560,7 +574,7 @@ async def zobot_webhook(request: Request):
             try:
                 os.makedirs('logs', exist_ok=True)
                 with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                    rf.write(f"{datetime.utcnow().isoformat()} - greeting returned: {json.dumps(zoho_response)}\n")
+                    rf.write(f"{datetime.utcnow().isoformat()} - greeting returned (reason: {'trigger' if handler_val else 'first_contact'}): {json.dumps(zoho_response)}\n")
             except Exception:
                 pass
             try:
