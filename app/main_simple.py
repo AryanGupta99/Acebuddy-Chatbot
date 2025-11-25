@@ -229,7 +229,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     from fastapi.responses import JSONResponse
     responses = {
         "greeting": {
-            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, and other IT issues. What can I help you with today?",
+            "answer": "Hi I am AceBuddy how may I assist you",
             "confidence": 0.9,
             "sources": []
         },
@@ -624,7 +624,7 @@ async def zobot_webhook(request: Request):
     # pull response map from existing code block
     responses = {
         "greeting": {
-            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, printer issues, remote desktop, storage upgrades, and other IT issues. What can I help you with today?",
+            "answer": "Hi I am AceBuddy how may I assist you",
             "confidence": 0.9,
             "sources": []
         },
