@@ -29,6 +29,6 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 # Expose port
 EXPOSE 8000
 
-# Build timestamp to force rebuild: 2025-11-24T23:20:00Z
+# Build timestamp to force rebuild: 2025-11-25T01:50:00Z - greeting fix
 # Run the application using main_simple which has the Zobot webhook integration with official Zoho response format
 CMD ["uvicorn", "main_simple:app", "--host", "0.0.0.0", "--port", "8000"]

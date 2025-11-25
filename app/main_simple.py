@@ -550,41 +550,25 @@ async def zobot_webhook(request: Request):
     except Exception:
         want_sync = False
 
-    # If this is the first message for this conversation, or SalesIQ sent a 'trigger' (chat open) event,
-    # send the greeting and stop further processing. This ensures the widget sees the bot greeting first.
-    try:
-        handler_val = None
-        if isinstance(body, dict):
-            handler_val = body.get('handler') or (body.get('request') or {}).get('handler')
-
-        should_send_greeting = False
-        # If SalesIQ indicates this is a trigger/open event, prefer greeting immediately
-        if handler_val and str(handler_val).lower() in ('trigger', 'init', 'start', 'open'):
-            should_send_greeting = True
-
-        # If there's no user message (query_text empty) and this is first contact, send greeting
-        if not query_text and conv_key and conv_key not in SEEN_CONVERSATIONS:
-            should_send_greeting = True
-
-        if should_send_greeting and conv_key and conv_key not in SEEN_CONVERSATIONS:
-            SEEN_CONVERSATIONS.add(conv_key)
-            greeting = responses['greeting']['answer']
-            zoho_response = {"action": "reply", "replies": [greeting]}
-            # log and save last event
-            try:
-                os.makedirs('logs', exist_ok=True)
-                with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                    rf.write(f"{datetime.utcnow().isoformat()} - greeting returned (reason: {'trigger' if handler_val else 'first_contact'}): {json.dumps(zoho_response)}\n")
-            except Exception:
-                pass
-            try:
-                LAST_EVENT['inbound'] = body
-                LAST_EVENT['outbound'] = zoho_response
-            except Exception:
-                pass
-            return JSONResponse(content=zoho_response, media_type="application/json")
-    except Exception:
-        pass
+    # ALWAYS send initial greeting for FIRST contact with this conversation
+    # This ensures the user sees the greeting FIRST, then answers questions in follow-ups
+    if conv_key and conv_key not in SEEN_CONVERSATIONS:
+        SEEN_CONVERSATIONS.add(conv_key)
+        greeting = responses['greeting']['answer']
+        zoho_response = {"action": "reply", "replies": [greeting]}
+        # log and save last event
+        try:
+            os.makedirs('logs', exist_ok=True)
+            with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+                rf.write(f"{datetime.utcnow().isoformat()} - greeting returned (first_contact): {json.dumps(zoho_response)}\n")
+        except Exception:
+            pass
+        try:
+            LAST_EVENT['inbound'] = body
+            LAST_EVENT['outbound'] = zoho_response
+        except Exception:
+            pass
+        return JSONResponse(content=zoho_response, media_type="application/json")
 
     # Log what we extracted for debugging
     try:
