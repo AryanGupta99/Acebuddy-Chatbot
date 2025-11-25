@@ -910,3 +910,11 @@ async def debug_echo(request: Request):
 def internal_last_event():
     """Return last inbound/outbound payload seen by the webhook (use for live debugging)."""
     return LAST_EVENT
+
+
+@app.post('/internal/reset_conversations')
+def internal_reset_conversations():
+    """ADMIN: Clear the SEEN_CONVERSATIONS set so greeting will be sent again (use for testing)."""
+    global SEEN_CONVERSATIONS
+    SEEN_CONVERSATIONS.clear()
+    return {"status": "cleared", "seen_conversations": len(SEEN_CONVERSATIONS)}
