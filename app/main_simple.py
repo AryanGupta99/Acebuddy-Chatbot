@@ -13,8 +13,8 @@ import threading
 import logging
 import json
 import requests
-import openai
-from pathlib import Path
+import glob
+import re
 
 app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple-fixed")
 
@@ -50,6 +50,99 @@ class SalesIQChatResponse(BaseModel):
     escalation_reason: Optional[str] = None
     sources: list = []
     metadata: dict = {}
+
+
+# Helper: simple KB search over files in data/kb/
+def kb_search(query: str, kb_dir: str = 'data/kb', min_score: int = 2):
+    if not query:
+        return None
+    try:
+        query_tokens = set(re.findall(r"\w+", query.lower()))
+        best = (None, 0, None)  # (filename, score, excerpt)
+        pattern = re.compile(r"\w+")
+        for path in glob.glob(os.path.join(kb_dir, '*.md')):
+            try:
+                with open(path, 'r', encoding='utf-8') as f:
+                    text = f.read()
+                tokens = set(pattern.findall(text.lower()))
+                score = len(query_tokens & tokens)
+                if score > best[1]:
+                    excerpt = text.strip().replace('\n', ' ')
+                    if len(excerpt) > 800:
+                        excerpt = excerpt[:800] + '...'
+                    best = (os.path.basename(path), score, excerpt)
+            except Exception:
+                continue
+        if best[1] >= min_score:
+            return { 'file': best[0], 'score': best[1], 'excerpt': best[2] }
+    except Exception:
+        return None
+    return None
+
+
+# Helper: call LLM (OpenAI) if key present. Returns text or None
+def call_llm(query: str, system_prompt: str = None):
+    key = os.getenv('OPENAI_API_KEY')
+    if not key or not query:
+        return None
+    try:
+        headers = {
+            'Authorization': f'Bearer {key}',
+            'Content-Type': 'application/json'
+        }
+        model = os.getenv('LLM_MODEL', 'gpt-3.5-turbo')
+        system_msg = system_prompt or 'You are a helpful IT assistant. Answer concisely.'
+        payload = {
+            'model': model,
+            'messages': [
+                {'role': 'system', 'content': system_msg},
+                {'role': 'user', 'content': query}
+            ],
+            'temperature': 0.2,
+            'max_tokens': 512
+        }
+        r = requests.post('https://api.openai.com/v1/chat/completions', headers=headers, json=payload, timeout=10)
+        if r.status_code == 200:
+            j = r.json()
+            choices = j.get('choices') or []
+            if choices:
+                return choices[0].get('message', {}).get('content')
+    except Exception:
+        return None
+    return None
+
+
+# Helper: escalate to human by posting to SalesIQ conversation (best-effort async)
+def escalate_to_human(body: dict, note: str = None):
+    try:
+        SALESIQ_API_BASE = os.getenv('SALESIQ_API_BASE')
+        SALESIQ_ACCESS_TOKEN = os.getenv('SALESIQ_ACCESS_TOKEN')
+        conv = None
+        if isinstance(body, dict):
+            conv = body.get('conversation_id') or body.get('visitor', {}).get('active_conversation_id')
+        if not SALESIQ_API_BASE or not SALESIQ_ACCESS_TOKEN or not conv:
+            return False
+        headers = {
+            'Authorization': f'Zoho-oauthtoken {SALESIQ_ACCESS_TOKEN}',
+            'Content-Type': 'application/json'
+        }
+        payload = {
+            'type': 'message',
+            'source': 'bot',
+            'message': note or 'Escalating to human agent',
+            'metadata': {
+                'escalation': True,
+                'timestamp': datetime.utcnow().isoformat()
+            }
+        }
+        url = f"{SALESIQ_API_BASE.rstrip('/')}/conversations/{conv}/messages"
+        try:
+            requests.post(url, headers=headers, json=payload, timeout=6)
+        except Exception:
+            pass
+        return True
+    except Exception:
+        return False
 
 # Health check endpoint
 @app.get("/health")
@@ -443,93 +536,64 @@ async def zobot_webhook(request: Request):
 
     }
 
-    # Helper: simple KB search (files in data/kb/*.md)
-    def kb_search(query: str):
-        try:
-            kb_dir = Path("data/kb")
-            if not kb_dir.exists():
-                return None, None
-            qwords = [w.lower() for w in query.split() if len(w) > 2]
-            best_score = 0
-            best_file = None
-            best_text = None
-            for p in kb_dir.glob("*.md"):
-                try:
-                    txt = p.read_text(encoding='utf-8')
-                except Exception:
-                    continue
-                low = txt.lower()
-                score = sum(low.count(w) for w in qwords)
-                if score > best_score:
-                    best_score = score
-                    best_file = p
-                    # extract first 400 chars as snippet
-                    best_text = txt.strip().replace('\n', ' ')[:800]
-            if best_score > 0 and best_file:
-                return best_text, str(best_file)
-        except Exception:
-            pass
-        return None, None
-
-    # Helper: call LLM fallback (OpenAI) if API key is present
-    def llm_fallback(query: str, kb_snippet: str | None = None):
-        try:
-            api_key = os.getenv('OPENAI_API_KEY') or os.getenv('OPENAI_API') or os.getenv('OPENAI_KEY')
-            if not api_key:
-                return None
-            openai.api_key = api_key
-            system = "You are an IT support assistant that answers concisely and helpfully."
-            user_prompt = query
-            if kb_snippet:
-                user_prompt = f"User question: {query}\n\nRelevant KB excerpt: {kb_snippet}\n\nAnswer the user's question using the KB when possible, otherwise provide an actionable troubleshooting answer."
-            resp = openai.ChatCompletion.create(
-                model=os.getenv('OPENAI_MODEL', 'gpt-3.5-turbo'),
-                messages=[
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user_prompt},
-                ],
-                max_tokens=450,
-                temperature=0.2,
-            )
-            if resp and 'choices' in resp and len(resp['choices']) > 0:
-                return resp['choices'][0]['message']['content'].strip()
-        except Exception:
-            pass
-        return None
-
-    # First, honor explicit intent/node mapping (treat response_key as Zobot node match)
+    # Base response from canned intents (if matched)
     resp = responses.get(response_key, responses['default'])
     answer = resp['answer']
     confidence = resp['confidence']
 
-    # If we matched a specific node (not just default/greeting), prefer that, but also try KB to augment
-    if response_key not in ("default", "greeting"):
-        # try to find KB info to append
-        try:
-            kb_snip, kb_file = kb_search(query_text or '')
-            if kb_snip:
-                answer = f"{answer}\n\nAdditional info from docs:\n{kb_snip}"
-                # slightly increase confidence
-                confidence = max(confidence, 0.85)
-        except Exception:
-            pass
+    # PIPELINE: 1) Zobot node mapping -> 2) canned intent -> 3) KB search -> 4) LLM -> 5) escalate
+    # 1) Check for explicit Zobot node mapping file (optional)
+    node_reply = None
+    try:
+        node_id = None
+        if isinstance(body, dict):
+            node_id = body.get('node') or (body.get('request') or {}).get('node_id') or (body.get('request') or {}).get('node')
+            # fallback to handler name
+            if not node_id:
+                node_id = body.get('handler')
+        nodes_map_path = os.path.join('data', 'zobot_nodes.json')
+        if node_id and os.path.exists(nodes_map_path):
+            try:
+                with open(nodes_map_path, 'r', encoding='utf-8') as nf:
+                    nodes_map = json.load(nf)
+                # nodes_map expected to be {"node_identifier": "reply text"}
+                node_reply = nodes_map.get(str(node_id))
+            except Exception:
+                node_reply = None
+    except Exception:
+        node_reply = None
+
+    if node_reply:
+        answer = node_reply
+        confidence = 0.95
+        resp_sources = [f'zobot_node:{node_id}']
     else:
-        # For default or greeting, try KB first, then LLM, then escalate
-        kb_snip, kb_file = kb_search(query_text or '')
-        if kb_snip:
-            answer = f"{kb_snip}"
-            confidence = 0.88
-        else:
-            # try LLM
-            llm_answer = llm_fallback(query_text or '')
-            if llm_answer:
-                answer = llm_answer
-                confidence = 0.75
+        # 2) If canned intent matched (not default), prefer it
+        resp_sources = resp.get('sources', [])
+        if response_key == 'default' or not answer:
+            # 3) KB search
+            kb_hit = kb_search(query_text or '')
+            if kb_hit:
+                answer = f"I found something in our documentation ({kb_hit['file']}): {kb_hit['excerpt']}"
+                confidence = 0.88
+                resp_sources = [os.path.join('data', 'kb', kb_hit['file'])]
             else:
-                # nothing helpful — escalate to human
-                answer = "I'm unable to find a helpful automated answer. Would you like me to connect you to a human agent?"
-                confidence = 0.25
-                resp['should_escalate'] = True
+                # 4) LLM fallback
+                llm_ans = call_llm(query_text or '')
+                if llm_ans:
+                    answer = llm_ans
+                    confidence = 0.75
+                    resp_sources = ['llm']
+                else:
+                    # 5) escalate to human (best-effort async) and return a friendly escalation message
+                    try:
+                        t = threading.Thread(target=escalate_to_human, args=(body, f"User requested human escalation for: {query_text}"), daemon=True)
+                        t.start()
+                    except Exception:
+                        pass
+                    answer = "I couldn't find an automated answer. I've forwarded this to a human agent — someone will join shortly."
+                    confidence = 0.0
+                    resp_sources = []
 
     # Build Zobot synchronous payload (the widget can accept this when configured)
     sync_payload = {
@@ -537,8 +601,8 @@ async def zobot_webhook(request: Request):
         "type": "text",
         "metadata": {
             "confidence": confidence,
-            "sources": resp.get('sources', []),
-            "version": "2.0.1-greeting"
+            "sources": resp_sources,
+            "version": "2.0.1-pipeline"
         }
     }
 
