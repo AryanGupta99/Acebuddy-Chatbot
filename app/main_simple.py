@@ -13,20 +13,11 @@ import threading
 import logging
 import json
 import requests
-import glob
-import re
-import base64
-import urllib.parse
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.asymmetric import padding
-from cryptography.hazmat.primitives import serialization
 
-app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple-fixed-v2")
+app = FastAPI(title="AceBuddy RAG Chatbot (Simple Mode)", version="2.0.0-simple-fixed")
 
 # In-memory last event storage for live debugging (not persisted)
 LAST_EVENT = {"inbound": None, "outbound": None}
-# Track conversations we've greeted so we only send the greeting once per conversation (in-memory)
-SEEN_CONVERSATIONS = set()
 # Simple request/response models
 class ChatRequest(BaseModel):
     query: str
@@ -58,161 +49,6 @@ class SalesIQChatResponse(BaseModel):
     sources: list = []
     metadata: dict = {}
 
-
-# Helper: simple KB search over files in data/kb/
-def kb_search(query: str, kb_dir: str = 'data/kb', min_score: int = 2):
-    if not query:
-        return None
-    try:
-        query_tokens = set(re.findall(r"\w+", query.lower()))
-        best = (None, 0, None)  # (filename, score, excerpt)
-        pattern = re.compile(r"\w+")
-        for path in glob.glob(os.path.join(kb_dir, '*.md')):
-            try:
-                with open(path, 'r', encoding='utf-8') as f:
-                    text = f.read()
-                tokens = set(pattern.findall(text.lower()))
-                score = len(query_tokens & tokens)
-                if score > best[1]:
-                    excerpt = text.strip().replace('\n', ' ')
-                    if len(excerpt) > 800:
-                        excerpt = excerpt[:800] + '...'
-                    best = (os.path.basename(path), score, excerpt)
-            except Exception:
-                continue
-        if best[1] >= min_score:
-            return { 'file': best[0], 'score': best[1], 'excerpt': best[2] }
-    except Exception:
-        return None
-    return None
-
-
-# Helper: call LLM (OpenAI) if key present. Returns text or None
-def call_llm(query: str, system_prompt: str = None):
-    key = os.getenv('OPENAI_API_KEY')
-    if not key or not query:
-        return None
-    try:
-        headers = {
-            'Authorization': f'Bearer {key}',
-            'Content-Type': 'application/json'
-        }
-        model = os.getenv('LLM_MODEL', 'gpt-3.5-turbo')
-        system_msg = system_prompt or 'You are a helpful IT assistant. Answer concisely.'
-        payload = {
-            'model': model,
-            'messages': [
-                {'role': 'system', 'content': system_msg},
-                {'role': 'user', 'content': query}
-            ],
-            'temperature': 0.2,
-            'max_tokens': 512
-        }
-        r = requests.post('https://api.openai.com/v1/chat/completions', headers=headers, json=payload, timeout=10)
-        if r.status_code == 200:
-            j = r.json()
-            choices = j.get('choices') or []
-            if choices:
-                return choices[0].get('message', {}).get('content')
-    except Exception:
-        return None
-    return None
-
-
-# Helper: escalate to human by posting to SalesIQ conversation (best-effort async)
-def escalate_to_human(body: dict, note: str = None):
-    try:
-        SALESIQ_API_BASE = os.getenv('SALESIQ_API_BASE')
-        SALESIQ_ACCESS_TOKEN = os.getenv('SALESIQ_ACCESS_TOKEN')
-        conv = None
-        if isinstance(body, dict):
-            conv = body.get('conversation_id') or body.get('visitor', {}).get('active_conversation_id')
-        if not SALESIQ_API_BASE or not SALESIQ_ACCESS_TOKEN or not conv:
-            return False
-        headers = {
-            'Authorization': f'Zoho-oauthtoken {SALESIQ_ACCESS_TOKEN}',
-            'Content-Type': 'application/json'
-        }
-        payload = {
-            'type': 'message',
-            'source': 'bot',
-            'message': note or 'Escalating to human agent',
-            'metadata': {
-                'escalation': True,
-                'timestamp': datetime.utcnow().isoformat()
-            }
-        }
-        url = f"{SALESIQ_API_BASE.rstrip('/')}/conversations/{conv}/messages"
-        try:
-            requests.post(url, headers=headers, json=payload, timeout=6)
-        except Exception:
-            pass
-        return True
-    except Exception:
-        return False
-
-
-# Verify RSA signature if SalesIQ signed the request. Uses env var SALESIQ_VERIFY_SIGNATURE=true
-def verify_salesiq_signature(raw_body: bytes, headers) -> bool:
-    try:
-        enabled = os.getenv('SALESIQ_VERIFY_SIGNATURE', 'false').lower() == 'true'
-        if not enabled:
-            return True
-
-        # try several common header names
-        sig_header_names = [
-            'X-SalesIQ-Signature', 'X-Salesiq-Signature', 'X-Zobot-Signature', 'X-Zoho-Signature', 'X-Signature', 'Signature'
-        ]
-        sig_value = None
-        for hn in sig_header_names:
-            v = headers.get(hn)
-            if v:
-                sig_value = v
-                break
-        if not sig_value:
-            # no signature header present -> treat as invalid when verification is enabled
-            return False
-
-        # load public key either from env or file
-        pub_pem = os.getenv('SALESIQ_PUBLIC_KEY')
-        if not pub_pem:
-            path = os.getenv('SALESIQ_PUBLIC_KEY_PATH')
-            if path and os.path.exists(path):
-                with open(path, 'r', encoding='utf-8') as pf:
-                    pub_pem = pf.read()
-        if not pub_pem:
-            return False
-
-        # normalize PEM
-        if isinstance(pub_pem, str):
-            pub_bytes = pub_pem.encode('utf-8')
-        else:
-            pub_bytes = pub_pem
-
-        public_key = serialization.load_pem_public_key(pub_bytes)
-
-        # signature likely base64; try decode base64 then verify
-        sig_bytes = None
-        try:
-            sig_bytes = base64.b64decode(sig_value)
-        except Exception:
-            # try hex
-            try:
-                sig_bytes = bytes.fromhex(sig_value)
-            except Exception:
-                return False
-
-        # verify using PKCS1v15 + SHA256
-        public_key.verify(
-            sig_bytes,
-            raw_body,
-            padding.PKCS1v15(),
-            hashes.SHA256()
-        )
-        return True
-    except Exception:
-        return False
-
 # Health check endpoint
 @app.get("/health")
 def health_check():
@@ -229,7 +65,7 @@ def chat(request: ChatRequest) -> ChatResponse:
     from fastapi.responses import JSONResponse
     responses = {
         "greeting": {
-            "answer": "Hi I am AceBuddy how may I assist you",
+            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, and other IT issues. What can I help you with today?",
             "confidence": 0.9,
             "sources": []
         },
@@ -291,26 +127,21 @@ def chat(request: ChatRequest) -> ChatResponse:
 @app.post("/salesiq/chat")
 async def salesiq_chat(request: Request):
     """SalesIQ webhook endpoint (robust parsing for JSON/form shapes)"""
-    # Read raw body bytes first (so we can verify signature)
-    body = {}
+    # Read incoming body robustly (JSON -> form -> raw)
+    body = None
     try:
-        raw = await request.body()
-        # verify signature if enabled
-        if not verify_salesiq_signature(raw, request.headers):
-            return JSONResponse(content={"error": "Invalid signature"}, status_code=401)
-        raw_text = raw.decode('utf-8', errors='ignore')
+        body = await request.json()
+    except Exception:
         try:
-            body = json.loads(raw_text)
+            form = await request.form()
+            body = {k: v for k, v in form.items()}
         except Exception:
-            # try form-encoded parse
             try:
-                parsed = urllib.parse.parse_qs(raw_text)
-                # flatten to simple dict
-                body = {k: v[0] if isinstance(v, list) and v else v for k, v in parsed.items()}
+                raw = await request.body()
+                body_text = raw.decode('utf-8', errors='ignore')
+                body = json.loads(body_text)
             except Exception:
                 body = {}
-    except Exception:
-        body = {}
 
     # Log raw payload for inspection
     try:
@@ -458,26 +289,21 @@ async def zobot_webhook(request: Request):
     - Otherwise the endpoint will return a quick ack and push the final message asynchronously when credentials exist.
     This handler reads JSON and form bodies robustly and records last event in memory.
     """
-    # Read raw body bytes first (so we can verify signature)
-    body = {}
+    # Read incoming body robustly (JSON -> form -> raw)
+    body = None
     try:
-        raw = await request.body()
-        # verify signature if enabled
-        if not verify_salesiq_signature(raw, request.headers):
-            return JSONResponse(content={"error": "Invalid signature"}, status_code=401)
-        raw_text = raw.decode('utf-8', errors='ignore')
+        body = await request.json()
+    except Exception:
         try:
-            body = json.loads(raw_text)
+            form = await request.form()
+            body = {k: v for k, v in form.items()}
         except Exception:
-            # try form-encoded parse
             try:
-                parsed = urllib.parse.parse_qs(raw_text)
-                # flatten to simple dict
-                body = {k: v[0] if isinstance(v, list) and v else v for k, v in parsed.items()}
+                raw = await request.body()
+                body_text = raw.decode('utf-8', errors='ignore')
+                body = json.loads(body_text)
             except Exception:
                 body = {}
-    except Exception:
-        body = {}
 
     # Log raw payload for debugging WITH ALL KEYS
     try:
@@ -535,25 +361,45 @@ async def zobot_webhook(request: Request):
     query_lower = (query_text or '').lower()
     response_key = "default"
 
-    # compute a conversation key to track first-contact greeting
-    conv_key = None
+    # Log what we extracted for debugging
     try:
-        if isinstance(body, dict):
-            conv_key = body.get('conversation_id') or (body.get('visitor') or {}).get('active_conversation_id') or (body.get('chat_id') or (body.get('visitor') or {}).get('email'))
+        os.makedirs('logs', exist_ok=True)
+        extraction_log = f"{datetime.utcnow().isoformat()} - EXTRACTION: query_text='{query_text}' query_lower='{query_lower}'\n"
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
+            f.write(extraction_log)
     except Exception:
-        conv_key = None
+        pass
 
-    # Determine if caller requested synchronous behavior
+    # Check specific intents FIRST before greeting
+    if any(word in query_lower for word in ["webdav", "web dav", "file share", "map network", "network drive"]):
+        response_key = "webdav"
+    elif any(word in query_lower for word in ["password", "reset", "login", "forgot", "change password"]):
+        response_key = "reset"
+    elif any(word in query_lower for word in ["quickbooks", "qb", "accounting", "invoice", "payroll"]):
+        response_key = "quickbooks"
+    elif any(word in query_lower for word in ["printer", "print", "printing", "paper", "ink", "toner", "hp", "canon", "xerox"]):
+        response_key = "printer"
+    elif any(word in query_lower for word in ["rdp", "remote desktop", "connect", "connection", "access remote"]):
+        response_key = "rdp"
+    elif any(word in query_lower for word in ["disk", "storage", "space", "hard drive", "ssd", "upgrade"]):
+        response_key = "disk"
+    elif any(g in query_lower for g in ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "hii", "hiii")):
+        # Greeting detection
+        response_key = "greeting"
+
+    # Log which response was chosen
     try:
-        query_params = dict(request.query_params)
-        want_sync = (query_params.get('sync') == 'true') or (request.headers.get('X-Zobot-Sync', '').lower() == 'true')
+        os.makedirs('logs', exist_ok=True)
+        intent_log = f"{datetime.utcnow().isoformat()} - INTENT: response_key='{response_key}'\n"
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
+            f.write(intent_log)
     except Exception:
-        want_sync = False
+        pass
 
-    # DEFINE RESPONSES DICT EARLY - before greeting check (it was defined after, causing NameError)
+    # pull response map from existing code block
     responses = {
         "greeting": {
-            "answer": "Hi I am AceBuddy how may I assist you",
+            "answer": "Hi! I'm AceBuddy — I can help with password resets, WebDAV access, QuickBooks, printer issues, remote desktop, storage upgrades, and other IT issues. What can I help you with today?",
             "confidence": 0.9,
             "sources": []
         },
@@ -592,133 +438,12 @@ async def zobot_webhook(request: Request):
             "confidence": 0.7,
             "sources": []
         }
+
     }
 
-    # ALWAYS send initial greeting for FIRST contact with this conversation
-    # This ensures the user sees the greeting FIRST, then answers questions in follow-ups
-    if conv_key and conv_key not in SEEN_CONVERSATIONS:
-        SEEN_CONVERSATIONS.add(conv_key)
-        greeting = responses['greeting']['answer']
-        zoho_response = {"action": "reply", "replies": [greeting]}
-        # log and save last event
-        try:
-            os.makedirs('logs', exist_ok=True)
-            with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                rf.write(f"{datetime.utcnow().isoformat()} - greeting returned (first_contact): {json.dumps(zoho_response)}\n")
-        except Exception:
-            pass
-        try:
-            LAST_EVENT['inbound'] = body
-            LAST_EVENT['outbound'] = zoho_response
-        except Exception:
-            pass
-        return JSONResponse(content=zoho_response, media_type="application/json")
-
-    # Log what we extracted for debugging
-    try:
-        os.makedirs('logs', exist_ok=True)
-        extraction_log = f"{datetime.utcnow().isoformat()} - EXTRACTION: query_text='{query_text}' query_lower='{query_lower}'\n"
-        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
-            f.write(extraction_log)
-    except Exception:
-        pass
-
-    # Check specific intents FIRST before greeting
-    if any(word in query_lower for word in ["webdav", "web dav", "file share", "map network", "network drive"]):
-        response_key = "webdav"
-    elif any(word in query_lower for word in ["password", "reset", "login", "forgot", "change password"]):
-        response_key = "reset"
-    elif any(word in query_lower for word in ["quickbooks", "qb", "accounting", "invoice", "payroll"]):
-        response_key = "quickbooks"
-    elif any(word in query_lower for word in ["printer", "print", "printing", "paper", "ink", "toner", "hp", "canon", "xerox"]):
-        response_key = "printer"
-    elif any(word in query_lower for word in ["rdp", "remote desktop", "connect", "connection", "access remote"]):
-        response_key = "rdp"
-    elif any(word in query_lower for word in ["disk", "storage", "space", "hard drive", "ssd", "upgrade"]):
-        response_key = "disk"
-    elif any(g in query_lower for g in ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "hii", "hiii")):
-        # Greeting detection
-        response_key = "greeting"
-
-    # Log which response was chosen
-    try:
-        os.makedirs('logs', exist_ok=True)
-        intent_log = f"{datetime.utcnow().isoformat()} - INTENT: response_key='{response_key}'\n"
-        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as f:
-            f.write(intent_log)
-    except Exception:
-        pass
-
-    # Base response from canned intents (if matched)
     resp = responses.get(response_key, responses['default'])
     answer = resp['answer']
     confidence = resp['confidence']
-
-    # PIPELINE: 1) Zobot node mapping -> 2) canned intent -> 3) KB search -> 4) LLM -> 5) escalate
-    # 1) Check for explicit Zobot node mapping file (optional)
-    node_reply = None
-    try:
-        node_id = None
-        if isinstance(body, dict):
-            node_id = body.get('node') or (body.get('request') or {}).get('node_id') or (body.get('request') or {}).get('node')
-            # fallback to handler name
-            if not node_id:
-                node_id = body.get('handler')
-        nodes_map_path = os.path.join('data', 'zobot_nodes.json')
-        if node_id and os.path.exists(nodes_map_path):
-            try:
-                with open(nodes_map_path, 'r', encoding='utf-8') as nf:
-                    nodes_map = json.load(nf)
-                # nodes_map expected to be {"node_identifier": "reply text"}
-                node_reply = nodes_map.get(str(node_id))
-            except Exception:
-                node_reply = None
-    except Exception:
-        node_reply = None
-
-    if node_reply:
-        answer = node_reply
-        confidence = 0.95
-        resp_sources = [f'zobot_node:{node_id}']
-    else:
-        # 2) If canned intent matched (not default), prefer it
-        resp_sources = resp.get('sources', [])
-        if response_key == 'default' or not answer:
-            # 3) KB search
-            kb_hit = kb_search(query_text or '')
-            if kb_hit:
-                answer = f"I found something in our documentation ({kb_hit['file']}): {kb_hit['excerpt']}"
-                confidence = 0.88
-                resp_sources = [os.path.join('data', 'kb', kb_hit['file'])]
-            else:
-                # 4) LLM fallback
-                llm_ans = call_llm(query_text or '')
-                if llm_ans:
-                    answer = llm_ans
-                    confidence = 0.75
-                    resp_sources = ['llm']
-                else:
-                    # 5) Decide whether to escalate or ask for clarification
-                    auto_escalate = os.getenv('AUTO_ESCALATE', 'false').lower() == 'true'
-                    escalation_triggers = (query_text or '').lower()
-                    wants_human = any(k in escalation_triggers for k in ("agent", "human", "representative", "speak to", "talk to human", "support", "help me", "customer care"))
-
-                    if auto_escalate or wants_human:
-                        try:
-                            t = threading.Thread(target=escalate_to_human, args=(body, f"User requested human escalation for: {query_text}"), daemon=True)
-                            t.start()
-                        except Exception:
-                            pass
-                        answer = "I couldn't find an automated answer. I've forwarded this to a human agent — someone will join shortly."
-                        confidence = 0.0
-                        resp_sources = []
-                        should_escalate_flag = True
-                    else:
-                        # Prefer to ask a clarifying question rather than escalate immediately
-                        answer = "I don't have an exact automated answer for that. Can you rephrase or type 'agent' to speak to a human?"
-                        confidence = 0.2
-                        resp_sources = []
-                        should_escalate_flag = False
 
     # Build Zobot synchronous payload (the widget can accept this when configured)
     sync_payload = {
@@ -726,8 +451,8 @@ async def zobot_webhook(request: Request):
         "type": "text",
         "metadata": {
             "confidence": confidence,
-            "sources": resp_sources,
-            "version": "2.0.1-pipeline"
+            "sources": resp.get('sources', []),
+            "version": "2.0.1-greeting"
         }
     }
 
@@ -772,48 +497,45 @@ async def zobot_webhook(request: Request):
         except Exception:
             pass
 
-    if want_sync:
-        # Log the outgoing synchronous payload so we can inspect what the widget receives
-        try:
-            os.makedirs('logs', exist_ok=True)
-            with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                rf.write(f"{datetime.utcnow().isoformat()} - response: {json.dumps(sync_payload)} - headers: {json.dumps(dict(request.headers))}\n")
-        except Exception:
-            pass
+    # ALWAYS return the official Zoho synchronous response so the widget displays it immediately
+    # The widget will show our reply immediately, and if async push is configured, it will also be pushed asynchronously
+    try:
+        os.makedirs('logs', exist_ok=True)
+        with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+            rf.write(f"{datetime.utcnow().isoformat()} - response: {json.dumps(sync_payload)}\n")
+    except Exception:
+        pass
 
-        # OFFICIAL ZOHO ZOBOT RESPONSE FORMAT (from Zoho docs):
-        # {
-        #   "action": "reply",
-        #   "replies": ["message1", {"text": "message2", "image": "url"}],
-        #   "suggestions": ["suggestion1", "suggestion2"]
-        # }
-        
-        zoho_response = {
-            "action": "reply",
-            "replies": [answer]
-        }
+    # OFFICIAL ZOHO ZOBOT RESPONSE FORMAT (from Zoho docs):
+    # {
+    #   "action": "reply",
+    #   "replies": ["message1", {"text": "message2", "image": "url"}],
+    #   "suggestions": ["suggestion1", "suggestion2"]
+    # }
+    
+    zoho_response = {
+        "action": "reply",
+        "replies": [answer]
+    }
 
-        # log the response for debugging
-        try:
-            os.makedirs('logs', exist_ok=True)
-            with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
-                rf.write(f"{datetime.utcnow().isoformat()} - returning official zoho format: {json.dumps(zoho_response)}\n")
-            with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
-                ef.write(f"{datetime.utcnow().isoformat()} - outgoing: {json.dumps(zoho_response)}\n")
-        except Exception:
-            pass
+    # log the response for debugging
+    try:
+        os.makedirs('logs', exist_ok=True)
+        with open('logs/salesiq_responses.log', 'a', encoding='utf-8') as rf:
+            rf.write(f"{datetime.utcnow().isoformat()} - returning official zoho format: {json.dumps(zoho_response)}\n")
+        with open('logs/salesiq_events.log', 'a', encoding='utf-8') as ef:
+            ef.write(f"{datetime.utcnow().isoformat()} - outgoing: {json.dumps(zoho_response)}\n")
+    except Exception:
+        pass
 
-        # Save last event for live debugging
-        try:
-            LAST_EVENT['inbound'] = body
-            LAST_EVENT['outbound'] = zoho_response
-        except Exception:
-            pass
+    # Save last event for live debugging
+    try:
+        LAST_EVENT['inbound'] = body
+        LAST_EVENT['outbound'] = zoho_response
+    except Exception:
+        pass
 
-        return JSONResponse(content=zoho_response, media_type="application/json")
-
-    # Otherwise return an ack that the webhook was received
-    return JSONResponse(content={"status": "accepted", "message": "Processing"}, status_code=202)
+    return JSONResponse(content=zoho_response, media_type="application/json")
 
 # SalesIQ status endpoint
 @app.get("/salesiq/status")
@@ -909,11 +631,3 @@ async def debug_echo(request: Request):
 def internal_last_event():
     """Return last inbound/outbound payload seen by the webhook (use for live debugging)."""
     return LAST_EVENT
-
-
-@app.post('/internal/reset_conversations')
-def internal_reset_conversations():
-    """ADMIN: Clear the SEEN_CONVERSATIONS set so greeting will be sent again (use for testing)."""
-    global SEEN_CONVERSATIONS
-    SEEN_CONVERSATIONS.clear()
-    return {"status": "cleared", "seen_conversations": len(SEEN_CONVERSATIONS)}
